@@ -9,6 +9,7 @@ from scripts.malden_precinct_pdf_report import (
     build_summary_text,
     create_correlation_bar_chart,
     create_scatter_plot,
+    example_graph_variables,
     render_analysis_page,
     render_correlation_overview_pages,
     render_conclusion_page,
@@ -28,6 +29,10 @@ def make_context() -> ReportContext:
             "turnout_pct": 0.12,
             "transit_share": 0.10,
             "bachelors_plus_share": 0.30,
+            "carpool_share": 0.18,
+            "hispanic_share_2020": 0.22,
+            "male_share": 0.47,
+            "median_age_estimate": 38.0,
             "age_18_to_34_share": 0.25,
         },
         {
@@ -38,6 +43,10 @@ def make_context() -> ReportContext:
             "turnout_pct": 0.18,
             "transit_share": 0.20,
             "bachelors_plus_share": 0.45,
+            "carpool_share": 0.10,
+            "hispanic_share_2020": 0.17,
+            "male_share": 0.49,
+            "median_age_estimate": 41.0,
             "age_18_to_34_share": 0.27,
         },
         {
@@ -48,6 +57,10 @@ def make_context() -> ReportContext:
             "turnout_pct": 0.26,
             "transit_share": 0.32,
             "bachelors_plus_share": 0.58,
+            "carpool_share": 0.05,
+            "hispanic_share_2020": 0.11,
+            "male_share": 0.51,
+            "median_age_estimate": 45.0,
             "age_18_to_34_share": 0.26,
         },
     ]
@@ -112,6 +125,41 @@ def test_chart_helpers_render_images(tmp_path):
     assert (tmp_path / "bars.png").exists()
     assert (tmp_path / "all_bars.png").exists()
     assert (tmp_path / "scatter.png").exists()
+
+
+def test_example_graph_pages_follow_q1a_order_and_pair_turnout(tmp_path):
+    context = make_context()
+
+    pages, paths = render_example_graph_pages(context, tmp_path / "charts")
+
+    assert len(pages) == 4
+    assert example_graph_variables(context) == [
+        "transit_share",
+        "carpool_share",
+        "bachelors_plus_share",
+        "hispanic_share_2020",
+        "turnout_pct",
+        "male_share",
+        "median_age_estimate",
+        "age_18_to_34_share",
+    ]
+    assert [path.name for path in paths] == [
+        "transit_share_q1a_yes_pct.png",
+        "transit_share_turnout_pct.png",
+        "carpool_share_q1a_yes_pct.png",
+        "carpool_share_turnout_pct.png",
+        "bachelors_plus_share_q1a_yes_pct.png",
+        "bachelors_plus_share_turnout_pct.png",
+        "hispanic_share_2020_q1a_yes_pct.png",
+        "hispanic_share_2020_turnout_pct.png",
+        "turnout_pct_q1a_yes_pct.png",
+        "male_share_q1a_yes_pct.png",
+        "male_share_turnout_pct.png",
+        "median_age_estimate_q1a_yes_pct.png",
+        "median_age_estimate_turnout_pct.png",
+        "age_18_to_34_share_q1a_yes_pct.png",
+        "age_18_to_34_share_turnout_pct.png",
+    ]
 
 
 def test_page_renderers_and_pdf_writer(tmp_path):

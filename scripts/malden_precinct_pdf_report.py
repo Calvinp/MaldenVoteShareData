@@ -254,6 +254,32 @@ def ordered_variables(context: ReportContext) -> list[str]:
     return ordered
 
 
+def has_plot_data(
+    precinct_rows: list[dict[str, float | str | None]],
+    x_key: str,
+    y_key: str,
+) -> bool:
+    points = [
+        (row.get(x_key), row.get(y_key))
+        for row in precinct_rows
+        if row.get(x_key) is not None and row.get(y_key) is not None
+    ]
+    if len(points) < 3:
+        return False
+    x_values = {round(float(point[0]), 12) for point in points}
+    y_values = {round(float(point[1]), 12) for point in points}
+    return len(x_values) > 1 and len(y_values) > 1
+
+
+def example_graph_variables(context: ReportContext) -> list[str]:
+    ranked_q1a = correlation_rows_for_outcome(context.correlations, "q1a_yes_pct")
+    return [
+        item.variable
+        for item in ranked_q1a
+        if has_plot_data(context.precinct_rows, item.variable, "q1a_yes_pct")
+    ]
+
+
 def build_summary_text(context: ReportContext) -> dict[str, object]:
     q1a_top = strongest_with_sign(context.correlations, "q1a_yes_pct", positive=True, limit=2)
     q1a_bottom = strongest_with_sign(context.correlations, "q1a_yes_pct", positive=False, limit=2)
@@ -488,8 +514,9 @@ def create_scatter_plot(
         y = project_y(y_value)
         draw.ellipse((x - 6, y - 6, x + 6, y + 6), fill=BLUE, outline="white", width=2)
 
+    y_label = OUTCOME_LABELS.get(y_key, TURNOUT_OUTCOME_LABEL if y_key == "turnout_pct" else VARIABLE_LABELS.get(y_key, y_key))
     draw.text((chart_left, height - 28), VARIABLE_LABELS[x_key], font=label_font, fill=TEXT_COLOR)
-    draw.text((chart_right - 220, chart_top - 26), OUTCOME_LABELS[y_key], font=label_font, fill=TEXT_COLOR)
+    draw.text((chart_right - 220, chart_top - 26), y_label, font=label_font, fill=TEXT_COLOR)
 
     if output_path is not None:
         output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -629,40 +656,64 @@ def render_example_graph_pages(
     context: ReportContext,
     chart_output_dir: Path = CHART_OUTPUT_DIR,
 ) -> tuple[list[Image.Image], list[Path]]:
-    variables = ordered_variables(context)
-    cards_per_page = 4
-    positions = [(90, 210), (650, 210), (90, 820), (650, 820)]
+    variables = example_graph_variables(context)
+    rows_per_page = 2
+    row_tops = [210, 820]
+    left_position = (90, 210)
+    right_position = (650, 210)
+    turnout_variables = [variable for variable in variables if variable != "turnout_pct"]
+    turnout_correlations = compute_correlations(
+        context.precinct_rows,
+        variables=turnout_variables,
+        outcomes={"turnout_pct": TURNOUT_OUTCOME_LABEL},
+    )
+    turnout_lookup = {
+        item.variable: item
+        for item in correlation_rows_for_outcome(turnout_correlations, "turnout_pct")
+    }
     pages: list[Image.Image] = []
     paths: list[Path] = []
 
-    for page_start in range(0, len(variables), cards_per_page):
-        page_variables = variables[page_start : page_start + cards_per_page]
-        page_number = page_start // cards_per_page + 1
+    for page_start in range(0, len(variables), rows_per_page):
+        page_variables = variables[page_start : page_start + rows_per_page]
+        page_number = page_start // rows_per_page + 1
         image, draw, _ = make_base_page(
             "Example Graphs",
-            f"Each variable appears once against its strongest-match outcome. p. {page_number}",
+            f"Q1A yes share on the left, turnout on the right. p. {page_number}",
         )
-        for variable, (left, top) in zip(page_variables, positions):
-            outcome = best_outcome_for_variable(context.correlations, variable)
-            if outcome is None:
-                continue
-            correlation = correlation_for_variable(context.correlations, variable, outcome)
-            subtitle = (
-                f"Best match: {OUTCOME_LABELS[outcome]} "
-                f"(Spearman {correlation.spearman_rho:+.2f})"
-            )
-            path = chart_output_dir / f"{variable}_{outcome}.png"
-            chart = create_scatter_plot(
+        for variable, top in zip(page_variables, row_tops):
+            q1a_correlation = correlation_for_variable(context.correlations, variable, "q1a_yes_pct")
+            q1a_path = chart_output_dir / f"{variable}_q1a_yes_pct.png"
+            q1a_chart = create_scatter_plot(
                 context.precinct_rows,
                 variable,
-                outcome,
-                f"{VARIABLE_LABELS[variable]} vs {OUTCOME_LABELS[outcome]}",
-                subtitle,
-                path,
+                "q1a_yes_pct",
+                f"{VARIABLE_LABELS[variable]} vs {OUTCOME_LABELS['q1a_yes_pct']}",
+                f"Spearman {q1a_correlation.spearman_rho:+.2f}",
+                q1a_path,
             )
-            image.paste(chart, (left, top))
-            paths.append(path)
-        draw.text((PAGE_MARGIN, PAGE_HEIGHT - 62), "Green lines are simple trend lines added only to make the general direction easier to see.", font=load_font(18), fill=MUTED_TEXT_COLOR)
+            image.paste(q1a_chart, (left_position[0], top))
+            paths.append(q1a_path)
+
+            if variable == "turnout_pct":
+                continue
+
+            turnout_correlation = turnout_lookup.get(variable)
+            if turnout_correlation is None or not has_plot_data(context.precinct_rows, variable, "turnout_pct"):
+                continue
+
+            turnout_path = chart_output_dir / f"{variable}_turnout_pct.png"
+            turnout_chart = create_scatter_plot(
+                context.precinct_rows,
+                variable,
+                "turnout_pct",
+                f"{VARIABLE_LABELS[variable]} vs {TURNOUT_OUTCOME_LABEL}",
+                f"Spearman {turnout_correlation.spearman_rho:+.2f}",
+                turnout_path,
+            )
+            image.paste(turnout_chart, (right_position[0], top))
+            paths.append(turnout_path)
+        draw.text((PAGE_MARGIN, PAGE_HEIGHT - 62), "Each row uses the same variable twice: Q1A on the left and turnout on the right. Turnout itself appears only once.", font=load_font(18), fill=MUTED_TEXT_COLOR)
         pages.append(image)
     return pages, paths
 

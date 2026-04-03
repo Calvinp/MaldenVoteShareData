@@ -140,6 +140,7 @@ def test_page_renderers_and_pdf_writer(tmp_path):
         sources_text = document[-1].get_text()
         assert "Data Sources" in sources_text
         assert "https://www.cityofmalden.org/198/Election-Results" in sources_text
+        assert "Used for precinct-level Q1A and Q1B vote totals" in sources_text
         assert "https://api.census.gov/data/2024/acs/acs5" in sources_text
         assert "C:\\" not in sources_text
         source_links = document[-1].get_links()

@@ -640,7 +640,7 @@ def render_example_graph_pages(
         page_number = page_start // cards_per_page + 1
         image, draw, _ = make_base_page(
             "Example Graphs",
-            f"Every checked variable appears below, graphed against the outcome where it had the strongest absolute correlation (page {page_number})",
+            f"Each variable appears once against its strongest-match outcome. p. {page_number}",
         )
         for variable, (left, top) in zip(page_variables, positions):
             outcome = best_outcome_for_variable(context.correlations, variable)
@@ -717,9 +717,22 @@ def append_sources_page(document: fitz.Document) -> None:
         page.insert_text((88, y + 14), url, fontsize=10.0, fontname="Helvetica", color=link_text_color)
         page.insert_link({"kind": fitz.LINK_URI, "from": url_box_rect, "uri": url})
         y += 26
-        desc_rect = fitz.Rect(84, y, 546, y + 28)
-        page.insert_textbox(desc_rect, description, fontsize=10.2, fontname="Helvetica", color=(0.30, 0.33, 0.38))
-        y += 30
+        desc_max_width = 546 - 84
+        desc_words = description.split()
+        desc_lines: list[str] = []
+        current_line = ""
+        for word in desc_words:
+            candidate = word if not current_line else f"{current_line} {word}"
+            if fitz.get_text_length(candidate, fontname="helv", fontsize=10.2) <= desc_max_width:
+                current_line = candidate
+            else:
+                desc_lines.append(current_line)
+                current_line = word
+        if current_line:
+            desc_lines.append(current_line)
+        for index, line in enumerate(desc_lines):
+            page.insert_text((84, y + 11 + index * 12), line, fontsize=10.2, fontname="Helvetica", color=(0.30, 0.33, 0.38))
+        y += max(28, len(desc_lines) * 12 + 4)
 
 
 def write_pdf_from_images(images: list[Image.Image], output_path: Path) -> None:

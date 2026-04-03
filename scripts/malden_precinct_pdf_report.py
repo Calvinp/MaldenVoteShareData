@@ -3,6 +3,7 @@ from __future__ import annotations
 import io
 import math
 import os
+import zlib
 from dataclasses import dataclass
 from pathlib import Path
 from statistics import fmean
@@ -10,6 +11,7 @@ from statistics import fmean
 import fitz
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
+from scipy.stats import spearmanr
 
 try:
     from scripts.malden_precinct_analysis import (
@@ -57,6 +59,24 @@ LIGHT_GREEN = (230, 246, 237)
 GRID = (222, 226, 232)
 HEADER_LINE = (210, 214, 220)
 TURNOUT_OUTCOME_LABEL = "Turnout %"
+BOOTSTRAP_ITERATIONS = 400
+
+DIRECT_VARIABLES = {
+    "registered_voters",
+    "turnout_pct",
+    "precinct_area_sq_miles",
+}
+
+BLOCK_LEVEL_VARIABLES = {
+    "population_density_per_sq_mile",
+    "white_share_2020",
+    "black_share_2020",
+    "asian_share_2020",
+    "multiracial_share_2020",
+    "hispanic_share_2020",
+}
+
+BLOCK_GROUP_VARIABLES = set(ANALYSIS_VARIABLES) - DIRECT_VARIABLES - BLOCK_LEVEL_VARIABLES
 
 WEB_SOURCE_ENTRIES = [
     (
@@ -106,6 +126,17 @@ WEB_SOURCE_ENTRIES = [
 class ReportContext:
     precinct_rows: list[dict[str, float | str | None]]
     correlations: list[CorrelationResult]
+
+
+@dataclass(frozen=True)
+class CorrelationUncertainty:
+    lower: float
+    upper: float
+    bootstrap_lower: float
+    bootstrap_upper: float
+    nonzero_count: int
+    sample_count: int
+    source_tier: str
 
 
 def load_font(size: int, *, bold: bool = False, serif: bool = False) -> ImageFont.FreeTypeFont | ImageFont.ImageFont:
@@ -360,11 +391,106 @@ def make_base_page(title: str, subtitle: str) -> tuple[Image.Image, ImageDraw.Im
     return image, draw, 185
 
 
+def variable_source_tier(variable: str) -> str:
+    if variable in DIRECT_VARIABLES:
+        return "direct"
+    if variable in BLOCK_LEVEL_VARIABLES:
+        return "block"
+    return "block-group"
+
+
+def source_uncertainty_factor(variable: str) -> float:
+    tier = variable_source_tier(variable)
+    if tier == "direct":
+        return 1.0
+    if tier == "block":
+        return 1.05
+    return 1.12
+
+
+def sparsity_uncertainty_factor(nonzero_count: int, sample_count: int) -> float:
+    if sample_count <= 0:
+        return 1.0
+    nonzero_fraction = nonzero_count / sample_count
+    return 1.0 + max(0.0, (0.50 - nonzero_fraction) / 0.50) * 0.35
+
+
+def bootstrap_seed(variable: str, outcome: str) -> int:
+    return zlib.crc32(f"{variable}:{outcome}".encode("utf-8")) & 0xFFFFFFFF
+
+
+def compute_correlation_uncertainty(
+    precinct_rows: list[dict[str, float | str | None]],
+    correlation: CorrelationResult,
+    *,
+    iterations: int = BOOTSTRAP_ITERATIONS,
+) -> CorrelationUncertainty:
+    pairs = [
+        (float(row[correlation.variable]), float(row[correlation.outcome]))
+        for row in precinct_rows
+        if row.get(correlation.variable) is not None and row.get(correlation.outcome) is not None
+    ]
+    sample_count = len(pairs)
+    nonzero_count = sum(1 for x_value, _ in pairs if abs(x_value) > 1e-12)
+    source_tier = variable_source_tier(correlation.variable)
+    if sample_count < 3:
+        return CorrelationUncertainty(
+            lower=correlation.spearman_rho,
+            upper=correlation.spearman_rho,
+            bootstrap_lower=correlation.spearman_rho,
+            bootstrap_upper=correlation.spearman_rho,
+            nonzero_count=nonzero_count,
+            sample_count=sample_count,
+            source_tier=source_tier,
+        )
+
+    values = np.array(pairs, dtype=float)
+    rng = np.random.default_rng(bootstrap_seed(correlation.variable, correlation.outcome))
+    estimates: list[float] = []
+    for _ in range(iterations):
+        sample_indices = rng.integers(0, sample_count, size=sample_count)
+        sampled = values[sample_indices]
+        x_values = sampled[:, 0]
+        y_values = sampled[:, 1]
+        if len({round(value, 12) for value in x_values}) <= 1:
+            continue
+        if len({round(value, 12) for value in y_values}) <= 1:
+            continue
+        statistic = float(spearmanr(x_values, y_values).statistic)
+        if math.isnan(statistic):
+            continue
+        estimates.append(statistic)
+
+    if estimates:
+        bootstrap_lower = float(np.percentile(estimates, 2.5))
+        bootstrap_upper = float(np.percentile(estimates, 97.5))
+    else:
+        bootstrap_lower = correlation.spearman_rho
+        bootstrap_upper = correlation.spearman_rho
+
+    inflation = source_uncertainty_factor(correlation.variable) * sparsity_uncertainty_factor(nonzero_count, sample_count)
+    lower = correlation.spearman_rho - (correlation.spearman_rho - bootstrap_lower) * inflation
+    upper = correlation.spearman_rho + (bootstrap_upper - correlation.spearman_rho) * inflation
+    lower = max(-1.0, min(lower, correlation.spearman_rho))
+    upper = min(1.0, max(upper, correlation.spearman_rho))
+
+    return CorrelationUncertainty(
+        lower=lower,
+        upper=upper,
+        bootstrap_lower=bootstrap_lower,
+        bootstrap_upper=bootstrap_upper,
+        nonzero_count=nonzero_count,
+        sample_count=sample_count,
+        source_tier=source_tier,
+    )
+
+
 def create_correlation_bar_chart(
     correlations: list[CorrelationResult],
     outcome: str,
     output_path: Path | None = None,
     *,
+    precinct_rows: list[dict[str, float | str | None]] | None = None,
     width: int = 1080,
     height: int | None = None,
     include_all_variables: bool = False,
@@ -391,7 +517,12 @@ def create_correlation_bar_chart(
         else f"Strongest precinct-level correlations: {outcome_label}"
     )
     draw.text((30, 20), chart_title, font=title_font, fill=TEXT_COLOR)
-    draw.text((30, 58), "Bars show Spearman correlation. Blue means more support as the variable rises; orange means less.", font=axis_font, fill=MUTED_TEXT_COLOR)
+    subtitle = "Bars show Spearman correlation."
+    if precinct_rows is not None:
+        subtitle += " Blue means more support as the variable rises; orange means less. Whiskers show 95% uncertainty intervals widened modestly for coarser Census interpolation and sparse variables."
+    else:
+        subtitle += " Blue means more support as the variable rises; orange means less."
+    draw.text((30, 58), subtitle, font=axis_font, fill=MUTED_TEXT_COLOR)
 
     chart_left = 360 if include_all_variables else 300
     chart_top = 110
@@ -414,6 +545,13 @@ def create_correlation_bar_chart(
             label = VARIABLE_LABELS[item.variable]
             label_bbox = draw.textbbox((0, 0), label, font=label_font)
             draw.text((chart_left - label_bbox[2] - 16, bar_center_y - 10), label, font=label_font, fill=TEXT_COLOR)
+            uncertainty = compute_correlation_uncertainty(precinct_rows, item) if precinct_rows is not None else None
+            if uncertainty is not None:
+                whisker_left = zero_x + uncertainty.lower * ((chart_right - chart_left) / 2)
+                whisker_right = zero_x + uncertainty.upper * ((chart_right - chart_left) / 2)
+                draw.line((whisker_left, bar_center_y, whisker_right, bar_center_y), fill=(92, 99, 112), width=3)
+                draw.line((whisker_left, bar_center_y - 8, whisker_left, bar_center_y + 8), fill=(92, 99, 112), width=2)
+                draw.line((whisker_right, bar_center_y - 8, whisker_right, bar_center_y + 8), fill=(92, 99, 112), width=2)
             x_end = zero_x + item.spearman_rho * ((chart_right - chart_left) / 2)
             x0, x1 = sorted([zero_x, x_end])
             draw.rounded_rectangle((x0, bar_center_y - 12, x1, bar_center_y + 12), radius=10, fill=BLUE if item.spearman_rho > 0 else ORANGE)
@@ -616,6 +754,7 @@ def render_correlation_overview_pages(
             context.correlations,
             outcome,
             chart_path,
+            precinct_rows=context.precinct_rows,
             width=1110,
             height=1180,
             include_all_variables=True,
@@ -640,6 +779,7 @@ def render_correlation_overview_pages(
         turnout_correlations,
         "turnout_pct",
         turnout_chart_path,
+        precinct_rows=context.precinct_rows,
         width=1110,
         height=1180,
         include_all_variables=True,

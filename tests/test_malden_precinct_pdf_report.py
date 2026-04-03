@@ -7,6 +7,7 @@ from scripts.malden_precinct_pdf_report import (
     ReportContext,
     WEB_SOURCE_ENTRIES,
     build_summary_text,
+    compute_correlation_uncertainty,
     create_correlation_bar_chart,
     create_scatter_plot,
     example_graph_variables,
@@ -125,6 +126,34 @@ def test_chart_helpers_render_images(tmp_path):
     assert (tmp_path / "bars.png").exists()
     assert (tmp_path / "all_bars.png").exists()
     assert (tmp_path / "scatter.png").exists()
+
+
+def test_correlation_uncertainty_is_deterministic_and_inflated_for_sparse_block_group_data():
+    precinct_rows = [
+        {
+            "precinct": f"1-{index}",
+            "q1a_yes_pct": 0.32 + index * 0.015,
+            "bicycle_share": 0.0 if index < 8 else 0.01 * (index - 7),
+            "registered_voters": 900 + index * 25,
+        }
+        for index in range(12)
+    ]
+    bicycle_correlation = CorrelationResult("bicycle_share", "q1a_yes_pct", 0.40, 0.0, 0.30, 0.0, 12)
+    direct_correlation = CorrelationResult("registered_voters", "q1a_yes_pct", 0.40, 0.0, 0.35, 0.0, 12)
+
+    bicycle_uncertainty = compute_correlation_uncertainty(precinct_rows, bicycle_correlation, iterations=250)
+    direct_uncertainty = compute_correlation_uncertainty(precinct_rows, direct_correlation, iterations=250)
+    bicycle_uncertainty_repeat = compute_correlation_uncertainty(precinct_rows, bicycle_correlation, iterations=250)
+
+    assert bicycle_uncertainty == bicycle_uncertainty_repeat
+    assert bicycle_uncertainty.source_tier == "block-group"
+    assert bicycle_uncertainty.nonzero_count == 4
+    assert bicycle_uncertainty.lower <= bicycle_correlation.spearman_rho <= bicycle_uncertainty.upper
+    assert direct_uncertainty.lower <= direct_correlation.spearman_rho <= direct_uncertainty.upper
+    bicycle_width = bicycle_uncertainty.upper - bicycle_uncertainty.lower
+    direct_width = direct_uncertainty.upper - direct_uncertainty.lower
+    assert direct_width >= direct_uncertainty.bootstrap_upper - direct_uncertainty.bootstrap_lower
+    assert bicycle_width >= bicycle_uncertainty.bootstrap_upper - bicycle_uncertainty.bootstrap_lower
 
 
 def test_example_graph_pages_follow_q1a_order_and_pair_turnout(tmp_path):

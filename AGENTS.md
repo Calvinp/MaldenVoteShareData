@@ -6,24 +6,24 @@
 - Instead, it draws official precinct polygons over a clipped grayscale street basemap, then labels precincts and ward boundaries.
 
 ## Key Files
-- [scripts/malden_override_map.py](C:/Users/calvi/Code/Prop2.5OverrideData/scripts/malden_override_map.py): Main generator for all output maps.
-- [scripts/malden_turnout_graphs.py](C:/Users/calvi/Code/Prop2.5OverrideData/scripts/malden_turnout_graphs.py): Generator for turnout visuals, including the precinct turnout map and optional ward charts.
-- [scripts/malden_precinct_analysis.py](C:/Users/calvi/Code/Prop2.5OverrideData/scripts/malden_precinct_analysis.py): Precinct-level Census/turnout covariate builder and vote-share correlation report generator.
-- [scripts/malden_precinct_pdf_report.py](C:/Users/calvi/Code/Prop2.5OverrideData/scripts/malden_precinct_pdf_report.py): Human-readable PDF report generator with narrative pages and charts built from the precinct analysis.
-- [tests/test_malden_override_map.py](C:/Users/calvi/Code/Prop2.5OverrideData/tests/test_malden_override_map.py): Parsing, join, and color-scale tests.
-- [tests/test_malden_turnout_graphs.py](C:/Users/calvi/Code/Prop2.5OverrideData/tests/test_malden_turnout_graphs.py): Turnout PDF parsing, aggregation, and chart rendering tests.
-- [tests/test_malden_precinct_analysis.py](C:/Users/calvi/Code/Prop2.5OverrideData/tests/test_malden_precinct_analysis.py): Overlay, Census parsing, covariate derivation, and correlation-report tests.
-- [tests/test_malden_precinct_pdf_report.py](C:/Users/calvi/Code/Prop2.5OverrideData/tests/test_malden_precinct_pdf_report.py): PDF page rendering, chart generation, and report assembly tests.
-- [RawData/malden_override_results_verified.xlsx](C:/Users/calvi/Code/Prop2.5OverrideData/RawData/malden_override_results_verified.xlsx): Source vote totals by precinct and ward.
-- [RawData/malden_special_municipal_election_2026_unofficial_results.pdf](C:/Users/calvi/Code/Prop2.5OverrideData/RawData/malden_special_municipal_election_2026_unofficial_results.pdf): Official Malden PDF with registered-voter and voter-count denominators for turnout.
-- [RawData/malden_subprecincts_official.geojson](C:/Users/calvi/Code/Prop2.5OverrideData/RawData/malden_subprecincts_official.geojson): Official Malden precinct polygons used for rendering.
-- [Output](C:/Users/calvi/Code/Prop2.5OverrideData/Output): Generated PNG and SVG maps.
-- [Graphics](C:/Users/calvi/Code/Prop2.5OverrideData/Graphics): Generated chart graphics, including vote-share and turnout bar charts.
+- [scripts/malden_override_map.py](scripts/malden_override_map.py): Main generator for all output maps.
+- [scripts/malden_turnout_graphs.py](scripts/malden_turnout_graphs.py): Generator for turnout visuals, including the precinct turnout map and optional ward charts.
+- [scripts/malden_precinct_analysis.py](scripts/malden_precinct_analysis.py): Precinct-level Census/turnout covariate builder and vote-share correlation report generator.
+- [scripts/malden_precinct_pdf_report.py](scripts/malden_precinct_pdf_report.py): Human-readable PDF report generator with narrative pages and charts built from the precinct analysis.
+- [tests/test_malden_override_map.py](tests/test_malden_override_map.py): Parsing, join, and color-scale tests.
+- [tests/test_malden_turnout_graphs.py](tests/test_malden_turnout_graphs.py): Turnout PDF parsing, aggregation, and chart rendering tests.
+- [tests/test_malden_precinct_analysis.py](tests/test_malden_precinct_analysis.py): Overlay, Census parsing, covariate derivation, and correlation-report tests.
+- [tests/test_malden_precinct_pdf_report.py](tests/test_malden_precinct_pdf_report.py): PDF page rendering, chart generation, and report assembly tests.
+- [RawData/malden_override_results_verified.xlsx](RawData/malden_override_results_verified.xlsx): Source vote totals by precinct and ward.
+- [RawData/malden_special_municipal_election_2026_unofficial_results.pdf](RawData/malden_special_municipal_election_2026_unofficial_results.pdf): Official Malden PDF with registered-voter and voter-count denominators for turnout.
+- [RawData/malden_subprecincts_official.geojson](RawData/malden_subprecincts_official.geojson): Official Malden precinct polygons used for rendering.
+- [Output](Output): Generated PNG and SVG maps.
+- [Graphics](Graphics): Generated chart graphics, including vote-share and turnout bar charts.
 
 ## How To Color A New Election Map
 1. Put the new workbook in `RawData`.
 2. Make sure it has a precinct-level sheet equivalent to `By Precinct` with precinct ids that match the geometry names.
-3. Update `load_precinct_results()` in [scripts/malden_override_map.py](C:/Users/calvi/Code/Prop2.5OverrideData/scripts/malden_override_map.py) if the column layout or question names changed.
+3. Update `load_precinct_results()` in [scripts/malden_override_map.py](scripts/malden_override_map.py) if the column layout or question names changed.
 4. Keep precinct ids normalized to the same format as the geometry file, for example `3-1A` and `7-3A`.
 5. Use `render_map()` with:
    - a baked-in title for the final PNG and SVG
@@ -31,25 +31,25 @@
    - a color function that maps that metric to RGB
    - a `LegendSpec` for every public-facing map so the colors are self-explanatory
 6. Regenerate outputs with:
-   - `C:\Users\calvi\AppData\Local\Python\bin\python.exe scripts\malden_override_map.py`
+   - `py -3 scripts/malden_override_map.py`
 7. Run tests with:
-   - `C:\Users\calvi\AppData\Local\Python\bin\python.exe -m pytest -q`
+   - `py -3 -m pytest -q`
 
 ## How To Rebuild The Correlation Analysis
 1. Make sure the existing election workbook, turnout PDF, and precinct GeoJSON are present in `RawData`.
 2. Run:
-   - `C:\Users\calvi\AppData\Local\Python\bin\python.exe scripts\malden_precinct_analysis.py`
-3. The script will cache Census API and TIGER geometry responses under `.cache\precinct_analysis`.
+   - `py -3 scripts/malden_precinct_analysis.py`
+3. The script will cache Census API and TIGER geometry responses under `.cache/precinct_analysis`.
 4. Review outputs in `Output`:
    - `malden_precinct_covariates.csv`
    - `malden_vote_correlation_report.md`
 5. To generate the human-readable PDF report with charts, run:
-   - `C:\Users\calvi\AppData\Local\Python\bin\python.exe scripts\malden_precinct_pdf_report.py`
+   - `py -3 scripts/malden_precinct_pdf_report.py`
 6. Review additional outputs in `Output`:
    - `malden_vote_correlation_report_human.pdf`
-   - `malden_vote_correlation_report_charts\`
+   - `malden_vote_correlation_report_charts/`
 7. Re-run tests with:
-   - `C:\Users\calvi\AppData\Local\Python\bin\python.exe -m pytest -q`
+   - `py -3 -m pytest -q`
 
 ## Correlation Analysis Notes
 - The analysis estimates precinct demographics by spatially intersecting precinct polygons with Census blocks and block groups; these are modeled precinct covariates, not official precinct-published Census tables.
@@ -80,7 +80,7 @@
 
 ## Updating For The Next Census / Redistricting Cycle
 - Do not assume the current precinct geometry file is still valid after redistricting.
-- Replace [RawData/malden_subprecincts_official.geojson](C:/Users/calvi/Code/Prop2.5OverrideData/RawData/malden_subprecincts_official.geojson) with a fresh official geometry export from the City of Malden GIS or another authoritative municipal source.
+- Replace [RawData/malden_subprecincts_official.geojson](RawData/malden_subprecincts_official.geojson) with a fresh official geometry export from the City of Malden GIS or another authoritative municipal source.
 - The geometry file must contain the post-redistricting precincts actually used in the election you are mapping.
 - Before rendering:
   - inspect the new geometry names
@@ -93,6 +93,6 @@
   - keep the rest of the rendering pipeline unchanged if possible
 
 ## When To Keep Or Ignore The Old PDF
-- The file [Ward and Precinct 2020 Map.pdf](C:/Users/calvi/Code/Prop2.5OverrideData/Ward%20and%20Precinct%202020%20Map.pdf) is useful as a visual reference only.
+- The file [Ward and Precinct 2020 Map.pdf](Ward%20and%20Precinct%202020%20Map.pdf) is useful as a visual reference only.
 - Do not rely on it as authoritative precinct geometry for recoloring.
 - If future agents want to compare old and new district layouts, use the PDF as a historical reference, not as the source for polygon boundaries.

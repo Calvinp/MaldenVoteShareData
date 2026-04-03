@@ -25,19 +25,19 @@ The project includes:
 
 ## Running the project
 
-Use the local Python install already configured for this project:
+Use Python from the repo root:
 
 ```powershell
-C:\Users\calvi\AppData\Local\Python\bin\python.exe scripts\malden_override_map.py
-C:\Users\calvi\AppData\Local\Python\bin\python.exe scripts\malden_turnout_graphs.py
-C:\Users\calvi\AppData\Local\Python\bin\python.exe scripts\malden_precinct_analysis.py
-C:\Users\calvi\AppData\Local\Python\bin\python.exe scripts\malden_precinct_pdf_report.py
+py -3 scripts/malden_override_map.py
+py -3 scripts/malden_turnout_graphs.py
+py -3 scripts/malden_precinct_analysis.py
+py -3 scripts/malden_precinct_pdf_report.py
 ```
 
 Run the test suite with:
 
 ```powershell
-C:\Users\calvi\AppData\Local\Python\bin\python.exe -m pytest -q
+py -3 -m pytest -q
 ```
 
 ## Notes

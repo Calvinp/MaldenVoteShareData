@@ -4,6 +4,7 @@ import base64
 import io
 import json
 import math
+import os
 import urllib.request
 from dataclasses import dataclass
 from pathlib import Path
@@ -344,10 +345,18 @@ def geometry_to_svg_path(geometry: Polygon | MultiPolygon, projector) -> str:
 
 
 def load_font(size: int) -> ImageFont.FreeTypeFont | ImageFont.ImageFont:
+    font_dirs: list[Path] = []
+    for env_var in ("WINDIR", "SystemRoot"):
+        base_dir = os.environ.get(env_var)
+        if not base_dir:
+            continue
+        font_dir = Path(base_dir) / "Fonts"
+        if font_dir not in font_dirs:
+            font_dirs.append(font_dir)
     candidates = [
-        Path("C:/Windows/Fonts/arialbd.ttf"),
-        Path("C:/Windows/Fonts/Arialbd.ttf"),
-        Path("C:/Windows/Fonts/segoeuib.ttf"),
+        font_dir / filename
+        for font_dir in font_dirs
+        for filename in ("arialbd.ttf", "Arialbd.ttf", "segoeuib.ttf")
     ]
     for candidate in candidates:
         if candidate.exists():

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import io
 import math
+import os
 from dataclasses import dataclass
 from pathlib import Path
 from statistics import fmean
@@ -108,16 +109,32 @@ class ReportContext:
 
 
 def load_font(size: int, *, bold: bool = False, serif: bool = False) -> ImageFont.FreeTypeFont | ImageFont.ImageFont:
+    font_dirs: list[Path] = []
+    for env_var in ("WINDIR", "SystemRoot"):
+        base_dir = os.environ.get(env_var)
+        if not base_dir:
+            continue
+        font_dir = Path(base_dir) / "Fonts"
+        if font_dir not in font_dirs:
+            font_dirs.append(font_dir)
     if serif:
         candidates = [
-            Path("C:/Windows/Fonts/georgiab.ttf" if bold else "C:/Windows/Fonts/georgia.ttf"),
-            Path("C:/Windows/Fonts/timesbd.ttf" if bold else "C:/Windows/Fonts/times.ttf"),
+            font_dir / ("georgiab.ttf" if bold else "georgia.ttf")
+            for font_dir in font_dirs
+        ] + [
+            font_dir / ("timesbd.ttf" if bold else "times.ttf")
+            for font_dir in font_dirs
         ]
     else:
         candidates = [
-            Path("C:/Windows/Fonts/arialbd.ttf" if bold else "C:/Windows/Fonts/arial.ttf"),
-            Path("C:/Windows/Fonts/Arialbd.ttf" if bold else "C:/Windows/Fonts/Arial.ttf"),
-            Path("C:/Windows/Fonts/segoeuib.ttf" if bold else "C:/Windows/Fonts/segoeui.ttf"),
+            font_dir / ("arialbd.ttf" if bold else "arial.ttf")
+            for font_dir in font_dirs
+        ] + [
+            font_dir / ("Arialbd.ttf" if bold else "Arial.ttf")
+            for font_dir in font_dirs
+        ] + [
+            font_dir / ("segoeuib.ttf" if bold else "segoeui.ttf")
+            for font_dir in font_dirs
         ]
     for candidate in candidates:
         if candidate.exists():

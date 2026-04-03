@@ -135,6 +135,6 @@ def test_page_renderers_and_pdf_writer(tmp_path):
 
     document = fitz.open(output_path)
     try:
-        assert document.page_count == 2 + len(chart_pages) + len(scatter_pages) + 1
+        assert document.page_count == 2 + len(chart_pages) + len(scatter_pages) + 2
     finally:
         document.close()

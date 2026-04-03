@@ -12,9 +12,9 @@ from PIL import Image, ImageDraw, ImageFont
 
 try:
     from scripts.malden_precinct_analysis import (
-    OUTPUT_DIR,
-    ANALYSIS_VARIABLES,
-    OUTCOME_LABELS,
+        OUTPUT_DIR,
+        ANALYSIS_VARIABLES,
+        OUTCOME_LABELS,
     REPORT_FIELD_SPECS,
     VARIABLE_LABELS,
         CorrelationResult,
@@ -23,11 +23,13 @@ try:
         correlation_rows_for_outcome,
         weakest_correlations_for_outcome,
     )
+    from scripts.malden_override_map import PRECINCTS_PATH, WORKBOOK_PATH
+    from scripts.malden_turnout_graphs import TURNOUT_PDF_PATH, TURNOUT_PDF_URL
 except ModuleNotFoundError:
     from malden_precinct_analysis import (  # type: ignore
-    OUTPUT_DIR,
-    ANALYSIS_VARIABLES,
-    OUTCOME_LABELS,
+        OUTPUT_DIR,
+        ANALYSIS_VARIABLES,
+        OUTCOME_LABELS,
     REPORT_FIELD_SPECS,
     VARIABLE_LABELS,
         CorrelationResult,
@@ -36,6 +38,8 @@ except ModuleNotFoundError:
         correlation_rows_for_outcome,
         weakest_correlations_for_outcome,
     )
+    from malden_override_map import PRECINCTS_PATH, WORKBOOK_PATH  # type: ignore
+    from malden_turnout_graphs import TURNOUT_PDF_PATH, TURNOUT_PDF_URL  # type: ignore
 
 
 PDF_REPORT_OUTPUT_PATH = OUTPUT_DIR / "malden_vote_correlation_report_human.pdf"
@@ -54,6 +58,44 @@ LIGHT_GREEN = (230, 246, 237)
 GRID = (222, 226, 232)
 HEADER_LINE = (210, 214, 220)
 TURNOUT_OUTCOME_LABEL = "Turnout %"
+
+WEB_SOURCE_ENTRIES = [
+    (
+        "City of Malden unofficial March 31, 2026 results PDF",
+        TURNOUT_PDF_URL,
+        "Used for registered voters and ballots cast in the turnout calculations.",
+    ),
+    (
+        "U.S. Census Bureau 2024 ACS 5-year API",
+        "https://api.census.gov/data/2024/acs/acs5",
+        "Used for age, sex, income, tenure, rent, commute, vehicles, and education variables.",
+    ),
+    (
+        "U.S. Census Bureau 2020 Decennial PL API",
+        "https://api.census.gov/data/2020/dec/pl",
+        "Used for block-level race and Hispanic-share estimates.",
+    ),
+    (
+        "U.S. Census Bureau TIGERweb Tracts/Blocks service",
+        "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/Tracts_Blocks/MapServer",
+        "Used for Census block and block-group geometry intersections with precinct polygons.",
+    ),
+]
+
+LOCAL_SOURCE_ENTRIES = [
+    (
+        "Verified precinct results workbook in this repo",
+        str(WORKBOOK_PATH),
+    ),
+    (
+        "Official precinct geometry GeoJSON in this repo",
+        str(PRECINCTS_PATH),
+    ),
+    (
+        "Cached turnout PDF in this repo",
+        str(TURNOUT_PDF_PATH),
+    ),
+]
 
 
 @dataclass(frozen=True)
@@ -629,6 +671,44 @@ def render_conclusion_page(context: ReportContext) -> Image.Image:
     return image
 
 
+def append_sources_page(document: fitz.Document) -> None:
+    page = document.new_page(width=612, height=792)
+    title_rect = fitz.Rect(54, 42, 558, 88)
+    subtitle_rect = fitz.Rect(54, 82, 558, 116)
+    page.insert_textbox(title_rect, "Data Sources", fontsize=24, fontname="Times-Bold", color=(0.12, 0.13, 0.16))
+    page.insert_textbox(
+        subtitle_rect,
+        "Public URLs used in the analysis, plus the repo-local source files used to assemble the final dataset.",
+        fontsize=11.5,
+        fontname="Helvetica",
+        color=(0.36, 0.39, 0.44),
+    )
+    page.draw_line((54, 122), (558, 122), color=(0.82, 0.84, 0.86), width=1.5)
+
+    y = 146
+    page.insert_textbox(fitz.Rect(54, y, 558, y + 18), "Public web sources", fontsize=15, fontname="Helvetica-Bold", color=(0.12, 0.13, 0.16))
+    y += 26
+    for title, url, description in WEB_SOURCE_ENTRIES:
+        page.insert_textbox(fitz.Rect(70, y, 558, y + 18), f"- {title}", fontsize=11.5, fontname="Helvetica-Bold", color=(0.12, 0.13, 0.16))
+        y += 16
+        url_rect = fitz.Rect(84, y, 546, y + 28)
+        page.insert_textbox(url_rect, url, fontsize=10.2, fontname="Courier", color=(0.09, 0.36, 0.83))
+        page.insert_link({"kind": fitz.LINK_URI, "from": url_rect, "uri": url})
+        y += 24
+        desc_rect = fitz.Rect(84, y, 546, y + 34)
+        page.insert_textbox(desc_rect, description, fontsize=10.5, fontname="Helvetica", color=(0.30, 0.33, 0.38))
+        y += 34
+
+    y += 8
+    page.insert_textbox(fitz.Rect(54, y, 558, y + 18), "Repo-local source files", fontsize=15, fontname="Helvetica-Bold", color=(0.12, 0.13, 0.16))
+    y += 26
+    for title, path_text in LOCAL_SOURCE_ENTRIES:
+        page.insert_textbox(fitz.Rect(70, y, 558, y + 18), f"- {title}", fontsize=11.5, fontname="Helvetica-Bold", color=(0.12, 0.13, 0.16))
+        y += 16
+        page.insert_textbox(fitz.Rect(84, y, 546, y + 28), path_text, fontsize=9.8, fontname="Courier", color=(0.30, 0.33, 0.38))
+        y += 28
+
+
 def write_pdf_from_images(images: list[Image.Image], output_path: Path) -> None:
     output_path.parent.mkdir(parents=True, exist_ok=True)
     document = fitz.open()
@@ -638,6 +718,7 @@ def write_pdf_from_images(images: list[Image.Image], output_path: Path) -> None:
             image.save(image_bytes, format="PNG")
             page = document.new_page(width=612, height=792)
             page.insert_image(fitz.Rect(0, 0, 612, 792), stream=image_bytes.getvalue())
+        append_sources_page(document)
         document.save(output_path)
     finally:
         document.close()

@@ -5,6 +5,7 @@ from scripts.malden_precinct_pdf_report import (
     PAGE_HEIGHT,
     PAGE_WIDTH,
     ReportContext,
+    WEB_SOURCE_ENTRIES,
     build_summary_text,
     create_correlation_bar_chart,
     create_scatter_plot,
@@ -141,5 +142,6 @@ def test_page_renderers_and_pdf_writer(tmp_path):
         assert "https://www.cityofmalden.org/198/Election-Results" in sources_text
         assert "https://api.census.gov/data/2024/acs/acs5" in sources_text
         assert "C:\\" not in sources_text
+        assert len(document[-1].get_links()) == len(WEB_SOURCE_ENTRIES)
     finally:
         document.close()

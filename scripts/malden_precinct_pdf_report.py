@@ -695,6 +695,9 @@ def append_sources_page(document: fitz.Document) -> None:
     page = document.new_page(width=612, height=792)
     title_rect = fitz.Rect(54, 42, 558, 88)
     subtitle_rect = fitz.Rect(54, 82, 558, 116)
+    link_text_color = (0.08, 0.26, 0.58)
+    link_fill_color = (0.90, 0.95, 1.0)
+    link_border_color = (0.72, 0.84, 0.98)
     page.insert_textbox(title_rect, "Data Sources", fontsize=24, fontname="Times-Bold", color=(0.12, 0.13, 0.16))
     page.insert_textbox(
         subtitle_rect,
@@ -711,10 +714,12 @@ def append_sources_page(document: fitz.Document) -> None:
     for title, url, description in WEB_SOURCE_ENTRIES:
         page.insert_textbox(fitz.Rect(70, y, 558, y + 18), f"- {title}", fontsize=11.5, fontname="Helvetica-Bold", color=(0.12, 0.13, 0.16))
         y += 16
-        url_rect = fitz.Rect(84, y, 546, y + 28)
-        page.insert_textbox(url_rect, url, fontsize=10.2, fontname="Courier", color=(0.09, 0.36, 0.83))
-        page.insert_link({"kind": fitz.LINK_URI, "from": url_rect, "uri": url})
-        y += 24
+        url_box_rect = fitz.Rect(78, y - 2, 552, y + 24)
+        url_text_rect = fitz.Rect(88, y + 3, 542, y + 21)
+        page.draw_rect(url_box_rect, color=link_border_color, fill=link_fill_color, width=0.8)
+        page.insert_textbox(url_text_rect, url, fontsize=10.0, fontname="Helvetica", color=link_text_color)
+        page.insert_link({"kind": fitz.LINK_URI, "from": url_box_rect, "uri": url})
+        y += 30
         desc_rect = fitz.Rect(84, y, 546, y + 34)
         page.insert_textbox(desc_rect, description, fontsize=10.5, fontname="Helvetica", color=(0.30, 0.33, 0.38))
         y += 34

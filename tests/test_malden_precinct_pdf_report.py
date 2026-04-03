@@ -136,5 +136,10 @@ def test_page_renderers_and_pdf_writer(tmp_path):
     document = fitz.open(output_path)
     try:
         assert document.page_count == 2 + len(chart_pages) + len(scatter_pages) + 2
+        sources_text = document[-1].get_text()
+        assert "Data Sources" in sources_text
+        assert "https://www.cityofmalden.org/198/Election-Results" in sources_text
+        assert "https://api.census.gov/data/2024/acs/acs5" in sources_text
+        assert "C:\\" not in sources_text
     finally:
         document.close()

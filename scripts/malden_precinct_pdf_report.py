@@ -23,8 +23,7 @@ try:
         correlation_rows_for_outcome,
         weakest_correlations_for_outcome,
     )
-    from scripts.malden_override_map import PRECINCTS_PATH, WORKBOOK_PATH
-    from scripts.malden_turnout_graphs import TURNOUT_PDF_PATH, TURNOUT_PDF_URL
+    from scripts.malden_turnout_graphs import TURNOUT_PDF_URL
 except ModuleNotFoundError:
     from malden_precinct_analysis import (  # type: ignore
         OUTPUT_DIR,
@@ -38,8 +37,7 @@ except ModuleNotFoundError:
         correlation_rows_for_outcome,
         weakest_correlations_for_outcome,
     )
-    from malden_override_map import PRECINCTS_PATH, WORKBOOK_PATH  # type: ignore
-    from malden_turnout_graphs import TURNOUT_PDF_PATH, TURNOUT_PDF_URL  # type: ignore
+    from malden_turnout_graphs import TURNOUT_PDF_URL  # type: ignore
 
 
 PDF_REPORT_OUTPUT_PATH = OUTPUT_DIR / "malden_vote_correlation_report_human.pdf"
@@ -61,9 +59,29 @@ TURNOUT_OUTCOME_LABEL = "Turnout %"
 
 WEB_SOURCE_ENTRIES = [
     (
+        "City of Malden Election Results page",
+        "https://www.cityofmalden.org/198/Election-Results",
+        "Public index page for Malden election-result documents and archived results.",
+    ),
+    (
         "City of Malden unofficial March 31, 2026 results PDF",
         TURNOUT_PDF_URL,
-        "Used for registered voters and ballots cast in the turnout calculations.",
+        "Used for precinct-level Q1A and Q1B vote totals, registered voters, ballots cast, and turnout calculations.",
+    ),
+    (
+        "City of Malden Geographic Information Systems page",
+        "https://www.cityofmalden.org/214/Geographic-Information-Systems",
+        "Public GIS landing page that links to Malden's official parcel viewer and ward/precinct reference map.",
+    ),
+    (
+        "City of Malden Ward and Precinct 2020 Map PDF",
+        "https://www.cityofmalden.org/DocumentCenter/View/4895/Ward-and-Precinct-2020-Map",
+        "Official precinct-boundary reference map used to validate the precinct geometry export and labels.",
+    ),
+    (
+        "Malden GIS Parcel Viewer",
+        "https://maldenma.mapgeo.io/",
+        "Public municipal GIS viewer used as the online source for official precinct-boundary context.",
     ),
     (
         "U.S. Census Bureau 2024 ACS 5-year API",
@@ -79,21 +97,6 @@ WEB_SOURCE_ENTRIES = [
         "U.S. Census Bureau TIGERweb Tracts/Blocks service",
         "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/Tracts_Blocks/MapServer",
         "Used for Census block and block-group geometry intersections with precinct polygons.",
-    ),
-]
-
-LOCAL_SOURCE_ENTRIES = [
-    (
-        "Verified precinct results workbook in this repo",
-        str(WORKBOOK_PATH),
-    ),
-    (
-        "Official precinct geometry GeoJSON in this repo",
-        str(PRECINCTS_PATH),
-    ),
-    (
-        "Cached turnout PDF in this repo",
-        str(TURNOUT_PDF_PATH),
     ),
 ]
 
@@ -678,7 +681,7 @@ def append_sources_page(document: fitz.Document) -> None:
     page.insert_textbox(title_rect, "Data Sources", fontsize=24, fontname="Times-Bold", color=(0.12, 0.13, 0.16))
     page.insert_textbox(
         subtitle_rect,
-        "Public URLs used in the analysis, plus the repo-local source files used to assemble the final dataset.",
+        "Public URLs for the official election, precinct-boundary, and Census sources used to assemble the analysis dataset.",
         fontsize=11.5,
         fontname="Helvetica",
         color=(0.36, 0.39, 0.44),
@@ -698,15 +701,6 @@ def append_sources_page(document: fitz.Document) -> None:
         desc_rect = fitz.Rect(84, y, 546, y + 34)
         page.insert_textbox(desc_rect, description, fontsize=10.5, fontname="Helvetica", color=(0.30, 0.33, 0.38))
         y += 34
-
-    y += 8
-    page.insert_textbox(fitz.Rect(54, y, 558, y + 18), "Repo-local source files", fontsize=15, fontname="Helvetica-Bold", color=(0.12, 0.13, 0.16))
-    y += 26
-    for title, path_text in LOCAL_SOURCE_ENTRIES:
-        page.insert_textbox(fitz.Rect(70, y, 558, y + 18), f"- {title}", fontsize=11.5, fontname="Helvetica-Bold", color=(0.12, 0.13, 0.16))
-        y += 16
-        page.insert_textbox(fitz.Rect(84, y, 546, y + 28), path_text, fontsize=9.8, fontname="Courier", color=(0.30, 0.33, 0.38))
-        y += 28
 
 
 def write_pdf_from_images(images: list[Image.Image], output_path: Path) -> None:

@@ -61,6 +61,11 @@ HEADER_LINE = (210, 214, 220)
 TURNOUT_OUTCOME_LABEL = "Turnout %"
 BOOTSTRAP_ITERATIONS = 400
 
+CHART_VARIABLE_LABELS = {
+    "median_household_income_estimate": "Median household income",
+    "median_gross_rent_estimate": "Median gross rent",
+}
+
 DIRECT_VARIABLES = {
     "registered_voters",
     "turnout_pct",
@@ -137,6 +142,16 @@ class CorrelationUncertainty:
     nonzero_count: int
     sample_count: int
     source_tier: str
+
+
+def symmetric_uncertainty_half_width(
+    correlation: CorrelationResult,
+    uncertainty: CorrelationUncertainty,
+) -> float:
+    return max(
+        abs(correlation.spearman_rho - uncertainty.lower),
+        abs(uncertainty.upper - correlation.spearman_rho),
+    )
 
 
 def load_font(size: int, *, bold: bool = False, serif: bool = False) -> ImageFont.FreeTypeFont | ImageFont.ImageFont:
@@ -399,6 +414,10 @@ def variable_source_tier(variable: str) -> str:
     return "block-group"
 
 
+def chart_variable_label(variable: str) -> str:
+    return CHART_VARIABLE_LABELS.get(variable, VARIABLE_LABELS[variable])
+
+
 def source_uncertainty_factor(variable: str) -> float:
     tier = variable_source_tier(variable)
     if tier == "direct":
@@ -524,7 +543,9 @@ def create_correlation_bar_chart(
         subtitle += " Blue means more support as the variable rises; orange means less."
     draw.text((30, 58), subtitle, font=axis_font, fill=MUTED_TEXT_COLOR)
 
-    chart_left = 360 if include_all_variables else 300
+    variable_text_x = 30
+    value_text_x = 265 if include_all_variables else 225
+    chart_left = 435 if include_all_variables else 365
     chart_top = 110
     chart_right = width - 70
     chart_bottom = height - 55
@@ -540,25 +561,32 @@ def create_correlation_bar_chart(
 
     if selected:
         row_height = (chart_bottom - chart_top) / len(selected)
+        value_font = load_font(14)
         for index, item in enumerate(selected):
             bar_center_y = chart_top + row_height * index + row_height / 2
-            label = VARIABLE_LABELS[item.variable]
-            label_bbox = draw.textbbox((0, 0), label, font=label_font)
-            draw.text((chart_left - label_bbox[2] - 16, bar_center_y - 10), label, font=label_font, fill=TEXT_COLOR)
+            label = chart_variable_label(item.variable)
+            draw.text((variable_text_x, bar_center_y - 10), label, font=label_font, fill=TEXT_COLOR)
             uncertainty = compute_correlation_uncertainty(precinct_rows, item) if precinct_rows is not None else None
-            if uncertainty is not None:
-                whisker_left = zero_x + uncertainty.lower * ((chart_right - chart_left) / 2)
-                whisker_right = zero_x + uncertainty.upper * ((chart_right - chart_left) / 2)
-                draw.line((whisker_left, bar_center_y, whisker_right, bar_center_y), fill=(92, 99, 112), width=3)
-                draw.line((whisker_left, bar_center_y - 8, whisker_left, bar_center_y + 8), fill=(92, 99, 112), width=2)
-                draw.line((whisker_right, bar_center_y - 8, whisker_right, bar_center_y + 8), fill=(92, 99, 112), width=2)
+            bar_top = bar_center_y - 12
+            bar_bottom = bar_center_y + 12
             x_end = zero_x + item.spearman_rho * ((chart_right - chart_left) / 2)
             x0, x1 = sorted([zero_x, x_end])
-            draw.rounded_rectangle((x0, bar_center_y - 12, x1, bar_center_y + 12), radius=10, fill=BLUE if item.spearman_rho > 0 else ORANGE)
-            value_label = f"{item.spearman_rho:+.2f}"
-            value_width = draw.textbbox((0, 0), value_label, font=label_font)[2]
-            text_x = x_end + 8 if item.spearman_rho > 0 else x_end - value_width - 8
-            draw.text((text_x, bar_center_y - 10), value_label, font=label_font, fill=TEXT_COLOR)
+            draw.rounded_rectangle((x0, bar_top, x1, bar_bottom), radius=9, fill=BLUE if item.spearman_rho > 0 else ORANGE)
+            if uncertainty is not None:
+                half_width = symmetric_uncertainty_half_width(item, uncertainty)
+                whisker_y = bar_center_y
+                whisker_left = zero_x + max(-1.0, item.spearman_rho - half_width) * ((chart_right - chart_left) / 2)
+                whisker_right = zero_x + min(1.0, item.spearman_rho + half_width) * ((chart_right - chart_left) / 2)
+                draw.line((whisker_left, whisker_y, whisker_right, whisker_y), fill="white", width=6)
+                draw.line((whisker_left, whisker_y, whisker_right, whisker_y), fill=(24, 28, 34), width=2)
+                draw.line((whisker_left, whisker_y - 5, whisker_left, whisker_y + 5), fill="white", width=5)
+                draw.line((whisker_left, whisker_y - 5, whisker_left, whisker_y + 5), fill=(24, 28, 34), width=2)
+                draw.line((whisker_right, whisker_y - 5, whisker_right, whisker_y + 5), fill="white", width=5)
+                draw.line((whisker_right, whisker_y - 5, whisker_right, whisker_y + 5), fill=(24, 28, 34), width=2)
+                value_label = f"{item.spearman_rho:+.2f} +/- {half_width:.2f}"
+            else:
+                value_label = f"{item.spearman_rho:+.2f}"
+            draw.text((value_text_x, bar_center_y - 9), value_label, font=value_font, fill=TEXT_COLOR)
 
     if output_path is not None:
         output_path.parent.mkdir(parents=True, exist_ok=True)

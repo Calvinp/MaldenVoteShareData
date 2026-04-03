@@ -2,11 +2,13 @@ import fitz
 
 from scripts.malden_precinct_analysis import CorrelationResult
 from scripts.malden_precinct_pdf_report import (
+    CorrelationUncertainty,
     PAGE_HEIGHT,
     PAGE_WIDTH,
     ReportContext,
     WEB_SOURCE_ENTRIES,
     build_summary_text,
+    chart_variable_label,
     compute_correlation_uncertainty,
     create_correlation_bar_chart,
     create_scatter_plot,
@@ -16,6 +18,7 @@ from scripts.malden_precinct_pdf_report import (
     render_conclusion_page,
     render_cover_page,
     render_example_graph_pages,
+    symmetric_uncertainty_half_width,
     write_pdf_from_images,
 )
 
@@ -126,6 +129,25 @@ def test_chart_helpers_render_images(tmp_path):
     assert (tmp_path / "bars.png").exists()
     assert (tmp_path / "all_bars.png").exists()
     assert (tmp_path / "scatter.png").exists()
+
+
+def test_chart_variable_label_shortens_long_income_name():
+    assert chart_variable_label("median_household_income_estimate") == "Median household income"
+
+
+def test_symmetric_uncertainty_half_width_uses_farther_side():
+    correlation = CorrelationResult("transit_share", "q1a_yes_pct", 0.24, 0.0, 0.20, 0.0, 10)
+    uncertainty = CorrelationUncertainty(
+        lower=-0.05,
+        upper=0.41,
+        bootstrap_lower=0.02,
+        bootstrap_upper=0.35,
+        nonzero_count=8,
+        sample_count=10,
+        source_tier="block-group",
+    )
+
+    assert symmetric_uncertainty_half_width(correlation, uncertainty) == 0.29
 
 
 def test_correlation_uncertainty_is_deterministic_and_inflated_for_sparse_block_group_data():

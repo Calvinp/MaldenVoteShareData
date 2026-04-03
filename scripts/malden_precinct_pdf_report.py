@@ -708,21 +708,18 @@ def append_sources_page(document: fitz.Document) -> None:
     )
     page.draw_line((54, 122), (558, 122), color=(0.82, 0.84, 0.86), width=1.5)
 
-    y = 146
-    page.insert_textbox(fitz.Rect(54, y, 558, y + 18), "Public web sources", fontsize=15, fontname="Helvetica-Bold", color=(0.12, 0.13, 0.16))
-    y += 26
+    y = 130
     for title, url, description in WEB_SOURCE_ENTRIES:
-        page.insert_textbox(fitz.Rect(70, y, 558, y + 18), f"- {title}", fontsize=11.5, fontname="Helvetica-Bold", color=(0.12, 0.13, 0.16))
-        y += 16
-        url_box_rect = fitz.Rect(78, y - 2, 552, y + 24)
-        url_text_rect = fitz.Rect(88, y + 3, 542, y + 21)
+        page.insert_textbox(fitz.Rect(70, y, 558, y + 16), f"- {title}", fontsize=11.0, fontname="Helvetica-Bold", color=(0.12, 0.13, 0.16))
+        y += 14
+        url_box_rect = fitz.Rect(78, y - 1, 552, y + 21)
         page.draw_rect(url_box_rect, color=link_border_color, fill=link_fill_color, width=0.8)
-        page.insert_textbox(url_text_rect, url, fontsize=10.0, fontname="Helvetica", color=link_text_color)
+        page.insert_text((88, y + 14), url, fontsize=10.0, fontname="Helvetica", color=link_text_color)
         page.insert_link({"kind": fitz.LINK_URI, "from": url_box_rect, "uri": url})
+        y += 26
+        desc_rect = fitz.Rect(84, y, 546, y + 28)
+        page.insert_textbox(desc_rect, description, fontsize=10.2, fontname="Helvetica", color=(0.30, 0.33, 0.38))
         y += 30
-        desc_rect = fitz.Rect(84, y, 546, y + 34)
-        page.insert_textbox(desc_rect, description, fontsize=10.5, fontname="Helvetica", color=(0.30, 0.33, 0.38))
-        y += 34
 
 
 def write_pdf_from_images(images: list[Image.Image], output_path: Path) -> None:

@@ -142,6 +142,8 @@ def test_page_renderers_and_pdf_writer(tmp_path):
         assert "https://www.cityofmalden.org/198/Election-Results" in sources_text
         assert "https://api.census.gov/data/2024/acs/acs5" in sources_text
         assert "C:\\" not in sources_text
-        assert len(document[-1].get_links()) == len(WEB_SOURCE_ENTRIES)
+        source_links = document[-1].get_links()
+        assert len(source_links) == len(WEB_SOURCE_ENTRIES)
+        assert max(link["from"].y1 for link in source_links) < 760
     finally:
         document.close()

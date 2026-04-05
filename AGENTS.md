@@ -55,8 +55,10 @@
 - The analysis estimates precinct demographics by spatially intersecting precinct polygons with Census blocks and block groups; these are modeled precinct covariates, not official precinct-published Census tables.
 - Race and Hispanic-share estimates come from 2020 Census redistricting tables at block level.
 - Most socioeconomic variables come from 2024 ACS 5-year estimates at block-group level.
+- The analysis now includes distance to the nearest MBTA rapid-transit stop, measured in straight-line miles from a precinct population-weighted block-overlap center when possible, with precinct centroid fallback otherwise.
 - Literal Walk Score is not currently included; use transit share, walk share, no-car share, and density as the public walkability proxies in this repo.
 - Turnout is included from the local city results PDF parser, so no turnout download is needed for the analysis pipeline.
+- In the PDF report's correlation bar charts, long variable labels can collide with the numeric correlation text; keep the dynamic label/value spacing in `create_correlation_bar_chart()` so new covariates do not reintroduce that overlap.
 
 ## Color Guidance
 - Use a colorblind-considerate palette by default, but follow explicit user direction if they want a different visual emphasis.

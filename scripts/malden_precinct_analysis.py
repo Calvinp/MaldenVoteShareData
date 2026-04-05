@@ -52,6 +52,13 @@ BLOCK_VARIABLES = [
     "P2_002N",
 ]
 
+# Parent-station coordinates from MBTA's official V3 stops API.
+MBTA_PARENT_STOPS = {
+    "Malden Center": (42.426632, -71.07411),
+    "Oak Grove": (42.43668, -71.071097),
+    "Wellington": (42.40237, -71.077082),
+}
+
 ACS_VARIABLES = [
     "B01001_001E",
     "B01001_002E",
@@ -191,6 +198,7 @@ ANALYSIS_VARIABLES = [
     "turnout_pct",
     "precinct_area_sq_miles",
     "population_density_per_sq_mile",
+    "nearest_mbta_stop_distance_miles",
     "white_share_2020",
     "black_share_2020",
     "asian_share_2020",
@@ -232,6 +240,7 @@ VARIABLE_LABELS = {
     "population_2020": "2020 Census population",
     "precinct_area_sq_miles": "Precinct area (sq mi)",
     "population_density_per_sq_mile": "Population density",
+    "nearest_mbta_stop_distance_miles": "Distance to nearest MBTA stop (mi)",
     "white_share_2020": "White share (2020)",
     "black_share_2020": "Black share (2020)",
     "asian_share_2020": "Asian share (2020)",
@@ -267,6 +276,7 @@ REPORT_FIELD_SPECS = {
     "population_2020": ("count", 0),
     "precinct_area_sq_miles": ("decimal", 2),
     "population_density_per_sq_mile": ("count", 0),
+    "nearest_mbta_stop_distance_miles": ("decimal", 2),
     "white_share_2020": ("pct", 1),
     "black_share_2020": ("pct", 1),
     "asian_share_2020": ("pct", 1),
@@ -358,6 +368,52 @@ def weighted_average(weighted_values: list[tuple[float, float]]) -> float | None
     if total_weight <= 0:
         return None
     return sum(value * weight for value, weight in weighted_values if weight > 0) / total_weight
+
+
+def weighted_point_coordinates(weighted_points: list[tuple[float, float, float]]) -> tuple[float, float] | None:
+    total_weight = sum(weight for _, _, weight in weighted_points if weight > 0)
+    if total_weight <= 0:
+        return None
+    latitude = sum(latitude * weight for latitude, _, weight in weighted_points if weight > 0) / total_weight
+    longitude = sum(longitude * weight for _, longitude, weight in weighted_points if weight > 0) / total_weight
+    return latitude, longitude
+
+
+def geometry_centroid_coordinates(geometry: Polygon | MultiPolygon) -> tuple[float, float]:
+    centroid = geometry.centroid
+    return centroid.y, centroid.x
+
+
+def haversine_distance_miles(
+    latitude_a: float,
+    longitude_a: float,
+    latitude_b: float,
+    longitude_b: float,
+) -> float:
+    earth_radius_miles = 3958.7613
+    latitude_a_radians = math.radians(latitude_a)
+    latitude_b_radians = math.radians(latitude_b)
+    delta_latitude = math.radians(latitude_b - latitude_a)
+    delta_longitude = math.radians(longitude_b - longitude_a)
+
+    haversine = (
+        math.sin(delta_latitude / 2) ** 2
+        + math.cos(latitude_a_radians) * math.cos(latitude_b_radians) * math.sin(delta_longitude / 2) ** 2
+    )
+    return 2 * earth_radius_miles * math.asin(math.sqrt(haversine))
+
+
+def nearest_mbta_stop(latitude: float, longitude: float) -> tuple[str, float]:
+    return min(
+        (
+            (
+                stop_name,
+                haversine_distance_miles(latitude, longitude, stop_latitude, stop_longitude),
+            )
+            for stop_name, (stop_latitude, stop_longitude) in MBTA_PARENT_STOPS.items()
+        ),
+        key=lambda item: item[1],
+    )
 
 
 def query_tigerweb_geojson(
@@ -543,13 +599,50 @@ def geometry_area_sq_miles(geometry: Polygon | MultiPolygon) -> float:
     return sum(polygon_area(polygon) for polygon in geometry.geoms)
 
 
+def estimate_precinct_population_center(
+    precinct_geometry: Polygon | MultiPolygon,
+    precinct_overlap: dict[str, float],
+    block_feature_lookup: dict[str, GeographyFeature],
+    block_rows: dict[str, dict[str, float | None]],
+) -> tuple[float, float, str]:
+    weighted_points: list[tuple[float, float, float]] = []
+
+    for geoid, share in precinct_overlap.items():
+        if share <= 0:
+            continue
+        block_feature = block_feature_lookup.get(geoid)
+        block_row = block_rows.get(geoid)
+        if block_feature is None or block_row is None:
+            continue
+
+        estimated_population = (block_row.get("P1_001N") or 0.0) * share
+        if estimated_population <= 0:
+            continue
+
+        overlap_geometry = precinct_geometry.intersection(block_feature.geometry)
+        if overlap_geometry.is_empty or overlap_geometry.area <= 0:
+            continue
+
+        overlap_centroid = overlap_geometry.centroid
+        weighted_points.append((overlap_centroid.y, overlap_centroid.x, estimated_population))
+
+    weighted_center = weighted_point_coordinates(weighted_points)
+    if weighted_center is not None:
+        latitude, longitude = weighted_center
+        return latitude, longitude, "population_weighted_block_centroid"
+
+    latitude, longitude = geometry_centroid_coordinates(precinct_geometry)
+    return latitude, longitude, "geographic_centroid"
+
+
 def build_block_demographics(
     precinct_geometries: dict[str, Polygon | MultiPolygon],
     block_features: list[GeographyFeature],
     block_rows: dict[str, dict[str, float | None]],
-) -> dict[str, dict[str, float | None]]:
+) -> dict[str, dict[str, float | str | None]]:
     overlaps = build_overlap_lookup(precinct_geometries, block_features)
-    demographics: dict[str, dict[str, float | None]] = {}
+    block_feature_lookup = {feature.geoid: feature for feature in block_features}
+    demographics: dict[str, dict[str, float | str | None]] = {}
 
     for precinct_name, precinct_overlap in overlaps.items():
         total_population = 0.0
@@ -569,11 +662,28 @@ def build_block_demographics(
             multiracial += (row.get("P1_009N") or 0.0) * share
             hispanic += (row.get("P2_002N") or 0.0) * share
 
+        population_center_latitude, population_center_longitude, population_center_source = (
+            estimate_precinct_population_center(
+                precinct_geometries[precinct_name],
+                precinct_overlap,
+                block_feature_lookup,
+                block_rows,
+            )
+        )
+        nearest_stop_name, nearest_stop_distance_miles = nearest_mbta_stop(
+            population_center_latitude,
+            population_center_longitude,
+        )
         precinct_area = geometry_area_sq_miles(precinct_geometries[precinct_name])
         demographics[precinct_name] = {
             "population_2020": total_population,
             "precinct_area_sq_miles": precinct_area,
             "population_density_per_sq_mile": safe_divide(total_population, precinct_area),
+            "population_center_latitude": population_center_latitude,
+            "population_center_longitude": population_center_longitude,
+            "population_center_source": population_center_source,
+            "nearest_mbta_stop": nearest_stop_name,
+            "nearest_mbta_stop_distance_miles": nearest_stop_distance_miles,
             "white_share_2020": safe_divide(white, total_population),
             "black_share_2020": safe_divide(black, total_population),
             "asian_share_2020": safe_divide(asian, total_population),
@@ -858,6 +968,7 @@ def build_report(
         f"- Average Q1B yes share: {q1b_mean * 100:.1f}%",
         f"- Average turnout: {turnout_mean * 100:.1f}%",
         "- Demographic and housing covariates are precinct estimates created by spatially intersecting precinct polygons with 2020 Census blocks and 2025-vintage TIGER/ACS block groups.",
+        "- Distance to the nearest MBTA stop is measured as straight-line miles from each precinct's population-weighted block-overlap center, with precinct centroid fallback where no population-weighted center is available.",
         "- Literal Walk Score is not included here; the analysis uses public walkability proxies instead, especially transit share, walk share, no-car share, and density.",
         "- Foreign-born share is omitted from this version because the block-group API fields available in this workflow were not clean enough to trust.",
         "- Correlation is not causation, and with only 27 precincts these results should be treated as directional rather than definitive.",

@@ -74,6 +74,7 @@ DIRECT_VARIABLES = {
 
 BLOCK_LEVEL_VARIABLES = {
     "population_density_per_sq_mile",
+    "nearest_mbta_stop_distance_miles",
     "white_share_2020",
     "black_share_2020",
     "asian_share_2020",
@@ -123,6 +124,11 @@ WEB_SOURCE_ENTRIES = [
         "U.S. Census Bureau TIGERweb Tracts/Blocks service",
         "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/Tracts_Blocks/MapServer",
         "Used for Census block and block-group geometry intersections with precinct polygons.",
+    ),
+    (
+        "MBTA V3 stops API",
+        "https://api-v3.mbta.com/docs/swagger/index.html",
+        "Used to verify the parent-station coordinates for Malden Center, Oak Grove, and Wellington when computing nearest-stop distance.",
     ),
 ]
 
@@ -544,11 +550,40 @@ def create_correlation_bar_chart(
     draw.text((30, 58), subtitle, font=axis_font, fill=MUTED_TEXT_COLOR)
 
     variable_text_x = 30
-    value_text_x = 265 if include_all_variables else 225
-    chart_left = 435 if include_all_variables else 365
     chart_top = 110
     chart_right = width - 70
     chart_bottom = height - 55
+
+    value_font = load_font(14)
+    label_padding = 18
+    value_padding = 20
+    base_value_text_x = 265 if include_all_variables else 225
+    base_chart_left = 435 if include_all_variables else 365
+    if selected:
+        max_label_width = max(
+            draw.textbbox((0, 0), chart_variable_label(item.variable), font=label_font)[2]
+            for item in selected
+        )
+        if precinct_rows is not None:
+            max_value_width = 0
+            for item in selected:
+                uncertainty = compute_correlation_uncertainty(precinct_rows, item)
+                half_width = symmetric_uncertainty_half_width(item, uncertainty)
+                value_label = f"{item.spearman_rho:+.2f} +/- {half_width:.2f}"
+                value_width = draw.textbbox((0, 0), value_label, font=value_font)[2]
+                max_value_width = max(max_value_width, value_width)
+        else:
+            max_value_width = max(
+                draw.textbbox((0, 0), f"{item.spearman_rho:+.2f}", font=value_font)[2]
+                for item in selected
+            )
+        value_text_x = max(base_value_text_x, variable_text_x + max_label_width + label_padding)
+        chart_left = max(base_chart_left, value_text_x + max_value_width + value_padding)
+        chart_left = min(chart_left, chart_right - 220)
+    else:
+        value_text_x = base_value_text_x
+        chart_left = base_chart_left
+
     zero_x = chart_left + (chart_right - chart_left) / 2
     draw.line((zero_x, chart_top, zero_x, chart_bottom), fill=(150, 157, 166), width=2)
 
@@ -561,7 +596,6 @@ def create_correlation_bar_chart(
 
     if selected:
         row_height = (chart_bottom - chart_top) / len(selected)
-        value_font = load_font(14)
         for index, item in enumerate(selected):
             bar_center_y = chart_top + row_height * index + row_height / 2
             label = chart_variable_label(item.variable)

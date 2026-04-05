@@ -57,9 +57,9 @@ def test_build_overlap_lookup_splits_source_geometry():
 
 def test_build_block_demographics_computes_precinct_shares():
     precincts = {
-        "1-1": make_square(-71.06, 42.42, -71.05, 42.43),
+        "1-1": make_square(-71.07511, 42.425632, -71.07311, 42.427632),
     }
-    features = [GeographyFeature("block1", make_square(-71.06, 42.42, -71.05, 42.43), 1000.0)]
+    features = [GeographyFeature("block1", make_square(-71.07511, 42.425632, -71.07311, 42.427632), 1000.0)]
     rows = {
         "block1": {
             "P1_001N": 100.0,
@@ -81,6 +81,36 @@ def test_build_block_demographics_computes_precinct_shares():
     assert demographics["hispanic_share_2020"] == pytest.approx(0.3)
     assert demographics["precinct_area_sq_miles"] > 0
     assert demographics["population_density_per_sq_mile"] > 0
+    assert demographics["population_center_latitude"] == pytest.approx(42.426632)
+    assert demographics["population_center_longitude"] == pytest.approx(-71.07411)
+    assert demographics["population_center_source"] == "population_weighted_block_centroid"
+    assert demographics["nearest_mbta_stop"] == "Malden Center"
+    assert demographics["nearest_mbta_stop_distance_miles"] == pytest.approx(0.0, abs=1e-8)
+
+
+def test_build_block_demographics_falls_back_to_geographic_centroid_when_population_center_unavailable():
+    precincts = {
+        "1-2": make_square(-71.072097, 42.43568, -71.070097, 42.43768),
+    }
+    features = [GeographyFeature("block1", make_square(-71.072097, 42.43568, -71.070097, 42.43768), 1000.0)]
+    rows = {
+        "block1": {
+            "P1_001N": 0.0,
+            "P1_003N": 0.0,
+            "P1_004N": 0.0,
+            "P1_006N": 0.0,
+            "P1_009N": 0.0,
+            "P2_002N": 0.0,
+        }
+    }
+
+    demographics = build_block_demographics(precincts, features, rows)["1-2"]
+
+    assert demographics["population_center_latitude"] == pytest.approx(42.43668)
+    assert demographics["population_center_longitude"] == pytest.approx(-71.071097)
+    assert demographics["population_center_source"] == "geographic_centroid"
+    assert demographics["nearest_mbta_stop"] == "Oak Grove"
+    assert demographics["nearest_mbta_stop_distance_miles"] == pytest.approx(0.0, abs=1e-8)
 
 
 def test_build_acs_covariates_derives_expected_shares_and_medians():
@@ -243,6 +273,7 @@ def test_compute_correlations_and_report_surface_rankings():
             "population_2020": 1000.0,
             "precinct_area_sq_miles": 0.25,
             "population_density_per_sq_mile": 4000.0,
+            "nearest_mbta_stop_distance_miles": 1.2,
             "renter_share": 0.70,
             "owner_share": 0.30,
             "walk_share": 0.05,
@@ -258,6 +289,7 @@ def test_compute_correlations_and_report_surface_rankings():
             "population_2020": 1100.0,
             "precinct_area_sq_miles": 0.25,
             "population_density_per_sq_mile": 4400.0,
+            "nearest_mbta_stop_distance_miles": 0.8,
             "renter_share": 0.50,
             "owner_share": 0.50,
             "walk_share": 0.10,
@@ -273,23 +305,34 @@ def test_compute_correlations_and_report_surface_rankings():
             "population_2020": 1200.0,
             "precinct_area_sq_miles": 0.25,
             "population_density_per_sq_mile": 4800.0,
+            "nearest_mbta_stop_distance_miles": 0.4,
             "renter_share": 0.30,
             "owner_share": 0.70,
             "walk_share": 0.15,
         },
     ]
 
-    correlations = compute_correlations(rows, ["turnout_pct", "renter_share", "walk_share"])
+    correlations = compute_correlations(
+        rows,
+        ["turnout_pct", "renter_share", "walk_share", "nearest_mbta_stop_distance_miles"],
+    )
     turnout_q1a = next(
         item for item in correlations if item.variable == "turnout_pct" and item.outcome == "q1a_yes_pct"
     )
     renter_q1a = next(
         item for item in correlations if item.variable == "renter_share" and item.outcome == "q1a_yes_pct"
     )
+    mbta_distance_q1a = next(
+        item
+        for item in correlations
+        if item.variable == "nearest_mbta_stop_distance_miles" and item.outcome == "q1a_yes_pct"
+    )
     report = build_report(rows, correlations)
 
     assert turnout_q1a.spearman_rho == pytest.approx(1.0)
     assert renter_q1a.spearman_rho == pytest.approx(-1.0)
+    assert mbta_distance_q1a.spearman_rho == pytest.approx(-1.0)
     assert "Strongest positive correlations" in report
     assert "`Turnout %`" in report
     assert "`Renter share`" in report
+    assert "`Distance to nearest MBTA stop (mi)`" in report

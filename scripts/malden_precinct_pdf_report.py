@@ -62,6 +62,8 @@ TURNOUT_OUTCOME_LABEL = "Turnout %"
 BOOTSTRAP_ITERATIONS = 400
 
 CHART_VARIABLE_LABELS = {
+    "mean_dr_vote_share_2022_2024": "Mean D-R vote share (2022/2024)",
+    "median_dr_vote_share_2022_2024": "Median D-R vote share (2022/2024)",
     "median_household_income_estimate": "Median household income",
     "median_gross_rent_estimate": "Median gross rent",
 }
@@ -69,6 +71,8 @@ CHART_VARIABLE_LABELS = {
 DIRECT_VARIABLES = {
     "registered_voters",
     "turnout_pct",
+    "mean_dr_vote_share_2022_2024",
+    "median_dr_vote_share_2022_2024",
     "precinct_area_sq_miles",
 }
 
@@ -88,7 +92,17 @@ WEB_SOURCE_ENTRIES = [
     (
         "City of Malden Election Results page",
         "https://www.cityofmalden.org/198/Election-Results",
-        "Public index page for Malden election-result documents and archived results.",
+        "Public index page for Malden election-result documents and archived results, including the 2022 and 2024 precinct-result PDFs used for the historical partisan baseline variables.",
+    ),
+    (
+        "Massachusetts 2022 state election candidates page",
+        "https://www.sec.state.ma.us/divisions/elections/research-and-statistics/2022-state-election-candidates.htm",
+        "Used to fill Democratic and Republican party labels for the 2022 Malden state-election candidate results.",
+    ),
+    (
+        "Massachusetts 2024 state election candidates page",
+        "https://www.sec.state.ma.us/divisions/elections/research-and-statistics/2024_state_election_candidates.htm",
+        "Used to fill Democratic and Republican party labels for the 2024 Malden state-election candidate results.",
     ),
     (
         "City of Malden unofficial March 31, 2026 results PDF",
@@ -424,22 +438,6 @@ def chart_variable_label(variable: str) -> str:
     return CHART_VARIABLE_LABELS.get(variable, VARIABLE_LABELS[variable])
 
 
-def source_uncertainty_factor(variable: str) -> float:
-    tier = variable_source_tier(variable)
-    if tier == "direct":
-        return 1.0
-    if tier == "block":
-        return 1.05
-    return 1.12
-
-
-def sparsity_uncertainty_factor(nonzero_count: int, sample_count: int) -> float:
-    if sample_count <= 0:
-        return 1.0
-    nonzero_fraction = nonzero_count / sample_count
-    return 1.0 + max(0.0, (0.50 - nonzero_fraction) / 0.50) * 0.35
-
-
 def bootstrap_seed(variable: str, outcome: str) -> int:
     return zlib.crc32(f"{variable}:{outcome}".encode("utf-8")) & 0xFFFFFFFF
 
@@ -493,11 +491,8 @@ def compute_correlation_uncertainty(
         bootstrap_lower = correlation.spearman_rho
         bootstrap_upper = correlation.spearman_rho
 
-    inflation = source_uncertainty_factor(correlation.variable) * sparsity_uncertainty_factor(nonzero_count, sample_count)
-    lower = correlation.spearman_rho - (correlation.spearman_rho - bootstrap_lower) * inflation
-    upper = correlation.spearman_rho + (bootstrap_upper - correlation.spearman_rho) * inflation
-    lower = max(-1.0, min(lower, correlation.spearman_rho))
-    upper = min(1.0, max(upper, correlation.spearman_rho))
+    lower = max(-1.0, bootstrap_lower)
+    upper = min(1.0, bootstrap_upper)
 
     return CorrelationUncertainty(
         lower=lower,
@@ -508,6 +503,13 @@ def compute_correlation_uncertainty(
         sample_count=sample_count,
         source_tier=source_tier,
     )
+
+
+def format_uncertainty_interval_label(
+    correlation: CorrelationResult,
+    uncertainty: CorrelationUncertainty,
+) -> str:
+    return f"{correlation.spearman_rho:+.2f} [{uncertainty.lower:+.2f}, {uncertainty.upper:+.2f}]"
 
 
 def create_correlation_bar_chart(
@@ -544,7 +546,7 @@ def create_correlation_bar_chart(
     draw.text((30, 20), chart_title, font=title_font, fill=TEXT_COLOR)
     subtitle = "Bars show Spearman correlation."
     if precinct_rows is not None:
-        subtitle += " Blue means more support as the variable rises; orange means less. Whiskers show 95% uncertainty intervals widened modestly for coarser Census interpolation and sparse variables."
+        subtitle += " Blue means more support as the variable rises; orange means less. Whiskers show bootstrap 95% intervals."
     else:
         subtitle += " Blue means more support as the variable rises; orange means less."
     draw.text((30, 58), subtitle, font=axis_font, fill=MUTED_TEXT_COLOR)
@@ -568,8 +570,7 @@ def create_correlation_bar_chart(
             max_value_width = 0
             for item in selected:
                 uncertainty = compute_correlation_uncertainty(precinct_rows, item)
-                half_width = symmetric_uncertainty_half_width(item, uncertainty)
-                value_label = f"{item.spearman_rho:+.2f} +/- {half_width:.2f}"
+                value_label = format_uncertainty_interval_label(item, uncertainty)
                 value_width = draw.textbbox((0, 0), value_label, font=value_font)[2]
                 max_value_width = max(max_value_width, value_width)
         else:
@@ -607,17 +608,16 @@ def create_correlation_bar_chart(
             x0, x1 = sorted([zero_x, x_end])
             draw.rounded_rectangle((x0, bar_top, x1, bar_bottom), radius=9, fill=BLUE if item.spearman_rho > 0 else ORANGE)
             if uncertainty is not None:
-                half_width = symmetric_uncertainty_half_width(item, uncertainty)
                 whisker_y = bar_center_y
-                whisker_left = zero_x + max(-1.0, item.spearman_rho - half_width) * ((chart_right - chart_left) / 2)
-                whisker_right = zero_x + min(1.0, item.spearman_rho + half_width) * ((chart_right - chart_left) / 2)
+                whisker_left = zero_x + uncertainty.lower * ((chart_right - chart_left) / 2)
+                whisker_right = zero_x + uncertainty.upper * ((chart_right - chart_left) / 2)
                 draw.line((whisker_left, whisker_y, whisker_right, whisker_y), fill="white", width=6)
                 draw.line((whisker_left, whisker_y, whisker_right, whisker_y), fill=(24, 28, 34), width=2)
                 draw.line((whisker_left, whisker_y - 5, whisker_left, whisker_y + 5), fill="white", width=5)
                 draw.line((whisker_left, whisker_y - 5, whisker_left, whisker_y + 5), fill=(24, 28, 34), width=2)
                 draw.line((whisker_right, whisker_y - 5, whisker_right, whisker_y + 5), fill="white", width=5)
                 draw.line((whisker_right, whisker_y - 5, whisker_right, whisker_y + 5), fill=(24, 28, 34), width=2)
-                value_label = f"{item.spearman_rho:+.2f} +/- {half_width:.2f}"
+                value_label = format_uncertainty_interval_label(item, uncertainty)
             else:
                 value_label = f"{item.spearman_rho:+.2f}"
             draw.text((value_text_x, bar_center_y - 9), value_label, font=value_font, fill=TEXT_COLOR)
@@ -946,37 +946,43 @@ def render_conclusion_page(context: ReportContext) -> Image.Image:
 
 def append_sources_page(document: fitz.Document) -> None:
     page = document.new_page(width=612, height=792)
-    title_rect = fitz.Rect(54, 42, 558, 88)
-    subtitle_rect = fitz.Rect(54, 82, 558, 116)
+    title_rect = fitz.Rect(54, 38, 558, 78)
+    subtitle_rect = fitz.Rect(54, 74, 558, 108)
     link_text_color = (0.08, 0.26, 0.58)
     link_fill_color = (0.90, 0.95, 1.0)
     link_border_color = (0.72, 0.84, 0.98)
-    page.insert_textbox(title_rect, "Data Sources", fontsize=24, fontname="Times-Bold", color=(0.12, 0.13, 0.16))
+    page.insert_textbox(title_rect, "Data Sources", fontsize=22, fontname="Times-Bold", color=(0.12, 0.13, 0.16))
     page.insert_textbox(
         subtitle_rect,
         "Public URLs for the official election, precinct-boundary, and Census sources used to assemble the analysis dataset.",
-        fontsize=11.5,
+        fontsize=10.5,
         fontname="Helvetica",
         color=(0.36, 0.39, 0.44),
     )
-    page.draw_line((54, 122), (558, 122), color=(0.82, 0.84, 0.86), width=1.5)
+    page.draw_line((54, 114), (558, 114), color=(0.82, 0.84, 0.86), width=1.5)
 
-    y = 130
+    y = 120
     for title, url, description in WEB_SOURCE_ENTRIES:
-        page.insert_textbox(fitz.Rect(70, y, 558, y + 16), f"- {title}", fontsize=11.0, fontname="Helvetica-Bold", color=(0.12, 0.13, 0.16))
-        y += 14
-        url_box_rect = fitz.Rect(78, y - 1, 552, y + 21)
+        page.insert_textbox(
+            fitz.Rect(70, y, 558, y + 14),
+            f"- {title}",
+            fontsize=10.2,
+            fontname="Helvetica-Bold",
+            color=(0.12, 0.13, 0.16),
+        )
+        y += 12
+        url_box_rect = fitz.Rect(78, y - 1, 552, y + 17)
         page.draw_rect(url_box_rect, color=link_border_color, fill=link_fill_color, width=0.8)
-        page.insert_text((88, y + 14), url, fontsize=10.0, fontname="Helvetica", color=link_text_color)
+        page.insert_text((88, y + 12), url, fontsize=9.0, fontname="Helvetica", color=link_text_color)
         page.insert_link({"kind": fitz.LINK_URI, "from": url_box_rect, "uri": url})
-        y += 26
+        y += 20
         desc_max_width = 546 - 84
         desc_words = description.split()
         desc_lines: list[str] = []
         current_line = ""
         for word in desc_words:
             candidate = word if not current_line else f"{current_line} {word}"
-            if fitz.get_text_length(candidate, fontname="helv", fontsize=10.2) <= desc_max_width:
+            if fitz.get_text_length(candidate, fontname="helv", fontsize=9.4) <= desc_max_width:
                 current_line = candidate
             else:
                 desc_lines.append(current_line)
@@ -984,8 +990,8 @@ def append_sources_page(document: fitz.Document) -> None:
         if current_line:
             desc_lines.append(current_line)
         for index, line in enumerate(desc_lines):
-            page.insert_text((84, y + 11 + index * 12), line, fontsize=10.2, fontname="Helvetica", color=(0.30, 0.33, 0.38))
-        y += max(28, len(desc_lines) * 12 + 4)
+            page.insert_text((84, y + 10 + index * 11), line, fontsize=9.4, fontname="Helvetica", color=(0.30, 0.33, 0.38))
+        y += max(20, len(desc_lines) * 11 + 2)
 
 
 def write_pdf_from_images(images: list[Image.Image], output_path: Path) -> None:

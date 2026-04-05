@@ -1,0 +1,622 @@
+election_key,election_date,election_type,contest,contest_slug,contest_order,candidate,candidate_party,candidate_order,precinct,ward,votes
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,DIEHL and ALLEN,Republican,1,1-1,1,79
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,DIEHL and ALLEN,Republican,1,1-2,1,139
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,DIEHL and ALLEN,Republican,1,1-3,1,149
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,DIEHL and ALLEN,Republican,1,2-1,2,108
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,DIEHL and ALLEN,Republican,1,2-2,2,172
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,DIEHL and ALLEN,Republican,1,2-3,2,197
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,DIEHL and ALLEN,Republican,1,3-1,3,110
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,DIEHL and ALLEN,Republican,1,3-1A,3,147
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,DIEHL and ALLEN,Republican,1,3-2,3,138
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,DIEHL and ALLEN,Republican,1,3-3,3,180
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,DIEHL and ALLEN,Republican,1,4-1,4,120
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,DIEHL and ALLEN,Republican,1,4-2,4,71
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,DIEHL and ALLEN,Republican,1,4-3,4,89
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,DIEHL and ALLEN,Republican,1,5-1,5,164
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,DIEHL and ALLEN,Republican,1,5-2,5,253
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,DIEHL and ALLEN,Republican,1,5-3,5,88
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,DIEHL and ALLEN,Republican,1,5-3A,5,13
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,DIEHL and ALLEN,Republican,1,6-1,6,225
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,DIEHL and ALLEN,Republican,1,6-2,6,164
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,DIEHL and ALLEN,Republican,1,6-3,6,205
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,DIEHL and ALLEN,Republican,1,7-1,7,100
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,DIEHL and ALLEN,Republican,1,7-2,7,119
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,DIEHL and ALLEN,Republican,1,7-3,7,102
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,DIEHL and ALLEN,Republican,1,7-3A,7,44
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,DIEHL and ALLEN,Republican,1,8-1,8,214
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,DIEHL and ALLEN,Republican,1,8-2,8,159
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,DIEHL and ALLEN,Republican,1,8-3,8,105
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,HEALEY and DRISCOLL,Democratic,2,1-1,1,365
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,HEALEY and DRISCOLL,Democratic,2,1-2,1,436
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,HEALEY and DRISCOLL,Democratic,2,1-3,1,456
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,HEALEY and DRISCOLL,Democratic,2,2-1,2,361
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,HEALEY and DRISCOLL,Democratic,2,2-2,2,360
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,HEALEY and DRISCOLL,Democratic,2,2-3,2,491
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,HEALEY and DRISCOLL,Democratic,2,3-1,3,336
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,HEALEY and DRISCOLL,Democratic,2,3-1A,3,408
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,HEALEY and DRISCOLL,Democratic,2,3-2,3,499
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,HEALEY and DRISCOLL,Democratic,2,3-3,3,687
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,HEALEY and DRISCOLL,Democratic,2,4-1,4,418
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,HEALEY and DRISCOLL,Democratic,2,4-2,4,298
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,HEALEY and DRISCOLL,Democratic,2,4-3,4,441
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,HEALEY and DRISCOLL,Democratic,2,5-1,5,454
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,HEALEY and DRISCOLL,Democratic,2,5-2,5,733
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,HEALEY and DRISCOLL,Democratic,2,5-3,5,273
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,HEALEY and DRISCOLL,Democratic,2,5-3A,5,146
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,HEALEY and DRISCOLL,Democratic,2,6-1,6,691
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,HEALEY and DRISCOLL,Democratic,2,6-2,6,408
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,HEALEY and DRISCOLL,Democratic,2,6-3,6,420
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,HEALEY and DRISCOLL,Democratic,2,7-1,7,365
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,HEALEY and DRISCOLL,Democratic,2,7-2,7,346
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,HEALEY and DRISCOLL,Democratic,2,7-3,7,206
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,HEALEY and DRISCOLL,Democratic,2,7-3A,7,172
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,HEALEY and DRISCOLL,Democratic,2,8-1,8,500
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,HEALEY and DRISCOLL,Democratic,2,8-2,8,392
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,HEALEY and DRISCOLL,Democratic,2,8-3,8,320
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,REED and EVERETT,Libertarian,3,1-1,1,6
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,REED and EVERETT,Libertarian,3,1-2,1,17
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,REED and EVERETT,Libertarian,3,1-3,1,19
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,REED and EVERETT,Libertarian,3,2-1,2,5
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,REED and EVERETT,Libertarian,3,2-2,2,12
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,REED and EVERETT,Libertarian,3,2-3,2,4
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,REED and EVERETT,Libertarian,3,3-1,3,13
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,REED and EVERETT,Libertarian,3,3-1A,3,5
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,REED and EVERETT,Libertarian,3,3-2,3,9
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,REED and EVERETT,Libertarian,3,3-3,3,17
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,REED and EVERETT,Libertarian,3,4-1,4,9
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,REED and EVERETT,Libertarian,3,4-2,4,9
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,REED and EVERETT,Libertarian,3,4-3,4,7
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,REED and EVERETT,Libertarian,3,5-1,5,13
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,REED and EVERETT,Libertarian,3,5-2,5,12
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,REED and EVERETT,Libertarian,3,5-3,5,9
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,REED and EVERETT,Libertarian,3,5-3A,5,1
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,REED and EVERETT,Libertarian,3,6-1,6,11
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,REED and EVERETT,Libertarian,3,6-2,6,10
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,REED and EVERETT,Libertarian,3,6-3,6,8
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,REED and EVERETT,Libertarian,3,7-1,7,4
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,REED and EVERETT,Libertarian,3,7-2,7,11
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,REED and EVERETT,Libertarian,3,7-3,7,6
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,REED and EVERETT,Libertarian,3,7-3A,7,3
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,REED and EVERETT,Libertarian,3,8-1,8,17
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,REED and EVERETT,Libertarian,3,8-2,8,4
+malden_state_election_2022_11_08,2022-11-08,state,GOVERNOR & LT. GOVERNOR,governor_lt_governor,1,REED and EVERETT,Libertarian,3,8-3,8,6
+malden_state_election_2022_11_08,2022-11-08,state,ATTORNEY GENERAL,attorney_general,2,ANDREA JOY CAMPBELL,Democratic,1,1-1,1,354
+malden_state_election_2022_11_08,2022-11-08,state,ATTORNEY GENERAL,attorney_general,2,ANDREA JOY CAMPBELL,Democratic,1,1-2,1,426
+malden_state_election_2022_11_08,2022-11-08,state,ATTORNEY GENERAL,attorney_general,2,ANDREA JOY CAMPBELL,Democratic,1,1-3,1,455
+malden_state_election_2022_11_08,2022-11-08,state,ATTORNEY GENERAL,attorney_general,2,ANDREA JOY CAMPBELL,Democratic,1,2-1,2,356
+malden_state_election_2022_11_08,2022-11-08,state,ATTORNEY GENERAL,attorney_general,2,ANDREA JOY CAMPBELL,Democratic,1,2-2,2,348
+malden_state_election_2022_11_08,2022-11-08,state,ATTORNEY GENERAL,attorney_general,2,ANDREA JOY CAMPBELL,Democratic,1,2-3,2,471
+malden_state_election_2022_11_08,2022-11-08,state,ATTORNEY GENERAL,attorney_general,2,ANDREA JOY CAMPBELL,Democratic,1,3-1,3,341
+malden_state_election_2022_11_08,2022-11-08,state,ATTORNEY GENERAL,attorney_general,2,ANDREA JOY CAMPBELL,Democratic,1,3-1A,3,388
+malden_state_election_2022_11_08,2022-11-08,state,ATTORNEY GENERAL,attorney_general,2,ANDREA JOY CAMPBELL,Democratic,1,3-2,3,491
+malden_state_election_2022_11_08,2022-11-08,state,ATTORNEY GENERAL,attorney_general,2,ANDREA JOY CAMPBELL,Democratic,1,3-3,3,684
+malden_state_election_2022_11_08,2022-11-08,state,ATTORNEY GENERAL,attorney_general,2,ANDREA JOY CAMPBELL,Democratic,1,4-1,4,416
+malden_state_election_2022_11_08,2022-11-08,state,ATTORNEY GENERAL,attorney_general,2,ANDREA JOY CAMPBELL,Democratic,1,4-2,4,299
+malden_state_election_2022_11_08,2022-11-08,state,ATTORNEY GENERAL,attorney_general,2,ANDREA JOY CAMPBELL,Democratic,1,4-3,4,449
+malden_state_election_2022_11_08,2022-11-08,state,ATTORNEY GENERAL,attorney_general,2,ANDREA JOY CAMPBELL,Democratic,1,5-1,5,458
+malden_state_election_2022_11_08,2022-11-08,state,ATTORNEY GENERAL,attorney_general,2,ANDREA JOY CAMPBELL,Democratic,1,5-2,5,726
+malden_state_election_2022_11_08,2022-11-08,state,ATTORNEY GENERAL,attorney_general,2,ANDREA JOY CAMPBELL,Democratic,1,5-3,5,270
+malden_state_election_2022_11_08,2022-11-08,state,ATTORNEY GENERAL,attorney_general,2,ANDREA JOY CAMPBELL,Democratic,1,5-3A,5,136
+malden_state_election_2022_11_08,2022-11-08,state,ATTORNEY GENERAL,attorney_general,2,ANDREA JOY CAMPBELL,Democratic,1,6-1,6,677
+malden_state_election_2022_11_08,2022-11-08,state,ATTORNEY GENERAL,attorney_general,2,ANDREA JOY CAMPBELL,Democratic,1,6-2,6,397
+malden_state_election_2022_11_08,2022-11-08,state,ATTORNEY GENERAL,attorney_general,2,ANDREA JOY CAMPBELL,Democratic,1,6-3,6,408
+malden_state_election_2022_11_08,2022-11-08,state,ATTORNEY GENERAL,attorney_general,2,ANDREA JOY CAMPBELL,Democratic,1,7-1,7,373
+malden_state_election_2022_11_08,2022-11-08,state,ATTORNEY GENERAL,attorney_general,2,ANDREA JOY CAMPBELL,Democratic,1,7-2,7,336
+malden_state_election_2022_11_08,2022-11-08,state,ATTORNEY GENERAL,attorney_general,2,ANDREA JOY CAMPBELL,Democratic,1,7-3,7,207
+malden_state_election_2022_11_08,2022-11-08,state,ATTORNEY GENERAL,attorney_general,2,ANDREA JOY CAMPBELL,Democratic,1,7-3A,7,172
+malden_state_election_2022_11_08,2022-11-08,state,ATTORNEY GENERAL,attorney_general,2,ANDREA JOY CAMPBELL,Democratic,1,8-1,8,498
+malden_state_election_2022_11_08,2022-11-08,state,ATTORNEY GENERAL,attorney_general,2,ANDREA JOY CAMPBELL,Democratic,1,8-2,8,384
+malden_state_election_2022_11_08,2022-11-08,state,ATTORNEY GENERAL,attorney_general,2,ANDREA JOY CAMPBELL,Democratic,1,8-3,8,321
+malden_state_election_2022_11_08,2022-11-08,state,ATTORNEY GENERAL,attorney_general,2,"JAMES R. McMAHON, III",Republican,2,1-1,1,90
+malden_state_election_2022_11_08,2022-11-08,state,ATTORNEY GENERAL,attorney_general,2,"JAMES R. McMAHON, III",Republican,2,1-2,1,154
+malden_state_election_2022_11_08,2022-11-08,state,ATTORNEY GENERAL,attorney_general,2,"JAMES R. McMAHON, III",Republican,2,1-3,1,160
+malden_state_election_2022_11_08,2022-11-08,state,ATTORNEY GENERAL,attorney_general,2,"JAMES R. McMAHON, III",Republican,2,2-1,2,105
+malden_state_election_2022_11_08,2022-11-08,state,ATTORNEY GENERAL,attorney_general,2,"JAMES R. McMAHON, III",Republican,2,2-2,2,187
+malden_state_election_2022_11_08,2022-11-08,state,ATTORNEY GENERAL,attorney_general,2,"JAMES R. McMAHON, III",Republican,2,2-3,2,204
+malden_state_election_2022_11_08,2022-11-08,state,ATTORNEY GENERAL,attorney_general,2,"JAMES R. McMAHON, III",Republican,2,3-1,3,111
+malden_state_election_2022_11_08,2022-11-08,state,ATTORNEY GENERAL,attorney_general,2,"JAMES R. McMAHON, III",Republican,2,3-1A,3,159
+malden_state_election_2022_11_08,2022-11-08,state,ATTORNEY GENERAL,attorney_general,2,"JAMES R. McMAHON, III",Republican,2,3-2,3,146
+malden_state_election_2022_11_08,2022-11-08,state,ATTORNEY GENERAL,attorney_general,2,"JAMES R. McMAHON, III",Republican,2,3-3,3,189
+malden_state_election_2022_11_08,2022-11-08,state,ATTORNEY GENERAL,attorney_general,2,"JAMES R. McMAHON, III",Republican,2,4-1,4,130
+malden_state_election_2022_11_08,2022-11-08,state,ATTORNEY GENERAL,attorney_general,2,"JAMES R. McMAHON, III",Republican,2,4-2,4,73
+malden_state_election_2022_11_08,2022-11-08,state,ATTORNEY GENERAL,attorney_general,2,"JAMES R. McMAHON, III",Republican,2,4-3,4,87
+malden_state_election_2022_11_08,2022-11-08,state,ATTORNEY GENERAL,attorney_general,2,"JAMES R. McMAHON, III",Republican,2,5-1,5,167
+malden_state_election_2022_11_08,2022-11-08,state,ATTORNEY GENERAL,attorney_general,2,"JAMES R. McMAHON, III",Republican,2,5-2,5,253
+malden_state_election_2022_11_08,2022-11-08,state,ATTORNEY GENERAL,attorney_general,2,"JAMES R. McMAHON, III",Republican,2,5-3,5,93
+malden_state_election_2022_11_08,2022-11-08,state,ATTORNEY GENERAL,attorney_general,2,"JAMES R. McMAHON, III",Republican,2,5-3A,5,20
+malden_state_election_2022_11_08,2022-11-08,state,ATTORNEY GENERAL,attorney_general,2,"JAMES R. McMAHON, III",Republican,2,6-1,6,244
+malden_state_election_2022_11_08,2022-11-08,state,ATTORNEY GENERAL,attorney_general,2,"JAMES R. McMAHON, III",Republican,2,6-2,6,172
+malden_state_election_2022_11_08,2022-11-08,state,ATTORNEY GENERAL,attorney_general,2,"JAMES R. McMAHON, III",Republican,2,6-3,6,220
+malden_state_election_2022_11_08,2022-11-08,state,ATTORNEY GENERAL,attorney_general,2,"JAMES R. McMAHON, III",Republican,2,7-1,7,93
+malden_state_election_2022_11_08,2022-11-08,state,ATTORNEY GENERAL,attorney_general,2,"JAMES R. McMAHON, III",Republican,2,7-2,7,128
+malden_state_election_2022_11_08,2022-11-08,state,ATTORNEY GENERAL,attorney_general,2,"JAMES R. McMAHON, III",Republican,2,7-3,7,102
+malden_state_election_2022_11_08,2022-11-08,state,ATTORNEY GENERAL,attorney_general,2,"JAMES R. McMAHON, III",Republican,2,7-3A,7,45
+malden_state_election_2022_11_08,2022-11-08,state,ATTORNEY GENERAL,attorney_general,2,"JAMES R. McMAHON, III",Republican,2,8-1,8,221
+malden_state_election_2022_11_08,2022-11-08,state,ATTORNEY GENERAL,attorney_general,2,"JAMES R. McMAHON, III",Republican,2,8-2,8,169
+malden_state_election_2022_11_08,2022-11-08,state,ATTORNEY GENERAL,attorney_general,2,"JAMES R. McMAHON, III",Republican,2,8-3,8,107
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,WILLIAM FRANCIS GALVIN,Democratic,1,1-1,1,363
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,WILLIAM FRANCIS GALVIN,Democratic,1,1-2,1,438
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,WILLIAM FRANCIS GALVIN,Democratic,1,1-3,1,462
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,WILLIAM FRANCIS GALVIN,Democratic,1,2-1,2,363
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,WILLIAM FRANCIS GALVIN,Democratic,1,2-2,2,381
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,WILLIAM FRANCIS GALVIN,Democratic,1,2-3,2,505
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,WILLIAM FRANCIS GALVIN,Democratic,1,3-1,3,331
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,WILLIAM FRANCIS GALVIN,Democratic,1,3-1A,3,415
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,WILLIAM FRANCIS GALVIN,Democratic,1,3-2,3,498
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,WILLIAM FRANCIS GALVIN,Democratic,1,3-3,3,690
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,WILLIAM FRANCIS GALVIN,Democratic,1,4-1,4,423
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,WILLIAM FRANCIS GALVIN,Democratic,1,4-2,4,284
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,WILLIAM FRANCIS GALVIN,Democratic,1,4-3,4,432
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,WILLIAM FRANCIS GALVIN,Democratic,1,5-1,5,478
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,WILLIAM FRANCIS GALVIN,Democratic,1,5-2,5,760
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,WILLIAM FRANCIS GALVIN,Democratic,1,5-3,5,271
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,WILLIAM FRANCIS GALVIN,Democratic,1,5-3A,5,147
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,WILLIAM FRANCIS GALVIN,Democratic,1,6-1,6,664
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,WILLIAM FRANCIS GALVIN,Democratic,1,6-2,6,418
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,WILLIAM FRANCIS GALVIN,Democratic,1,6-3,6,447
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,WILLIAM FRANCIS GALVIN,Democratic,1,7-1,7,368
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,WILLIAM FRANCIS GALVIN,Democratic,1,7-2,7,344
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,WILLIAM FRANCIS GALVIN,Democratic,1,7-3,7,222
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,WILLIAM FRANCIS GALVIN,Democratic,1,7-3A,7,182
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,WILLIAM FRANCIS GALVIN,Democratic,1,8-1,8,512
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,WILLIAM FRANCIS GALVIN,Democratic,1,8-2,8,401
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,WILLIAM FRANCIS GALVIN,Democratic,1,8-3,8,319
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,RAYLA CAMPBELL,Republican,2,1-1,1,66
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,RAYLA CAMPBELL,Republican,2,1-2,1,114
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,RAYLA CAMPBELL,Republican,2,1-3,1,130
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,RAYLA CAMPBELL,Republican,2,2-1,2,85
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,RAYLA CAMPBELL,Republican,2,2-2,2,137
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,RAYLA CAMPBELL,Republican,2,2-3,2,155
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,RAYLA CAMPBELL,Republican,2,3-1,3,93
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,RAYLA CAMPBELL,Republican,2,3-1A,3,109
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,RAYLA CAMPBELL,Republican,2,3-2,3,105
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,RAYLA CAMPBELL,Republican,2,3-3,3,145
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,RAYLA CAMPBELL,Republican,2,4-1,4,97
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,RAYLA CAMPBELL,Republican,2,4-2,4,63
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,RAYLA CAMPBELL,Republican,2,4-3,4,67
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,RAYLA CAMPBELL,Republican,2,5-1,5,136
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,RAYLA CAMPBELL,Republican,2,5-2,5,199
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,RAYLA CAMPBELL,Republican,2,5-3,5,81
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,RAYLA CAMPBELL,Republican,2,5-3A,5,10
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,RAYLA CAMPBELL,Republican,2,6-1,6,201
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,RAYLA CAMPBELL,Republican,2,6-2,6,137
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,RAYLA CAMPBELL,Republican,2,6-3,6,159
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,RAYLA CAMPBELL,Republican,2,7-1,7,79
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,RAYLA CAMPBELL,Republican,2,7-2,7,114
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,RAYLA CAMPBELL,Republican,2,7-3,7,78
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,RAYLA CAMPBELL,Republican,2,7-3A,7,30
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,RAYLA CAMPBELL,Republican,2,8-1,8,176
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,RAYLA CAMPBELL,Republican,2,8-2,8,140
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,RAYLA CAMPBELL,Republican,2,8-3,8,92
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,JUAN SANCHEZ,Green-Rainbow Party,3,1-1,1,23
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,JUAN SANCHEZ,Green-Rainbow Party,3,1-2,1,33
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,JUAN SANCHEZ,Green-Rainbow Party,3,1-3,1,27
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,JUAN SANCHEZ,Green-Rainbow Party,3,2-1,2,17
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,JUAN SANCHEZ,Green-Rainbow Party,3,2-2,2,23
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,JUAN SANCHEZ,Green-Rainbow Party,3,2-3,2,23
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,JUAN SANCHEZ,Green-Rainbow Party,3,3-1,3,19
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,JUAN SANCHEZ,Green-Rainbow Party,3,3-1A,3,25
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,JUAN SANCHEZ,Green-Rainbow Party,3,3-2,3,35
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,JUAN SANCHEZ,Green-Rainbow Party,3,3-3,3,35
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,JUAN SANCHEZ,Green-Rainbow Party,3,4-1,4,24
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,JUAN SANCHEZ,Green-Rainbow Party,3,4-2,4,18
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,JUAN SANCHEZ,Green-Rainbow Party,3,4-3,4,35
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,JUAN SANCHEZ,Green-Rainbow Party,3,5-1,5,14
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,JUAN SANCHEZ,Green-Rainbow Party,3,5-2,5,29
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,JUAN SANCHEZ,Green-Rainbow Party,3,5-3,5,17
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,JUAN SANCHEZ,Green-Rainbow Party,3,5-3A,5,3
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,JUAN SANCHEZ,Green-Rainbow Party,3,6-1,6,42
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,JUAN SANCHEZ,Green-Rainbow Party,3,6-2,6,18
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,JUAN SANCHEZ,Green-Rainbow Party,3,6-3,6,18
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,JUAN SANCHEZ,Green-Rainbow Party,3,7-1,7,19
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,JUAN SANCHEZ,Green-Rainbow Party,3,7-2,7,17
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,JUAN SANCHEZ,Green-Rainbow Party,3,7-3,7,13
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,JUAN SANCHEZ,Green-Rainbow Party,3,7-3A,7,4
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,JUAN SANCHEZ,Green-Rainbow Party,3,8-1,8,27
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,JUAN SANCHEZ,Green-Rainbow Party,3,8-2,8,18
+malden_state_election_2022_11_08,2022-11-08,state,SECRETARY OF STATE,secretary_of_state,3,JUAN SANCHEZ,Green-Rainbow Party,3,8-3,8,11
+malden_state_election_2022_11_08,2022-11-08,state,TREASURER,treasurer,4,DEBORAH B. GOLDBERG,Democratic,1,1-1,1,371
+malden_state_election_2022_11_08,2022-11-08,state,TREASURER,treasurer,4,DEBORAH B. GOLDBERG,Democratic,1,1-2,1,445
+malden_state_election_2022_11_08,2022-11-08,state,TREASURER,treasurer,4,DEBORAH B. GOLDBERG,Democratic,1,1-3,1,488
+malden_state_election_2022_11_08,2022-11-08,state,TREASURER,treasurer,4,DEBORAH B. GOLDBERG,Democratic,1,2-1,2,376
+malden_state_election_2022_11_08,2022-11-08,state,TREASURER,treasurer,4,DEBORAH B. GOLDBERG,Democratic,1,2-2,2,380
+malden_state_election_2022_11_08,2022-11-08,state,TREASURER,treasurer,4,DEBORAH B. GOLDBERG,Democratic,1,2-3,2,513
+malden_state_election_2022_11_08,2022-11-08,state,TREASURER,treasurer,4,DEBORAH B. GOLDBERG,Democratic,1,3-1,3,345
+malden_state_election_2022_11_08,2022-11-08,state,TREASURER,treasurer,4,DEBORAH B. GOLDBERG,Democratic,1,3-1A,3,408
+malden_state_election_2022_11_08,2022-11-08,state,TREASURER,treasurer,4,DEBORAH B. GOLDBERG,Democratic,1,3-2,3,519
+malden_state_election_2022_11_08,2022-11-08,state,TREASURER,treasurer,4,DEBORAH B. GOLDBERG,Democratic,1,3-3,3,693
+malden_state_election_2022_11_08,2022-11-08,state,TREASURER,treasurer,4,DEBORAH B. GOLDBERG,Democratic,1,4-1,4,437
+malden_state_election_2022_11_08,2022-11-08,state,TREASURER,treasurer,4,DEBORAH B. GOLDBERG,Democratic,1,4-2,4,298
+malden_state_election_2022_11_08,2022-11-08,state,TREASURER,treasurer,4,DEBORAH B. GOLDBERG,Democratic,1,4-3,4,447
+malden_state_election_2022_11_08,2022-11-08,state,TREASURER,treasurer,4,DEBORAH B. GOLDBERG,Democratic,1,5-1,5,465
+malden_state_election_2022_11_08,2022-11-08,state,TREASURER,treasurer,4,DEBORAH B. GOLDBERG,Democratic,1,5-2,5,750
+malden_state_election_2022_11_08,2022-11-08,state,TREASURER,treasurer,4,DEBORAH B. GOLDBERG,Democratic,1,5-3,5,281
+malden_state_election_2022_11_08,2022-11-08,state,TREASURER,treasurer,4,DEBORAH B. GOLDBERG,Democratic,1,5-3A,5,145
+malden_state_election_2022_11_08,2022-11-08,state,TREASURER,treasurer,4,DEBORAH B. GOLDBERG,Democratic,1,6-1,6,670
+malden_state_election_2022_11_08,2022-11-08,state,TREASURER,treasurer,4,DEBORAH B. GOLDBERG,Democratic,1,6-2,6,413
+malden_state_election_2022_11_08,2022-11-08,state,TREASURER,treasurer,4,DEBORAH B. GOLDBERG,Democratic,1,6-3,6,450
+malden_state_election_2022_11_08,2022-11-08,state,TREASURER,treasurer,4,DEBORAH B. GOLDBERG,Democratic,1,7-1,7,387
+malden_state_election_2022_11_08,2022-11-08,state,TREASURER,treasurer,4,DEBORAH B. GOLDBERG,Democratic,1,7-2,7,370
+malden_state_election_2022_11_08,2022-11-08,state,TREASURER,treasurer,4,DEBORAH B. GOLDBERG,Democratic,1,7-3,7,227
+malden_state_election_2022_11_08,2022-11-08,state,TREASURER,treasurer,4,DEBORAH B. GOLDBERG,Democratic,1,7-3A,7,181
+malden_state_election_2022_11_08,2022-11-08,state,TREASURER,treasurer,4,DEBORAH B. GOLDBERG,Democratic,1,8-1,8,527
+malden_state_election_2022_11_08,2022-11-08,state,TREASURER,treasurer,4,DEBORAH B. GOLDBERG,Democratic,1,8-2,8,425
+malden_state_election_2022_11_08,2022-11-08,state,TREASURER,treasurer,4,DEBORAH B. GOLDBERG,Democratic,1,8-3,8,331
+malden_state_election_2022_11_08,2022-11-08,state,TREASURER,treasurer,4,CRISTINA CRAWFORD,Libertarian,2,1-1,1,54
+malden_state_election_2022_11_08,2022-11-08,state,TREASURER,treasurer,4,CRISTINA CRAWFORD,Libertarian,2,1-2,1,83
+malden_state_election_2022_11_08,2022-11-08,state,TREASURER,treasurer,4,CRISTINA CRAWFORD,Libertarian,2,1-3,1,102
+malden_state_election_2022_11_08,2022-11-08,state,TREASURER,treasurer,4,CRISTINA CRAWFORD,Libertarian,2,2-1,2,72
+malden_state_election_2022_11_08,2022-11-08,state,TREASURER,treasurer,4,CRISTINA CRAWFORD,Libertarian,2,2-2,2,106
+malden_state_election_2022_11_08,2022-11-08,state,TREASURER,treasurer,4,CRISTINA CRAWFORD,Libertarian,2,2-3,2,115
+malden_state_election_2022_11_08,2022-11-08,state,TREASURER,treasurer,4,CRISTINA CRAWFORD,Libertarian,2,3-1,3,70
+malden_state_election_2022_11_08,2022-11-08,state,TREASURER,treasurer,4,CRISTINA CRAWFORD,Libertarian,2,3-1A,3,100
+malden_state_election_2022_11_08,2022-11-08,state,TREASURER,treasurer,4,CRISTINA CRAWFORD,Libertarian,2,3-2,3,83
+malden_state_election_2022_11_08,2022-11-08,state,TREASURER,treasurer,4,CRISTINA CRAWFORD,Libertarian,2,3-3,3,121
+malden_state_election_2022_11_08,2022-11-08,state,TREASURER,treasurer,4,CRISTINA CRAWFORD,Libertarian,2,4-1,4,80
+malden_state_election_2022_11_08,2022-11-08,state,TREASURER,treasurer,4,CRISTINA CRAWFORD,Libertarian,2,4-2,4,45
+malden_state_election_2022_11_08,2022-11-08,state,TREASURER,treasurer,4,CRISTINA CRAWFORD,Libertarian,2,4-3,4,60
+malden_state_election_2022_11_08,2022-11-08,state,TREASURER,treasurer,4,CRISTINA CRAWFORD,Libertarian,2,5-1,5,103
+malden_state_election_2022_11_08,2022-11-08,state,TREASURER,treasurer,4,CRISTINA CRAWFORD,Libertarian,2,5-2,5,154
+malden_state_election_2022_11_08,2022-11-08,state,TREASURER,treasurer,4,CRISTINA CRAWFORD,Libertarian,2,5-3,5,54
+malden_state_election_2022_11_08,2022-11-08,state,TREASURER,treasurer,4,CRISTINA CRAWFORD,Libertarian,2,5-3A,5,9
+malden_state_election_2022_11_08,2022-11-08,state,TREASURER,treasurer,4,CRISTINA CRAWFORD,Libertarian,2,6-1,6,168
+malden_state_election_2022_11_08,2022-11-08,state,TREASURER,treasurer,4,CRISTINA CRAWFORD,Libertarian,2,6-2,6,105
+malden_state_election_2022_11_08,2022-11-08,state,TREASURER,treasurer,4,CRISTINA CRAWFORD,Libertarian,2,6-3,6,129
+malden_state_election_2022_11_08,2022-11-08,state,TREASURER,treasurer,4,CRISTINA CRAWFORD,Libertarian,2,7-1,7,60
+malden_state_election_2022_11_08,2022-11-08,state,TREASURER,treasurer,4,CRISTINA CRAWFORD,Libertarian,2,7-2,7,69
+malden_state_election_2022_11_08,2022-11-08,state,TREASURER,treasurer,4,CRISTINA CRAWFORD,Libertarian,2,7-3,7,58
+malden_state_election_2022_11_08,2022-11-08,state,TREASURER,treasurer,4,CRISTINA CRAWFORD,Libertarian,2,7-3A,7,26
+malden_state_election_2022_11_08,2022-11-08,state,TREASURER,treasurer,4,CRISTINA CRAWFORD,Libertarian,2,8-1,8,129
+malden_state_election_2022_11_08,2022-11-08,state,TREASURER,treasurer,4,CRISTINA CRAWFORD,Libertarian,2,8-2,8,87
+malden_state_election_2022_11_08,2022-11-08,state,TREASURER,treasurer,4,CRISTINA CRAWFORD,Libertarian,2,8-3,8,57
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,ANTHONY AMORE,Republican,1,1-1,1,83
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,ANTHONY AMORE,Republican,1,1-2,1,159
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,ANTHONY AMORE,Republican,1,1-3,1,160
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,ANTHONY AMORE,Republican,1,2-1,2,108
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,ANTHONY AMORE,Republican,1,2-2,2,185
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,ANTHONY AMORE,Republican,1,2-3,2,198
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,ANTHONY AMORE,Republican,1,3-1,3,117
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,ANTHONY AMORE,Republican,1,3-1A,3,173
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,ANTHONY AMORE,Republican,1,3-2,3,140
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,ANTHONY AMORE,Republican,1,3-3,3,213
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,ANTHONY AMORE,Republican,1,4-1,4,133
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,ANTHONY AMORE,Republican,1,4-2,4,80
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,ANTHONY AMORE,Republican,1,4-3,4,101
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,ANTHONY AMORE,Republican,1,5-1,5,173
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,ANTHONY AMORE,Republican,1,5-2,5,269
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,ANTHONY AMORE,Republican,1,5-3,5,103
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,ANTHONY AMORE,Republican,1,5-3A,5,28
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,ANTHONY AMORE,Republican,1,6-1,6,237
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,ANTHONY AMORE,Republican,1,6-2,6,167
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,ANTHONY AMORE,Republican,1,6-3,6,204
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,ANTHONY AMORE,Republican,1,7-1,7,109
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,ANTHONY AMORE,Republican,1,7-2,7,127
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,ANTHONY AMORE,Republican,1,7-3,7,94
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,ANTHONY AMORE,Republican,1,7-3A,7,52
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,ANTHONY AMORE,Republican,1,8-1,8,215
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,ANTHONY AMORE,Republican,1,8-2,8,173
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,ANTHONY AMORE,Republican,1,8-3,8,117
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,DIANA DiZOGLIO,Democratic,2,1-1,1,311
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,DIANA DiZOGLIO,Democratic,2,1-2,1,362
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,DIANA DiZOGLIO,Democratic,2,1-3,1,384
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,DIANA DiZOGLIO,Democratic,2,2-1,2,314
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,DIANA DiZOGLIO,Democratic,2,2-2,2,290
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,DIANA DiZOGLIO,Democratic,2,2-3,2,420
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,DIANA DiZOGLIO,Democratic,2,3-1,3,269
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,DIANA DiZOGLIO,Democratic,2,3-1A,3,320
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,DIANA DiZOGLIO,Democratic,2,3-2,3,413
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,DIANA DiZOGLIO,Democratic,2,3-3,3,571
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,DIANA DiZOGLIO,Democratic,2,4-1,4,345
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,DIANA DiZOGLIO,Democratic,2,4-2,4,248
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,DIANA DiZOGLIO,Democratic,2,4-3,4,365
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,DIANA DiZOGLIO,Democratic,2,5-1,5,390
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,DIANA DiZOGLIO,Democratic,2,5-2,5,611
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,DIANA DiZOGLIO,Democratic,2,5-3,5,227
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,DIANA DiZOGLIO,Democratic,2,5-3A,5,122
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,DIANA DiZOGLIO,Democratic,2,6-1,6,575
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,DIANA DiZOGLIO,Democratic,2,6-2,6,351
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,DIANA DiZOGLIO,Democratic,2,6-3,6,363
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,DIANA DiZOGLIO,Democratic,2,7-1,7,317
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,DIANA DiZOGLIO,Democratic,2,7-2,7,283
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,DIANA DiZOGLIO,Democratic,2,7-3,7,181
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,DIANA DiZOGLIO,Democratic,2,7-3A,7,147
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,DIANA DiZOGLIO,Democratic,2,8-1,8,427
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,DIANA DiZOGLIO,Democratic,2,8-2,8,332
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,DIANA DiZOGLIO,Democratic,2,8-3,8,276
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,GLORIA A. CABALLERO-ROCA,Green-Rainbow Party,3,1-1,1,14
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,GLORIA A. CABALLERO-ROCA,Green-Rainbow Party,3,1-2,1,27
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,GLORIA A. CABALLERO-ROCA,Green-Rainbow Party,3,1-3,1,22
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,GLORIA A. CABALLERO-ROCA,Green-Rainbow Party,3,2-1,2,9
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,GLORIA A. CABALLERO-ROCA,Green-Rainbow Party,3,2-2,2,14
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,GLORIA A. CABALLERO-ROCA,Green-Rainbow Party,3,2-3,2,25
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,GLORIA A. CABALLERO-ROCA,Green-Rainbow Party,3,3-1,3,16
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,GLORIA A. CABALLERO-ROCA,Green-Rainbow Party,3,3-1A,3,23
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,GLORIA A. CABALLERO-ROCA,Green-Rainbow Party,3,3-2,3,34
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,GLORIA A. CABALLERO-ROCA,Green-Rainbow Party,3,3-3,3,19
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,GLORIA A. CABALLERO-ROCA,Green-Rainbow Party,3,4-1,4,21
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,GLORIA A. CABALLERO-ROCA,Green-Rainbow Party,3,4-2,4,21
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,GLORIA A. CABALLERO-ROCA,Green-Rainbow Party,3,4-3,4,24
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,GLORIA A. CABALLERO-ROCA,Green-Rainbow Party,3,5-1,5,15
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,GLORIA A. CABALLERO-ROCA,Green-Rainbow Party,3,5-2,5,30
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,GLORIA A. CABALLERO-ROCA,Green-Rainbow Party,3,5-3,5,14
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,GLORIA A. CABALLERO-ROCA,Green-Rainbow Party,3,5-3A,5,3
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,GLORIA A. CABALLERO-ROCA,Green-Rainbow Party,3,6-1,6,34
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,GLORIA A. CABALLERO-ROCA,Green-Rainbow Party,3,6-2,6,20
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,GLORIA A. CABALLERO-ROCA,Green-Rainbow Party,3,6-3,6,19
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,GLORIA A. CABALLERO-ROCA,Green-Rainbow Party,3,7-1,7,13
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,GLORIA A. CABALLERO-ROCA,Green-Rainbow Party,3,7-2,7,17
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,GLORIA A. CABALLERO-ROCA,Green-Rainbow Party,3,7-3,7,9
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,GLORIA A. CABALLERO-ROCA,Green-Rainbow Party,3,7-3A,7,2
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,GLORIA A. CABALLERO-ROCA,Green-Rainbow Party,3,8-1,8,27
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,GLORIA A. CABALLERO-ROCA,Green-Rainbow Party,3,8-2,8,12
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,GLORIA A. CABALLERO-ROCA,Green-Rainbow Party,3,8-3,8,7
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,"DOMINIC GIANNONE, III",Workers Party,4,1-1,1,17
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,"DOMINIC GIANNONE, III",Workers Party,4,1-2,1,11
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,"DOMINIC GIANNONE, III",Workers Party,4,1-3,1,21
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,"DOMINIC GIANNONE, III",Workers Party,4,2-1,2,14
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,"DOMINIC GIANNONE, III",Workers Party,4,2-2,2,19
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,"DOMINIC GIANNONE, III",Workers Party,4,2-3,2,12
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,"DOMINIC GIANNONE, III",Workers Party,4,3-1,3,12
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,"DOMINIC GIANNONE, III",Workers Party,4,3-1A,3,12
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,"DOMINIC GIANNONE, III",Workers Party,4,3-2,3,24
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,"DOMINIC GIANNONE, III",Workers Party,4,3-3,3,24
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,"DOMINIC GIANNONE, III",Workers Party,4,4-1,4,22
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,"DOMINIC GIANNONE, III",Workers Party,4,4-2,4,6
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,"DOMINIC GIANNONE, III",Workers Party,4,4-3,4,21
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,"DOMINIC GIANNONE, III",Workers Party,4,5-1,5,14
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,"DOMINIC GIANNONE, III",Workers Party,4,5-2,5,27
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,"DOMINIC GIANNONE, III",Workers Party,4,5-3,5,7
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,"DOMINIC GIANNONE, III",Workers Party,4,5-3A,5,2
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,"DOMINIC GIANNONE, III",Workers Party,4,6-1,6,21
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,"DOMINIC GIANNONE, III",Workers Party,4,6-2,6,10
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,"DOMINIC GIANNONE, III",Workers Party,4,6-3,6,20
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,"DOMINIC GIANNONE, III",Workers Party,4,7-1,7,11
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,"DOMINIC GIANNONE, III",Workers Party,4,7-2,7,11
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,"DOMINIC GIANNONE, III",Workers Party,4,7-3,7,16
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,"DOMINIC GIANNONE, III",Workers Party,4,7-3A,7,5
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,"DOMINIC GIANNONE, III",Workers Party,4,8-1,8,12
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,"DOMINIC GIANNONE, III",Workers Party,4,8-2,8,10
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,"DOMINIC GIANNONE, III",Workers Party,4,8-3,8,10
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,DANIEL RIEK,Libertarian,5,1-1,1,7
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,DANIEL RIEK,Libertarian,5,1-2,1,5
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,DANIEL RIEK,Libertarian,5,1-3,1,14
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,DANIEL RIEK,Libertarian,5,2-1,2,7
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,DANIEL RIEK,Libertarian,5,2-2,2,7
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,DANIEL RIEK,Libertarian,5,2-3,2,8
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,DANIEL RIEK,Libertarian,5,3-1,3,9
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,DANIEL RIEK,Libertarian,5,3-1A,3,5
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,DANIEL RIEK,Libertarian,5,3-2,3,12
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,DANIEL RIEK,Libertarian,5,3-3,3,22
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,DANIEL RIEK,Libertarian,5,4-1,4,9
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,DANIEL RIEK,Libertarian,5,4-2,4,6
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,DANIEL RIEK,Libertarian,5,4-3,4,4
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,DANIEL RIEK,Libertarian,5,5-1,5,7
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,DANIEL RIEK,Libertarian,5,5-2,5,15
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,DANIEL RIEK,Libertarian,5,5-3,5,7
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,DANIEL RIEK,Libertarian,5,5-3A,5,2
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,DANIEL RIEK,Libertarian,5,6-1,6,11
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,DANIEL RIEK,Libertarian,5,6-2,6,8
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,DANIEL RIEK,Libertarian,5,6-3,6,7
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,DANIEL RIEK,Libertarian,5,7-1,7,8
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,DANIEL RIEK,Libertarian,5,7-2,7,9
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,DANIEL RIEK,Libertarian,5,7-3,7,6
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,DANIEL RIEK,Libertarian,5,7-3A,7,3
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,DANIEL RIEK,Libertarian,5,8-1,8,14
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,DANIEL RIEK,Libertarian,5,8-2,8,13
+malden_state_election_2022_11_08,2022-11-08,state,AUDITOR,auditor,5,DANIEL RIEK,Libertarian,5,8-3,8,8
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN CONGRESS FIFTH,representative_in_congress_fifth,6,KATHERINE M. CLARK,Democratic,1,1-1,1,366
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN CONGRESS FIFTH,representative_in_congress_fifth,6,KATHERINE M. CLARK,Democratic,1,1-2,1,435
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN CONGRESS FIFTH,representative_in_congress_fifth,6,KATHERINE M. CLARK,Democratic,1,1-3,1,462
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN CONGRESS FIFTH,representative_in_congress_fifth,6,KATHERINE M. CLARK,Democratic,1,2-1,2,361
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN CONGRESS FIFTH,representative_in_congress_fifth,6,KATHERINE M. CLARK,Democratic,1,2-2,2,353
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN CONGRESS FIFTH,representative_in_congress_fifth,6,KATHERINE M. CLARK,Democratic,1,2-3,2,473
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN CONGRESS FIFTH,representative_in_congress_fifth,6,KATHERINE M. CLARK,Democratic,1,3-1,3,324
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN CONGRESS FIFTH,representative_in_congress_fifth,6,KATHERINE M. CLARK,Democratic,1,3-1A,3,394
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN CONGRESS FIFTH,representative_in_congress_fifth,6,KATHERINE M. CLARK,Democratic,1,3-2,3,498
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN CONGRESS FIFTH,representative_in_congress_fifth,6,KATHERINE M. CLARK,Democratic,1,3-3,3,686
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN CONGRESS FIFTH,representative_in_congress_fifth,6,KATHERINE M. CLARK,Democratic,1,4-1,4,413
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN CONGRESS FIFTH,representative_in_congress_fifth,6,KATHERINE M. CLARK,Democratic,1,4-2,4,298
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN CONGRESS FIFTH,representative_in_congress_fifth,6,KATHERINE M. CLARK,Democratic,1,4-3,4,447
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN CONGRESS FIFTH,representative_in_congress_fifth,6,KATHERINE M. CLARK,Democratic,1,5-1,5,444
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN CONGRESS FIFTH,representative_in_congress_fifth,6,KATHERINE M. CLARK,Democratic,1,5-2,5,734
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN CONGRESS FIFTH,representative_in_congress_fifth,6,KATHERINE M. CLARK,Democratic,1,5-3,5,278
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN CONGRESS FIFTH,representative_in_congress_fifth,6,KATHERINE M. CLARK,Democratic,1,5-3A,5,140
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN CONGRESS FIFTH,representative_in_congress_fifth,6,KATHERINE M. CLARK,Democratic,1,6-1,6,675
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN CONGRESS FIFTH,representative_in_congress_fifth,6,KATHERINE M. CLARK,Democratic,1,6-2,6,410
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN CONGRESS FIFTH,representative_in_congress_fifth,6,KATHERINE M. CLARK,Democratic,1,6-3,6,413
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN CONGRESS FIFTH,representative_in_congress_fifth,6,KATHERINE M. CLARK,Democratic,1,7-1,7,368
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN CONGRESS FIFTH,representative_in_congress_fifth,6,KATHERINE M. CLARK,Democratic,1,7-2,7,344
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN CONGRESS FIFTH,representative_in_congress_fifth,6,KATHERINE M. CLARK,Democratic,1,7-3,7,218
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN CONGRESS FIFTH,representative_in_congress_fifth,6,KATHERINE M. CLARK,Democratic,1,7-3A,7,168
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN CONGRESS FIFTH,representative_in_congress_fifth,6,KATHERINE M. CLARK,Democratic,1,8-1,8,495
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN CONGRESS FIFTH,representative_in_congress_fifth,6,KATHERINE M. CLARK,Democratic,1,8-2,8,382
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN CONGRESS FIFTH,representative_in_congress_fifth,6,KATHERINE M. CLARK,Democratic,1,8-3,8,307
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN CONGRESS FIFTH,representative_in_congress_fifth,6,CAROLINE COLARUSSO,Republican,2,1-1,1,78
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN CONGRESS FIFTH,representative_in_congress_fifth,6,CAROLINE COLARUSSO,Republican,2,1-2,1,138
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN CONGRESS FIFTH,representative_in_congress_fifth,6,CAROLINE COLARUSSO,Republican,2,1-3,1,149
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN CONGRESS FIFTH,representative_in_congress_fifth,6,CAROLINE COLARUSSO,Republican,2,2-1,2,105
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN CONGRESS FIFTH,representative_in_congress_fifth,6,CAROLINE COLARUSSO,Republican,2,2-2,2,177
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN CONGRESS FIFTH,representative_in_congress_fifth,6,CAROLINE COLARUSSO,Republican,2,2-3,2,194
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN CONGRESS FIFTH,representative_in_congress_fifth,6,CAROLINE COLARUSSO,Republican,2,3-1,3,114
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN CONGRESS FIFTH,representative_in_congress_fifth,6,CAROLINE COLARUSSO,Republican,2,3-1A,3,149
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN CONGRESS FIFTH,representative_in_congress_fifth,6,CAROLINE COLARUSSO,Republican,2,3-2,3,137
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN CONGRESS FIFTH,representative_in_congress_fifth,6,CAROLINE COLARUSSO,Republican,2,3-3,3,175
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN CONGRESS FIFTH,representative_in_congress_fifth,6,CAROLINE COLARUSSO,Republican,2,4-1,4,117
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN CONGRESS FIFTH,representative_in_congress_fifth,6,CAROLINE COLARUSSO,Republican,2,4-2,4,63
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN CONGRESS FIFTH,representative_in_congress_fifth,6,CAROLINE COLARUSSO,Republican,2,4-3,4,79
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN CONGRESS FIFTH,representative_in_congress_fifth,6,CAROLINE COLARUSSO,Republican,2,5-1,5,171
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN CONGRESS FIFTH,representative_in_congress_fifth,6,CAROLINE COLARUSSO,Republican,2,5-2,5,236
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN CONGRESS FIFTH,representative_in_congress_fifth,6,CAROLINE COLARUSSO,Republican,2,5-3,5,84
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN CONGRESS FIFTH,representative_in_congress_fifth,6,CAROLINE COLARUSSO,Republican,2,5-3A,5,18
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN CONGRESS FIFTH,representative_in_congress_fifth,6,CAROLINE COLARUSSO,Republican,2,6-1,6,219
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN CONGRESS FIFTH,representative_in_congress_fifth,6,CAROLINE COLARUSSO,Republican,2,6-2,6,161
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN CONGRESS FIFTH,representative_in_congress_fifth,6,CAROLINE COLARUSSO,Republican,2,6-3,6,198
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN CONGRESS FIFTH,representative_in_congress_fifth,6,CAROLINE COLARUSSO,Republican,2,7-1,7,94
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN CONGRESS FIFTH,representative_in_congress_fifth,6,CAROLINE COLARUSSO,Republican,2,7-2,7,122
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN CONGRESS FIFTH,representative_in_congress_fifth,6,CAROLINE COLARUSSO,Republican,2,7-3,7,85
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN CONGRESS FIFTH,representative_in_congress_fifth,6,CAROLINE COLARUSSO,Republican,2,7-3A,7,44
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN CONGRESS FIFTH,representative_in_congress_fifth,6,CAROLINE COLARUSSO,Republican,2,8-1,8,211
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN CONGRESS FIFTH,representative_in_congress_fifth,6,CAROLINE COLARUSSO,Republican,2,8-2,8,159
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN CONGRESS FIFTH,representative_in_congress_fifth,6,CAROLINE COLARUSSO,Republican,2,8-3,8,108
+malden_state_election_2022_11_08,2022-11-08,state,COUNCILLOR SIXTH DISTRICT,councillor_sixth_district,7,TERRENCE W. KENNEDY,Democratic,1,1-1,1,381
+malden_state_election_2022_11_08,2022-11-08,state,COUNCILLOR SIXTH DISTRICT,councillor_sixth_district,7,TERRENCE W. KENNEDY,Democratic,1,1-2,1,450
+malden_state_election_2022_11_08,2022-11-08,state,COUNCILLOR SIXTH DISTRICT,councillor_sixth_district,7,TERRENCE W. KENNEDY,Democratic,1,1-3,1,478
+malden_state_election_2022_11_08,2022-11-08,state,COUNCILLOR SIXTH DISTRICT,councillor_sixth_district,7,TERRENCE W. KENNEDY,Democratic,1,2-1,2,387
+malden_state_election_2022_11_08,2022-11-08,state,COUNCILLOR SIXTH DISTRICT,councillor_sixth_district,7,TERRENCE W. KENNEDY,Democratic,1,2-2,2,378
+malden_state_election_2022_11_08,2022-11-08,state,COUNCILLOR SIXTH DISTRICT,councillor_sixth_district,7,TERRENCE W. KENNEDY,Democratic,1,2-3,2,513
+malden_state_election_2022_11_08,2022-11-08,state,COUNCILLOR SIXTH DISTRICT,councillor_sixth_district,7,TERRENCE W. KENNEDY,Democratic,1,3-1,3,333
+malden_state_election_2022_11_08,2022-11-08,state,COUNCILLOR SIXTH DISTRICT,councillor_sixth_district,7,TERRENCE W. KENNEDY,Democratic,1,3-1A,3,394
+malden_state_election_2022_11_08,2022-11-08,state,COUNCILLOR SIXTH DISTRICT,councillor_sixth_district,7,TERRENCE W. KENNEDY,Democratic,1,3-2,3,504
+malden_state_election_2022_11_08,2022-11-08,state,COUNCILLOR SIXTH DISTRICT,councillor_sixth_district,7,TERRENCE W. KENNEDY,Democratic,1,3-3,3,658
+malden_state_election_2022_11_08,2022-11-08,state,COUNCILLOR SIXTH DISTRICT,councillor_sixth_district,7,TERRENCE W. KENNEDY,Democratic,1,4-1,4,441
+malden_state_election_2022_11_08,2022-11-08,state,COUNCILLOR SIXTH DISTRICT,councillor_sixth_district,7,TERRENCE W. KENNEDY,Democratic,1,4-2,4,290
+malden_state_election_2022_11_08,2022-11-08,state,COUNCILLOR SIXTH DISTRICT,councillor_sixth_district,7,TERRENCE W. KENNEDY,Democratic,1,4-3,4,440
+malden_state_election_2022_11_08,2022-11-08,state,COUNCILLOR SIXTH DISTRICT,councillor_sixth_district,7,TERRENCE W. KENNEDY,Democratic,1,5-1,5,484
+malden_state_election_2022_11_08,2022-11-08,state,COUNCILLOR SIXTH DISTRICT,councillor_sixth_district,7,TERRENCE W. KENNEDY,Democratic,1,5-2,5,736
+malden_state_election_2022_11_08,2022-11-08,state,COUNCILLOR SIXTH DISTRICT,councillor_sixth_district,7,TERRENCE W. KENNEDY,Democratic,1,5-3,5,283
+malden_state_election_2022_11_08,2022-11-08,state,COUNCILLOR SIXTH DISTRICT,councillor_sixth_district,7,TERRENCE W. KENNEDY,Democratic,1,5-3A,5,142
+malden_state_election_2022_11_08,2022-11-08,state,COUNCILLOR SIXTH DISTRICT,councillor_sixth_district,7,TERRENCE W. KENNEDY,Democratic,1,6-1,6,684
+malden_state_election_2022_11_08,2022-11-08,state,COUNCILLOR SIXTH DISTRICT,councillor_sixth_district,7,TERRENCE W. KENNEDY,Democratic,1,6-2,6,433
+malden_state_election_2022_11_08,2022-11-08,state,COUNCILLOR SIXTH DISTRICT,councillor_sixth_district,7,TERRENCE W. KENNEDY,Democratic,1,6-3,6,469
+malden_state_election_2022_11_08,2022-11-08,state,COUNCILLOR SIXTH DISTRICT,councillor_sixth_district,7,TERRENCE W. KENNEDY,Democratic,1,7-1,7,378
+malden_state_election_2022_11_08,2022-11-08,state,COUNCILLOR SIXTH DISTRICT,councillor_sixth_district,7,TERRENCE W. KENNEDY,Democratic,1,7-2,7,372
+malden_state_election_2022_11_08,2022-11-08,state,COUNCILLOR SIXTH DISTRICT,councillor_sixth_district,7,TERRENCE W. KENNEDY,Democratic,1,7-3,7,238
+malden_state_election_2022_11_08,2022-11-08,state,COUNCILLOR SIXTH DISTRICT,councillor_sixth_district,7,TERRENCE W. KENNEDY,Democratic,1,7-3A,7,170
+malden_state_election_2022_11_08,2022-11-08,state,COUNCILLOR SIXTH DISTRICT,councillor_sixth_district,7,TERRENCE W. KENNEDY,Democratic,1,8-1,8,544
+malden_state_election_2022_11_08,2022-11-08,state,COUNCILLOR SIXTH DISTRICT,councillor_sixth_district,7,TERRENCE W. KENNEDY,Democratic,1,8-2,8,440
+malden_state_election_2022_11_08,2022-11-08,state,COUNCILLOR SIXTH DISTRICT,councillor_sixth_district,7,TERRENCE W. KENNEDY,Democratic,1,8-3,8,329
+malden_state_election_2022_11_08,2022-11-08,state,SENATOR IN GENERAL COURT FIFTH,senator_in_general_court_fifth,8,JASON M. LEWIS,Democratic,1,1-1,1,342
+malden_state_election_2022_11_08,2022-11-08,state,SENATOR IN GENERAL COURT FIFTH,senator_in_general_court_fifth,8,JASON M. LEWIS,Democratic,1,1-2,1,413
+malden_state_election_2022_11_08,2022-11-08,state,SENATOR IN GENERAL COURT FIFTH,senator_in_general_court_fifth,8,JASON M. LEWIS,Democratic,1,1-3,1,445
+malden_state_election_2022_11_08,2022-11-08,state,SENATOR IN GENERAL COURT FIFTH,senator_in_general_court_fifth,8,JASON M. LEWIS,Democratic,1,2-1,2,348
+malden_state_election_2022_11_08,2022-11-08,state,SENATOR IN GENERAL COURT FIFTH,senator_in_general_court_fifth,8,JASON M. LEWIS,Democratic,1,2-2,2,328
+malden_state_election_2022_11_08,2022-11-08,state,SENATOR IN GENERAL COURT FIFTH,senator_in_general_court_fifth,8,JASON M. LEWIS,Democratic,1,2-3,2,466
+malden_state_election_2022_11_08,2022-11-08,state,SENATOR IN GENERAL COURT FIFTH,senator_in_general_court_fifth,8,JASON M. LEWIS,Democratic,1,3-1,3,311
+malden_state_election_2022_11_08,2022-11-08,state,SENATOR IN GENERAL COURT FIFTH,senator_in_general_court_fifth,8,JASON M. LEWIS,Democratic,1,3-1A,3,379
+malden_state_election_2022_11_08,2022-11-08,state,SENATOR IN GENERAL COURT FIFTH,senator_in_general_court_fifth,8,JASON M. LEWIS,Democratic,1,3-2,3,488
+malden_state_election_2022_11_08,2022-11-08,state,SENATOR IN GENERAL COURT FIFTH,senator_in_general_court_fifth,8,JASON M. LEWIS,Democratic,1,3-3,3,650
+malden_state_election_2022_11_08,2022-11-08,state,SENATOR IN GENERAL COURT FIFTH,senator_in_general_court_fifth,8,JASON M. LEWIS,Democratic,1,4-1,4,406
+malden_state_election_2022_11_08,2022-11-08,state,SENATOR IN GENERAL COURT FIFTH,senator_in_general_court_fifth,8,JASON M. LEWIS,Democratic,1,4-2,4,284
+malden_state_election_2022_11_08,2022-11-08,state,SENATOR IN GENERAL COURT FIFTH,senator_in_general_court_fifth,8,JASON M. LEWIS,Democratic,1,4-3,4,421
+malden_state_election_2022_11_08,2022-11-08,state,SENATOR IN GENERAL COURT FIFTH,senator_in_general_court_fifth,8,JASON M. LEWIS,Democratic,1,5-1,5,425
+malden_state_election_2022_11_08,2022-11-08,state,SENATOR IN GENERAL COURT FIFTH,senator_in_general_court_fifth,8,JASON M. LEWIS,Democratic,1,5-2,5,698
+malden_state_election_2022_11_08,2022-11-08,state,SENATOR IN GENERAL COURT FIFTH,senator_in_general_court_fifth,8,JASON M. LEWIS,Democratic,1,5-3,5,262
+malden_state_election_2022_11_08,2022-11-08,state,SENATOR IN GENERAL COURT FIFTH,senator_in_general_court_fifth,8,JASON M. LEWIS,Democratic,1,5-3A,5,134
+malden_state_election_2022_11_08,2022-11-08,state,SENATOR IN GENERAL COURT FIFTH,senator_in_general_court_fifth,8,JASON M. LEWIS,Democratic,1,6-1,6,640
+malden_state_election_2022_11_08,2022-11-08,state,SENATOR IN GENERAL COURT FIFTH,senator_in_general_court_fifth,8,JASON M. LEWIS,Democratic,1,6-2,6,385
+malden_state_election_2022_11_08,2022-11-08,state,SENATOR IN GENERAL COURT FIFTH,senator_in_general_court_fifth,8,JASON M. LEWIS,Democratic,1,6-3,6,394
+malden_state_election_2022_11_08,2022-11-08,state,SENATOR IN GENERAL COURT FIFTH,senator_in_general_court_fifth,8,JASON M. LEWIS,Democratic,1,7-1,7,347
+malden_state_election_2022_11_08,2022-11-08,state,SENATOR IN GENERAL COURT FIFTH,senator_in_general_court_fifth,8,JASON M. LEWIS,Democratic,1,7-2,7,315
+malden_state_election_2022_11_08,2022-11-08,state,SENATOR IN GENERAL COURT FIFTH,senator_in_general_court_fifth,8,JASON M. LEWIS,Democratic,1,7-3,7,198
+malden_state_election_2022_11_08,2022-11-08,state,SENATOR IN GENERAL COURT FIFTH,senator_in_general_court_fifth,8,JASON M. LEWIS,Democratic,1,7-3A,7,160
+malden_state_election_2022_11_08,2022-11-08,state,SENATOR IN GENERAL COURT FIFTH,senator_in_general_court_fifth,8,JASON M. LEWIS,Democratic,1,8-1,8,450
+malden_state_election_2022_11_08,2022-11-08,state,SENATOR IN GENERAL COURT FIFTH,senator_in_general_court_fifth,8,JASON M. LEWIS,Democratic,1,8-2,8,368
+malden_state_election_2022_11_08,2022-11-08,state,SENATOR IN GENERAL COURT FIFTH,senator_in_general_court_fifth,8,JASON M. LEWIS,Democratic,1,8-3,8,291
+malden_state_election_2022_11_08,2022-11-08,state,SENATOR IN GENERAL COURT FIFTH,senator_in_general_court_fifth,8,"EDWARD F. DOMBROSKI, JR.",Republican,2,1-1,1,86
+malden_state_election_2022_11_08,2022-11-08,state,SENATOR IN GENERAL COURT FIFTH,senator_in_general_court_fifth,8,"EDWARD F. DOMBROSKI, JR.",Republican,2,1-2,1,151
+malden_state_election_2022_11_08,2022-11-08,state,SENATOR IN GENERAL COURT FIFTH,senator_in_general_court_fifth,8,"EDWARD F. DOMBROSKI, JR.",Republican,2,1-3,1,152
+malden_state_election_2022_11_08,2022-11-08,state,SENATOR IN GENERAL COURT FIFTH,senator_in_general_court_fifth,8,"EDWARD F. DOMBROSKI, JR.",Republican,2,2-1,2,106
+malden_state_election_2022_11_08,2022-11-08,state,SENATOR IN GENERAL COURT FIFTH,senator_in_general_court_fifth,8,"EDWARD F. DOMBROSKI, JR.",Republican,2,2-2,2,179
+malden_state_election_2022_11_08,2022-11-08,state,SENATOR IN GENERAL COURT FIFTH,senator_in_general_court_fifth,8,"EDWARD F. DOMBROSKI, JR.",Republican,2,2-3,2,195
+malden_state_election_2022_11_08,2022-11-08,state,SENATOR IN GENERAL COURT FIFTH,senator_in_general_court_fifth,8,"EDWARD F. DOMBROSKI, JR.",Republican,2,3-1,3,113
+malden_state_election_2022_11_08,2022-11-08,state,SENATOR IN GENERAL COURT FIFTH,senator_in_general_court_fifth,8,"EDWARD F. DOMBROSKI, JR.",Republican,2,3-1A,3,154
+malden_state_election_2022_11_08,2022-11-08,state,SENATOR IN GENERAL COURT FIFTH,senator_in_general_court_fifth,8,"EDWARD F. DOMBROSKI, JR.",Republican,2,3-2,3,137
+malden_state_election_2022_11_08,2022-11-08,state,SENATOR IN GENERAL COURT FIFTH,senator_in_general_court_fifth,8,"EDWARD F. DOMBROSKI, JR.",Republican,2,3-3,3,202
+malden_state_election_2022_11_08,2022-11-08,state,SENATOR IN GENERAL COURT FIFTH,senator_in_general_court_fifth,8,"EDWARD F. DOMBROSKI, JR.",Republican,2,4-1,4,126
+malden_state_election_2022_11_08,2022-11-08,state,SENATOR IN GENERAL COURT FIFTH,senator_in_general_court_fifth,8,"EDWARD F. DOMBROSKI, JR.",Republican,2,4-2,4,67
+malden_state_election_2022_11_08,2022-11-08,state,SENATOR IN GENERAL COURT FIFTH,senator_in_general_court_fifth,8,"EDWARD F. DOMBROSKI, JR.",Republican,2,4-3,4,92
+malden_state_election_2022_11_08,2022-11-08,state,SENATOR IN GENERAL COURT FIFTH,senator_in_general_court_fifth,8,"EDWARD F. DOMBROSKI, JR.",Republican,2,5-1,5,179
+malden_state_election_2022_11_08,2022-11-08,state,SENATOR IN GENERAL COURT FIFTH,senator_in_general_court_fifth,8,"EDWARD F. DOMBROSKI, JR.",Republican,2,5-2,5,263
+malden_state_election_2022_11_08,2022-11-08,state,SENATOR IN GENERAL COURT FIFTH,senator_in_general_court_fifth,8,"EDWARD F. DOMBROSKI, JR.",Republican,2,5-3,5,98
+malden_state_election_2022_11_08,2022-11-08,state,SENATOR IN GENERAL COURT FIFTH,senator_in_general_court_fifth,8,"EDWARD F. DOMBROSKI, JR.",Republican,2,5-3A,5,20
+malden_state_election_2022_11_08,2022-11-08,state,SENATOR IN GENERAL COURT FIFTH,senator_in_general_court_fifth,8,"EDWARD F. DOMBROSKI, JR.",Republican,2,6-1,6,231
+malden_state_election_2022_11_08,2022-11-08,state,SENATOR IN GENERAL COURT FIFTH,senator_in_general_court_fifth,8,"EDWARD F. DOMBROSKI, JR.",Republican,2,6-2,6,172
+malden_state_election_2022_11_08,2022-11-08,state,SENATOR IN GENERAL COURT FIFTH,senator_in_general_court_fifth,8,"EDWARD F. DOMBROSKI, JR.",Republican,2,6-3,6,212
+malden_state_election_2022_11_08,2022-11-08,state,SENATOR IN GENERAL COURT FIFTH,senator_in_general_court_fifth,8,"EDWARD F. DOMBROSKI, JR.",Republican,2,7-1,7,103
+malden_state_election_2022_11_08,2022-11-08,state,SENATOR IN GENERAL COURT FIFTH,senator_in_general_court_fifth,8,"EDWARD F. DOMBROSKI, JR.",Republican,2,7-2,7,129
+malden_state_election_2022_11_08,2022-11-08,state,SENATOR IN GENERAL COURT FIFTH,senator_in_general_court_fifth,8,"EDWARD F. DOMBROSKI, JR.",Republican,2,7-3,7,96
+malden_state_election_2022_11_08,2022-11-08,state,SENATOR IN GENERAL COURT FIFTH,senator_in_general_court_fifth,8,"EDWARD F. DOMBROSKI, JR.",Republican,2,7-3A,7,47
+malden_state_election_2022_11_08,2022-11-08,state,SENATOR IN GENERAL COURT FIFTH,senator_in_general_court_fifth,8,"EDWARD F. DOMBROSKI, JR.",Republican,2,8-1,8,253
+malden_state_election_2022_11_08,2022-11-08,state,SENATOR IN GENERAL COURT FIFTH,senator_in_general_court_fifth,8,"EDWARD F. DOMBROSKI, JR.",Republican,2,8-2,8,168
+malden_state_election_2022_11_08,2022-11-08,state,SENATOR IN GENERAL COURT FIFTH,senator_in_general_court_fifth,8,"EDWARD F. DOMBROSKI, JR.",Republican,2,8-3,8,114
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN GENERAL COURT,representative_in_general_court,9,KATE LIPPER-GARABEDIAN,Democratic,1,5-2,5,744
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN GENERAL COURT,representative_in_general_court,9,KATE LIPPER-GARABEDIAN,Democratic,1,5-3A,5,143
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN GENERAL COURT,representative_in_general_court,9,STEVEN ULTRINO,Democratic,2,2-1,2,395
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN GENERAL COURT,representative_in_general_court,9,STEVEN ULTRINO,Democratic,2,2-2,2,414
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN GENERAL COURT,representative_in_general_court,9,STEVEN ULTRINO,Democratic,2,2-3,2,550
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN GENERAL COURT,representative_in_general_court,9,STEVEN ULTRINO,Democratic,2,3-1,3,336
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN GENERAL COURT,representative_in_general_court,9,STEVEN ULTRINO,Democratic,2,3-2,3,527
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN GENERAL COURT,representative_in_general_court,9,STEVEN ULTRINO,Democratic,2,4-1,4,458
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN GENERAL COURT,representative_in_general_court,9,STEVEN ULTRINO,Democratic,2,4-2,4,296
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN GENERAL COURT,representative_in_general_court,9,STEVEN ULTRINO,Democratic,2,4-3,4,453
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN GENERAL COURT,representative_in_general_court,9,STEVEN ULTRINO,Democratic,2,5-1,5,504
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN GENERAL COURT,representative_in_general_court,9,STEVEN ULTRINO,Democratic,2,5-3,5,285
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN GENERAL COURT,representative_in_general_court,9,STEVEN ULTRINO,Democratic,2,6-1,6,722
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN GENERAL COURT,representative_in_general_court,9,STEVEN ULTRINO,Democratic,2,6-2,6,442
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN GENERAL COURT,representative_in_general_court,9,STEVEN ULTRINO,Democratic,2,6-3,6,479
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN GENERAL COURT,representative_in_general_court,9,STEVEN ULTRINO,Democratic,2,7-2,7,371
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN GENERAL COURT,representative_in_general_court,9,STEVEN ULTRINO,Democratic,2,7-3,7,246
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN GENERAL COURT,representative_in_general_court,9,STEVEN ULTRINO,Democratic,2,8-1,8,560
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN GENERAL COURT,representative_in_general_court,9,STEVEN ULTRINO,Democratic,2,8-2,8,444
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN GENERAL COURT,representative_in_general_court,9,STEVEN ULTRINO,Democratic,2,8-3,8,335
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN GENERAL COURT,representative_in_general_court,9,PAUL J. DONATO,Democratic,3,1-1,1,393
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN GENERAL COURT,representative_in_general_court,9,PAUL J. DONATO,Democratic,3,1-2,1,451
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN GENERAL COURT,representative_in_general_court,9,PAUL J. DONATO,Democratic,3,1-3,1,492
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN GENERAL COURT,representative_in_general_court,9,PAUL J. DONATO,Democratic,3,3-1A,3,424
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN GENERAL COURT,representative_in_general_court,9,PAUL J. DONATO,Democratic,3,3-3,3,655
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN GENERAL COURT,representative_in_general_court,9,PAUL J. DONATO,Democratic,3,7-1,7,386
+malden_state_election_2022_11_08,2022-11-08,state,REPRESENTATIVE IN GENERAL COURT,representative_in_general_court,9,PAUL J. DONATO,Democratic,3,7-3A,7,175
+malden_state_election_2022_11_08,2022-11-08,state,DISTRICT ATTORNEY NORTHERN DISTRICT,district_attorney_northern_district,10,MARIAN T. RYAN,Democratic,1,1-1,1,378
+malden_state_election_2022_11_08,2022-11-08,state,DISTRICT ATTORNEY NORTHERN DISTRICT,district_attorney_northern_district,10,MARIAN T. RYAN,Democratic,1,1-2,1,442
+malden_state_election_2022_11_08,2022-11-08,state,DISTRICT ATTORNEY NORTHERN DISTRICT,district_attorney_northern_district,10,MARIAN T. RYAN,Democratic,1,1-3,1,481
+malden_state_election_2022_11_08,2022-11-08,state,DISTRICT ATTORNEY NORTHERN DISTRICT,district_attorney_northern_district,10,MARIAN T. RYAN,Democratic,1,2-1,2,393
+malden_state_election_2022_11_08,2022-11-08,state,DISTRICT ATTORNEY NORTHERN DISTRICT,district_attorney_northern_district,10,MARIAN T. RYAN,Democratic,1,2-2,2,375
+malden_state_election_2022_11_08,2022-11-08,state,DISTRICT ATTORNEY NORTHERN DISTRICT,district_attorney_northern_district,10,MARIAN T. RYAN,Democratic,1,2-3,2,512
+malden_state_election_2022_11_08,2022-11-08,state,DISTRICT ATTORNEY NORTHERN DISTRICT,district_attorney_northern_district,10,MARIAN T. RYAN,Democratic,1,3-1,3,335
+malden_state_election_2022_11_08,2022-11-08,state,DISTRICT ATTORNEY NORTHERN DISTRICT,district_attorney_northern_district,10,MARIAN T. RYAN,Democratic,1,3-1A,3,403
+malden_state_election_2022_11_08,2022-11-08,state,DISTRICT ATTORNEY NORTHERN DISTRICT,district_attorney_northern_district,10,MARIAN T. RYAN,Democratic,1,3-2,3,507
+malden_state_election_2022_11_08,2022-11-08,state,DISTRICT ATTORNEY NORTHERN DISTRICT,district_attorney_northern_district,10,MARIAN T. RYAN,Democratic,1,3-3,3,674
+malden_state_election_2022_11_08,2022-11-08,state,DISTRICT ATTORNEY NORTHERN DISTRICT,district_attorney_northern_district,10,MARIAN T. RYAN,Democratic,1,4-1,4,441
+malden_state_election_2022_11_08,2022-11-08,state,DISTRICT ATTORNEY NORTHERN DISTRICT,district_attorney_northern_district,10,MARIAN T. RYAN,Democratic,1,4-2,4,293
+malden_state_election_2022_11_08,2022-11-08,state,DISTRICT ATTORNEY NORTHERN DISTRICT,district_attorney_northern_district,10,MARIAN T. RYAN,Democratic,1,4-3,4,444
+malden_state_election_2022_11_08,2022-11-08,state,DISTRICT ATTORNEY NORTHERN DISTRICT,district_attorney_northern_district,10,MARIAN T. RYAN,Democratic,1,5-1,5,479
+malden_state_election_2022_11_08,2022-11-08,state,DISTRICT ATTORNEY NORTHERN DISTRICT,district_attorney_northern_district,10,MARIAN T. RYAN,Democratic,1,5-2,5,752
+malden_state_election_2022_11_08,2022-11-08,state,DISTRICT ATTORNEY NORTHERN DISTRICT,district_attorney_northern_district,10,MARIAN T. RYAN,Democratic,1,5-3,5,282
+malden_state_election_2022_11_08,2022-11-08,state,DISTRICT ATTORNEY NORTHERN DISTRICT,district_attorney_northern_district,10,MARIAN T. RYAN,Democratic,1,5-3A,5,145
+malden_state_election_2022_11_08,2022-11-08,state,DISTRICT ATTORNEY NORTHERN DISTRICT,district_attorney_northern_district,10,MARIAN T. RYAN,Democratic,1,6-1,6,688
+malden_state_election_2022_11_08,2022-11-08,state,DISTRICT ATTORNEY NORTHERN DISTRICT,district_attorney_northern_district,10,MARIAN T. RYAN,Democratic,1,6-2,6,424
+malden_state_election_2022_11_08,2022-11-08,state,DISTRICT ATTORNEY NORTHERN DISTRICT,district_attorney_northern_district,10,MARIAN T. RYAN,Democratic,1,6-3,6,470
+malden_state_election_2022_11_08,2022-11-08,state,DISTRICT ATTORNEY NORTHERN DISTRICT,district_attorney_northern_district,10,MARIAN T. RYAN,Democratic,1,7-1,7,372
+malden_state_election_2022_11_08,2022-11-08,state,DISTRICT ATTORNEY NORTHERN DISTRICT,district_attorney_northern_district,10,MARIAN T. RYAN,Democratic,1,7-2,7,376
+malden_state_election_2022_11_08,2022-11-08,state,DISTRICT ATTORNEY NORTHERN DISTRICT,district_attorney_northern_district,10,MARIAN T. RYAN,Democratic,1,7-3,7,238
+malden_state_election_2022_11_08,2022-11-08,state,DISTRICT ATTORNEY NORTHERN DISTRICT,district_attorney_northern_district,10,MARIAN T. RYAN,Democratic,1,7-3A,7,169
+malden_state_election_2022_11_08,2022-11-08,state,DISTRICT ATTORNEY NORTHERN DISTRICT,district_attorney_northern_district,10,MARIAN T. RYAN,Democratic,1,8-1,8,545
+malden_state_election_2022_11_08,2022-11-08,state,DISTRICT ATTORNEY NORTHERN DISTRICT,district_attorney_northern_district,10,MARIAN T. RYAN,Democratic,1,8-2,8,434
+malden_state_election_2022_11_08,2022-11-08,state,DISTRICT ATTORNEY NORTHERN DISTRICT,district_attorney_northern_district,10,MARIAN T. RYAN,Democratic,1,8-3,8,332
+malden_state_election_2022_11_08,2022-11-08,state,SHERIFF MIDDLESEX COUNTY,sheriff_middlesex_county,11,PETER J. KOUTOUJIAN,Democratic,1,1-1,1,373
+malden_state_election_2022_11_08,2022-11-08,state,SHERIFF MIDDLESEX COUNTY,sheriff_middlesex_county,11,PETER J. KOUTOUJIAN,Democratic,1,1-2,1,439
+malden_state_election_2022_11_08,2022-11-08,state,SHERIFF MIDDLESEX COUNTY,sheriff_middlesex_county,11,PETER J. KOUTOUJIAN,Democratic,1,1-3,1,478
+malden_state_election_2022_11_08,2022-11-08,state,SHERIFF MIDDLESEX COUNTY,sheriff_middlesex_county,11,PETER J. KOUTOUJIAN,Democratic,1,2-1,2,389
+malden_state_election_2022_11_08,2022-11-08,state,SHERIFF MIDDLESEX COUNTY,sheriff_middlesex_county,11,PETER J. KOUTOUJIAN,Democratic,1,2-2,2,385
+malden_state_election_2022_11_08,2022-11-08,state,SHERIFF MIDDLESEX COUNTY,sheriff_middlesex_county,11,PETER J. KOUTOUJIAN,Democratic,1,2-3,2,517
+malden_state_election_2022_11_08,2022-11-08,state,SHERIFF MIDDLESEX COUNTY,sheriff_middlesex_county,11,PETER J. KOUTOUJIAN,Democratic,1,3-1,3,340
+malden_state_election_2022_11_08,2022-11-08,state,SHERIFF MIDDLESEX COUNTY,sheriff_middlesex_county,11,PETER J. KOUTOUJIAN,Democratic,1,3-1A,3,408
+malden_state_election_2022_11_08,2022-11-08,state,SHERIFF MIDDLESEX COUNTY,sheriff_middlesex_county,11,PETER J. KOUTOUJIAN,Democratic,1,3-2,3,510
+malden_state_election_2022_11_08,2022-11-08,state,SHERIFF MIDDLESEX COUNTY,sheriff_middlesex_county,11,PETER J. KOUTOUJIAN,Democratic,1,3-3,3,665
+malden_state_election_2022_11_08,2022-11-08,state,SHERIFF MIDDLESEX COUNTY,sheriff_middlesex_county,11,PETER J. KOUTOUJIAN,Democratic,1,4-1,4,442
+malden_state_election_2022_11_08,2022-11-08,state,SHERIFF MIDDLESEX COUNTY,sheriff_middlesex_county,11,PETER J. KOUTOUJIAN,Democratic,1,4-2,4,285
+malden_state_election_2022_11_08,2022-11-08,state,SHERIFF MIDDLESEX COUNTY,sheriff_middlesex_county,11,PETER J. KOUTOUJIAN,Democratic,1,4-3,4,433
+malden_state_election_2022_11_08,2022-11-08,state,SHERIFF MIDDLESEX COUNTY,sheriff_middlesex_county,11,PETER J. KOUTOUJIAN,Democratic,1,5-1,5,479
+malden_state_election_2022_11_08,2022-11-08,state,SHERIFF MIDDLESEX COUNTY,sheriff_middlesex_county,11,PETER J. KOUTOUJIAN,Democratic,1,5-2,5,745
+malden_state_election_2022_11_08,2022-11-08,state,SHERIFF MIDDLESEX COUNTY,sheriff_middlesex_county,11,PETER J. KOUTOUJIAN,Democratic,1,5-3,5,275
+malden_state_election_2022_11_08,2022-11-08,state,SHERIFF MIDDLESEX COUNTY,sheriff_middlesex_county,11,PETER J. KOUTOUJIAN,Democratic,1,5-3A,5,147
+malden_state_election_2022_11_08,2022-11-08,state,SHERIFF MIDDLESEX COUNTY,sheriff_middlesex_county,11,PETER J. KOUTOUJIAN,Democratic,1,6-1,6,679
+malden_state_election_2022_11_08,2022-11-08,state,SHERIFF MIDDLESEX COUNTY,sheriff_middlesex_county,11,PETER J. KOUTOUJIAN,Democratic,1,6-2,6,436
+malden_state_election_2022_11_08,2022-11-08,state,SHERIFF MIDDLESEX COUNTY,sheriff_middlesex_county,11,PETER J. KOUTOUJIAN,Democratic,1,6-3,6,469
+malden_state_election_2022_11_08,2022-11-08,state,SHERIFF MIDDLESEX COUNTY,sheriff_middlesex_county,11,PETER J. KOUTOUJIAN,Democratic,1,7-1,7,374
+malden_state_election_2022_11_08,2022-11-08,state,SHERIFF MIDDLESEX COUNTY,sheriff_middlesex_county,11,PETER J. KOUTOUJIAN,Democratic,1,7-2,7,371
+malden_state_election_2022_11_08,2022-11-08,state,SHERIFF MIDDLESEX COUNTY,sheriff_middlesex_county,11,PETER J. KOUTOUJIAN,Democratic,1,7-3,7,239
+malden_state_election_2022_11_08,2022-11-08,state,SHERIFF MIDDLESEX COUNTY,sheriff_middlesex_county,11,PETER J. KOUTOUJIAN,Democratic,1,7-3A,7,178
+malden_state_election_2022_11_08,2022-11-08,state,SHERIFF MIDDLESEX COUNTY,sheriff_middlesex_county,11,PETER J. KOUTOUJIAN,Democratic,1,8-1,8,553
+malden_state_election_2022_11_08,2022-11-08,state,SHERIFF MIDDLESEX COUNTY,sheriff_middlesex_county,11,PETER J. KOUTOUJIAN,Democratic,1,8-2,8,436
+malden_state_election_2022_11_08,2022-11-08,state,SHERIFF MIDDLESEX COUNTY,sheriff_middlesex_county,11,PETER J. KOUTOUJIAN,Democratic,1,8-3,8,330

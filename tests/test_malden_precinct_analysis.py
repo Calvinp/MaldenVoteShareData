@@ -7,6 +7,7 @@ from scripts.malden_precinct_analysis import (
     build_block_demographics,
     build_overlap_lookup,
     build_report,
+    compute_precinct_historical_partisan_baselines,
     compute_correlations,
     parse_census_api_table,
     weighted_average,
@@ -258,6 +259,123 @@ def test_build_acs_covariates_accumulates_vehicle_denominator_across_sources():
     assert covariates["no_vehicle_share"] == pytest.approx(0.1)
     assert covariates["one_vehicle_share"] == pytest.approx(0.5)
     assert covariates["three_plus_vehicle_share"] == pytest.approx(0.2)
+
+
+def test_compute_precinct_historical_partisan_baselines_uses_only_democratic_republican_contests():
+    rows = [
+        {
+            "election_key": "2022",
+            "contest_slug": "governor",
+            "candidate_party": "Democratic",
+            "precinct": "1-1",
+            "votes": "60",
+        },
+        {
+            "election_key": "2022",
+            "contest_slug": "governor",
+            "candidate_party": "Republican",
+            "precinct": "1-1",
+            "votes": "40",
+        },
+        {
+            "election_key": "2022",
+            "contest_slug": "auditor",
+            "candidate_party": "Democratic",
+            "precinct": "1-1",
+            "votes": "50",
+        },
+        {
+            "election_key": "2022",
+            "contest_slug": "auditor",
+            "candidate_party": "Republican",
+            "precinct": "1-1",
+            "votes": "30",
+        },
+        {
+            "election_key": "2022",
+            "contest_slug": "auditor",
+            "candidate_party": "Green-Rainbow Party",
+            "precinct": "1-1",
+            "votes": "20",
+        },
+        {
+            "election_key": "2024",
+            "contest_slug": "senate",
+            "candidate_party": "Democratic",
+            "precinct": "1-1",
+            "votes": "35",
+        },
+        {
+            "election_key": "2024",
+            "contest_slug": "senate",
+            "candidate_party": "Republican",
+            "precinct": "1-1",
+            "votes": "65",
+        },
+        {
+            "election_key": "2024",
+            "contest_slug": "register_of_deeds",
+            "candidate_party": "Democratic",
+            "precinct": "1-1",
+            "votes": "80",
+        },
+        {
+            "election_key": "2024",
+            "contest_slug": "register_of_deeds",
+            "candidate_party": "Independent",
+            "precinct": "1-1",
+            "votes": "20",
+        },
+        {
+            "election_key": "2022",
+            "contest_slug": "governor",
+            "candidate_party": "Democratic",
+            "precinct": "1-2",
+            "votes": "25",
+        },
+        {
+            "election_key": "2022",
+            "contest_slug": "governor",
+            "candidate_party": "Republican",
+            "precinct": "1-2",
+            "votes": "75",
+        },
+        {
+            "election_key": "2022",
+            "contest_slug": "auditor",
+            "candidate_party": "Democratic",
+            "precinct": "1-2",
+            "votes": "45",
+        },
+        {
+            "election_key": "2022",
+            "contest_slug": "auditor",
+            "candidate_party": "Republican",
+            "precinct": "1-2",
+            "votes": "55",
+        },
+        {
+            "election_key": "2024",
+            "contest_slug": "senate",
+            "candidate_party": "Democratic",
+            "precinct": "1-2",
+            "votes": "90",
+        },
+        {
+            "election_key": "2024",
+            "contest_slug": "senate",
+            "candidate_party": "Republican",
+            "precinct": "1-2",
+            "votes": "10",
+        },
+    ]
+
+    baselines = compute_precinct_historical_partisan_baselines(rows)
+
+    assert baselines["1-1"]["mean_dr_vote_share_2022_2024"] == pytest.approx(0.05)
+    assert baselines["1-1"]["median_dr_vote_share_2022_2024"] == pytest.approx(0.20)
+    assert baselines["1-2"]["mean_dr_vote_share_2022_2024"] == pytest.approx((0.20) / 3.0)
+    assert baselines["1-2"]["median_dr_vote_share_2022_2024"] == pytest.approx(-0.10)
 
 
 def test_compute_correlations_and_report_surface_rankings():

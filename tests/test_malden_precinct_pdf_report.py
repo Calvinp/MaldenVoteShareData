@@ -13,6 +13,7 @@ from scripts.malden_precinct_pdf_report import (
     create_correlation_bar_chart,
     create_scatter_plot,
     example_graph_variables,
+    format_uncertainty_interval_label,
     render_analysis_page,
     render_correlation_overview_pages,
     render_conclusion_page,
@@ -150,7 +151,22 @@ def test_symmetric_uncertainty_half_width_uses_farther_side():
     assert symmetric_uncertainty_half_width(correlation, uncertainty) == 0.29
 
 
-def test_correlation_uncertainty_is_deterministic_and_inflated_for_sparse_block_group_data():
+def test_format_uncertainty_interval_label_uses_explicit_bounds():
+    correlation = CorrelationResult("transit_share", "q1a_yes_pct", 0.24, 0.0, 0.20, 0.0, 10)
+    uncertainty = CorrelationUncertainty(
+        lower=-0.05,
+        upper=0.41,
+        bootstrap_lower=-0.05,
+        bootstrap_upper=0.41,
+        nonzero_count=8,
+        sample_count=10,
+        source_tier="block-group",
+    )
+
+    assert format_uncertainty_interval_label(correlation, uncertainty) == "+0.24 [-0.05, +0.41]"
+
+
+def test_correlation_uncertainty_is_deterministic_and_bounded():
     precinct_rows = [
         {
             "precinct": f"1-{index}",
@@ -170,12 +186,12 @@ def test_correlation_uncertainty_is_deterministic_and_inflated_for_sparse_block_
     assert bicycle_uncertainty == bicycle_uncertainty_repeat
     assert bicycle_uncertainty.source_tier == "block-group"
     assert bicycle_uncertainty.nonzero_count == 4
-    assert bicycle_uncertainty.lower <= bicycle_correlation.spearman_rho <= bicycle_uncertainty.upper
-    assert direct_uncertainty.lower <= direct_correlation.spearman_rho <= direct_uncertainty.upper
-    bicycle_width = bicycle_uncertainty.upper - bicycle_uncertainty.lower
-    direct_width = direct_uncertainty.upper - direct_uncertainty.lower
-    assert direct_width >= direct_uncertainty.bootstrap_upper - direct_uncertainty.bootstrap_lower
-    assert bicycle_width >= bicycle_uncertainty.bootstrap_upper - bicycle_uncertainty.bootstrap_lower
+    assert bicycle_uncertainty.lower == bicycle_uncertainty.bootstrap_lower
+    assert bicycle_uncertainty.upper == bicycle_uncertainty.bootstrap_upper
+    assert direct_uncertainty.lower == direct_uncertainty.bootstrap_lower
+    assert direct_uncertainty.upper == direct_uncertainty.bootstrap_upper
+    assert -1.0 <= bicycle_uncertainty.lower <= bicycle_uncertainty.upper <= 1.0
+    assert -1.0 <= direct_uncertainty.lower <= direct_uncertainty.upper <= 1.0
 
 
 def test_example_graph_pages_follow_q1a_order_and_pair_turnout(tmp_path):

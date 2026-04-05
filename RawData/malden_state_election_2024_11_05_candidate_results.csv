@@ -1,0 +1,676 @@
+election_key,election_date,election_type,contest,contest_slug,contest_order,candidate,candidate_party,candidate_order,precinct,ward,votes
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,AYYADURAI and ELLIS,Independent,1,1-1,1,3
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,AYYADURAI and ELLIS,Independent,1,1-2,1,1
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,AYYADURAI and ELLIS,Independent,1,1-3,1,6
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,AYYADURAI and ELLIS,Independent,1,2-1,2,7
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,AYYADURAI and ELLIS,Independent,1,2-2,2,3
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,AYYADURAI and ELLIS,Independent,1,2-3,2,8
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,AYYADURAI and ELLIS,Independent,1,3-1,3,2
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,AYYADURAI and ELLIS,Independent,1,3-1A,3,3
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,AYYADURAI and ELLIS,Independent,1,3-2,3,3
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,AYYADURAI and ELLIS,Independent,1,3-3,3,5
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,AYYADURAI and ELLIS,Independent,1,4-1,4,4
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,AYYADURAI and ELLIS,Independent,1,4-2,4,4
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,AYYADURAI and ELLIS,Independent,1,4-3,4,5
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,AYYADURAI and ELLIS,Independent,1,5-1,5,7
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,AYYADURAI and ELLIS,Independent,1,5-2,5,4
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,AYYADURAI and ELLIS,Independent,1,5-3,5,1
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,AYYADURAI and ELLIS,Independent,1,5-3A,5,2
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,AYYADURAI and ELLIS,Independent,1,6-1,6,6
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,AYYADURAI and ELLIS,Independent,1,6-2,6,7
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,AYYADURAI and ELLIS,Independent,1,6-3,6,7
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,AYYADURAI and ELLIS,Independent,1,7-1,7,5
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,AYYADURAI and ELLIS,Independent,1,7-2,7,7
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,AYYADURAI and ELLIS,Independent,1,7-3,7,6
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,AYYADURAI and ELLIS,Independent,1,7-3A,7,1
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,AYYADURAI and ELLIS,Independent,1,8-1,8,9
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,AYYADURAI and ELLIS,Independent,1,8-2,8,5
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,AYYADURAI and ELLIS,Independent,1,8-3,8,1
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,DE LA CRUZ and GARCIA,Socialism and Liberation,2,1-1,1,6
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,DE LA CRUZ and GARCIA,Socialism and Liberation,2,1-2,1,9
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,DE LA CRUZ and GARCIA,Socialism and Liberation,2,1-3,1,6
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,DE LA CRUZ and GARCIA,Socialism and Liberation,2,2-1,2,8
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,DE LA CRUZ and GARCIA,Socialism and Liberation,2,2-2,2,6
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,DE LA CRUZ and GARCIA,Socialism and Liberation,2,2-3,2,7
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,DE LA CRUZ and GARCIA,Socialism and Liberation,2,3-1,3,6
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,DE LA CRUZ and GARCIA,Socialism and Liberation,2,3-1A,3,4
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,DE LA CRUZ and GARCIA,Socialism and Liberation,2,3-2,3,20
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,DE LA CRUZ and GARCIA,Socialism and Liberation,2,3-3,3,5
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,DE LA CRUZ and GARCIA,Socialism and Liberation,2,4-1,4,5
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,DE LA CRUZ and GARCIA,Socialism and Liberation,2,4-2,4,7
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,DE LA CRUZ and GARCIA,Socialism and Liberation,2,4-3,4,10
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,DE LA CRUZ and GARCIA,Socialism and Liberation,2,5-1,5,4
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,DE LA CRUZ and GARCIA,Socialism and Liberation,2,5-2,5,8
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,DE LA CRUZ and GARCIA,Socialism and Liberation,2,5-3,5,3
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,DE LA CRUZ and GARCIA,Socialism and Liberation,2,5-3A,5,1
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,DE LA CRUZ and GARCIA,Socialism and Liberation,2,6-1,6,10
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,DE LA CRUZ and GARCIA,Socialism and Liberation,2,6-2,6,4
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,DE LA CRUZ and GARCIA,Socialism and Liberation,2,6-3,6,3
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,DE LA CRUZ and GARCIA,Socialism and Liberation,2,7-1,7,6
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,DE LA CRUZ and GARCIA,Socialism and Liberation,2,7-2,7,8
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,DE LA CRUZ and GARCIA,Socialism and Liberation,2,7-3,7,4
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,DE LA CRUZ and GARCIA,Socialism and Liberation,2,7-3A,7,2
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,DE LA CRUZ and GARCIA,Socialism and Liberation,2,8-1,8,10
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,DE LA CRUZ and GARCIA,Socialism and Liberation,2,8-2,8,6
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,DE LA CRUZ and GARCIA,Socialism and Liberation,2,8-3,8,5
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,HARRIS and WALZ,Democratic,3,1-1,1,570
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,HARRIS and WALZ,Democratic,3,1-2,1,586
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,HARRIS and WALZ,Democratic,3,1-3,1,632
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,HARRIS and WALZ,Democratic,3,2-1,2,496
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,HARRIS and WALZ,Democratic,3,2-2,2,506
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,HARRIS and WALZ,Democratic,3,2-3,2,647
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,HARRIS and WALZ,Democratic,3,3-1,3,398
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,HARRIS and WALZ,Democratic,3,3-1A,3,472
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,HARRIS and WALZ,Democratic,3,3-2,3,692
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,HARRIS and WALZ,Democratic,3,3-3,3,834
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,HARRIS and WALZ,Democratic,3,4-1,4,620
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,HARRIS and WALZ,Democratic,3,4-2,4,442
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,HARRIS and WALZ,Democratic,3,4-3,4,641
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,HARRIS and WALZ,Democratic,3,5-1,5,619
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,HARRIS and WALZ,Democratic,3,5-2,5,958
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,HARRIS and WALZ,Democratic,3,5-3,5,356
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,HARRIS and WALZ,Democratic,3,5-3A,5,383
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,HARRIS and WALZ,Democratic,3,6-1,6,844
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,HARRIS and WALZ,Democratic,3,6-2,6,615
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,HARRIS and WALZ,Democratic,3,6-3,6,626
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,HARRIS and WALZ,Democratic,3,7-1,7,553
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,HARRIS and WALZ,Democratic,3,7-2,7,546
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,HARRIS and WALZ,Democratic,3,7-3,7,285
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,HARRIS and WALZ,Democratic,3,7-3A,7,248
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,HARRIS and WALZ,Democratic,3,8-1,8,661
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,HARRIS and WALZ,Democratic,3,8-2,8,623
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,HARRIS and WALZ,Democratic,3,8-3,8,474
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,OLIVER and TER MAAT,Libertarian,4,1-1,1,2
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,OLIVER and TER MAAT,Libertarian,4,1-2,1,4
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,OLIVER and TER MAAT,Libertarian,4,1-3,1,8
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,OLIVER and TER MAAT,Libertarian,4,2-1,2,1
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,OLIVER and TER MAAT,Libertarian,4,2-2,2,1
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,OLIVER and TER MAAT,Libertarian,4,2-3,2,2
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,OLIVER and TER MAAT,Libertarian,4,3-1,3,5
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,OLIVER and TER MAAT,Libertarian,4,3-1A,3,3
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,OLIVER and TER MAAT,Libertarian,4,3-2,3,9
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,OLIVER and TER MAAT,Libertarian,4,3-3,3,5
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,OLIVER and TER MAAT,Libertarian,4,4-1,4,4
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,OLIVER and TER MAAT,Libertarian,4,4-2,4,4
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,OLIVER and TER MAAT,Libertarian,4,4-3,4,1
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,OLIVER and TER MAAT,Libertarian,4,5-1,5,7
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,OLIVER and TER MAAT,Libertarian,4,5-2,5,5
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,OLIVER and TER MAAT,Libertarian,4,5-3,5,0
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,OLIVER and TER MAAT,Libertarian,4,5-3A,5,2
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,OLIVER and TER MAAT,Libertarian,4,6-1,6,7
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,OLIVER and TER MAAT,Libertarian,4,6-2,6,4
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,OLIVER and TER MAAT,Libertarian,4,6-3,6,2
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,OLIVER and TER MAAT,Libertarian,4,7-1,7,0
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,OLIVER and TER MAAT,Libertarian,4,7-2,7,1
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,OLIVER and TER MAAT,Libertarian,4,7-3,7,3
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,OLIVER and TER MAAT,Libertarian,4,7-3A,7,0
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,OLIVER and TER MAAT,Libertarian,4,8-1,8,2
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,OLIVER and TER MAAT,Libertarian,4,8-2,8,1
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,OLIVER and TER MAAT,Libertarian,4,8-3,8,4
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,STEIN and CABALLERO-ROCA,Green-Rainbow Party,5,1-1,1,8
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,STEIN and CABALLERO-ROCA,Green-Rainbow Party,5,1-2,1,11
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,STEIN and CABALLERO-ROCA,Green-Rainbow Party,5,1-3,1,12
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,STEIN and CABALLERO-ROCA,Green-Rainbow Party,5,2-1,2,12
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,STEIN and CABALLERO-ROCA,Green-Rainbow Party,5,2-2,2,17
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,STEIN and CABALLERO-ROCA,Green-Rainbow Party,5,2-3,2,15
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,STEIN and CABALLERO-ROCA,Green-Rainbow Party,5,3-1,3,10
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,STEIN and CABALLERO-ROCA,Green-Rainbow Party,5,3-1A,3,5
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,STEIN and CABALLERO-ROCA,Green-Rainbow Party,5,3-2,3,24
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,STEIN and CABALLERO-ROCA,Green-Rainbow Party,5,3-3,3,22
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,STEIN and CABALLERO-ROCA,Green-Rainbow Party,5,4-1,4,17
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,STEIN and CABALLERO-ROCA,Green-Rainbow Party,5,4-2,4,10
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,STEIN and CABALLERO-ROCA,Green-Rainbow Party,5,4-3,4,17
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,STEIN and CABALLERO-ROCA,Green-Rainbow Party,5,5-1,5,13
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,STEIN and CABALLERO-ROCA,Green-Rainbow Party,5,5-2,5,8
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,STEIN and CABALLERO-ROCA,Green-Rainbow Party,5,5-3,5,10
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,STEIN and CABALLERO-ROCA,Green-Rainbow Party,5,5-3A,5,5
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,STEIN and CABALLERO-ROCA,Green-Rainbow Party,5,6-1,6,15
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,STEIN and CABALLERO-ROCA,Green-Rainbow Party,5,6-2,6,10
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,STEIN and CABALLERO-ROCA,Green-Rainbow Party,5,6-3,6,19
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,STEIN and CABALLERO-ROCA,Green-Rainbow Party,5,7-1,7,14
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,STEIN and CABALLERO-ROCA,Green-Rainbow Party,5,7-2,7,11
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,STEIN and CABALLERO-ROCA,Green-Rainbow Party,5,7-3,7,4
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,STEIN and CABALLERO-ROCA,Green-Rainbow Party,5,7-3A,7,6
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,STEIN and CABALLERO-ROCA,Green-Rainbow Party,5,8-1,8,22
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,STEIN and CABALLERO-ROCA,Green-Rainbow Party,5,8-2,8,18
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,STEIN and CABALLERO-ROCA,Green-Rainbow Party,5,8-3,8,15
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,TRUMP and VANCE,Republican,6,1-1,1,177
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,TRUMP and VANCE,Republican,6,1-2,1,266
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,TRUMP and VANCE,Republican,6,1-3,1,252
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,TRUMP and VANCE,Republican,6,2-1,2,203
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,TRUMP and VANCE,Republican,6,2-2,2,308
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,TRUMP and VANCE,Republican,6,2-3,2,322
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,TRUMP and VANCE,Republican,6,3-1,3,160
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,TRUMP and VANCE,Republican,6,3-1A,3,216
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,TRUMP and VANCE,Republican,6,3-2,3,207
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,TRUMP and VANCE,Republican,6,3-3,3,246
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,TRUMP and VANCE,Republican,6,4-1,4,234
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,TRUMP and VANCE,Republican,6,4-2,4,132
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,TRUMP and VANCE,Republican,6,4-3,4,166
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,TRUMP and VANCE,Republican,6,5-1,5,287
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,TRUMP and VANCE,Republican,6,5-2,5,353
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,TRUMP and VANCE,Republican,6,5-3,5,119
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,TRUMP and VANCE,Republican,6,5-3A,5,141
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,TRUMP and VANCE,Republican,6,6-1,6,387
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,TRUMP and VANCE,Republican,6,6-2,6,290
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,TRUMP and VANCE,Republican,6,6-3,6,343
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,TRUMP and VANCE,Republican,6,7-1,7,183
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,TRUMP and VANCE,Republican,6,7-2,7,258
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,TRUMP and VANCE,Republican,6,7-3,7,191
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,TRUMP and VANCE,Republican,6,7-3A,7,99
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,TRUMP and VANCE,Republican,6,8-1,8,379
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,TRUMP and VANCE,Republican,6,8-2,8,299
+malden_state_election_2024_11_05,2024-11-05,state,ELECTORS OF PRESIDENT AND VICE PRESIDENT,electors_of_president_and_vice_president,1,TRUMP and VANCE,Republican,6,8-3,8,225
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN CONGRESS,senator_in_congress,2,ELIZABETH ANN WARREN,Democratic,1,1-1,1,586
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN CONGRESS,senator_in_congress,2,ELIZABETH ANN WARREN,Democratic,1,1-2,1,617
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN CONGRESS,senator_in_congress,2,ELIZABETH ANN WARREN,Democratic,1,1-3,1,643
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN CONGRESS,senator_in_congress,2,ELIZABETH ANN WARREN,Democratic,1,2-1,2,510
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN CONGRESS,senator_in_congress,2,ELIZABETH ANN WARREN,Democratic,1,2-2,2,530
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN CONGRESS,senator_in_congress,2,ELIZABETH ANN WARREN,Democratic,1,2-3,2,652
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN CONGRESS,senator_in_congress,2,ELIZABETH ANN WARREN,Democratic,1,3-1,3,407
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN CONGRESS,senator_in_congress,2,ELIZABETH ANN WARREN,Democratic,1,3-1A,3,470
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN CONGRESS,senator_in_congress,2,ELIZABETH ANN WARREN,Democratic,1,3-2,3,717
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN CONGRESS,senator_in_congress,2,ELIZABETH ANN WARREN,Democratic,1,3-3,3,831
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN CONGRESS,senator_in_congress,2,ELIZABETH ANN WARREN,Democratic,1,4-1,4,647
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN CONGRESS,senator_in_congress,2,ELIZABETH ANN WARREN,Democratic,1,4-2,4,462
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN CONGRESS,senator_in_congress,2,ELIZABETH ANN WARREN,Democratic,1,4-3,4,658
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN CONGRESS,senator_in_congress,2,ELIZABETH ANN WARREN,Democratic,1,5-1,5,640
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN CONGRESS,senator_in_congress,2,ELIZABETH ANN WARREN,Democratic,1,5-2,5,936
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN CONGRESS,senator_in_congress,2,ELIZABETH ANN WARREN,Democratic,1,5-3,5,357
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN CONGRESS,senator_in_congress,2,ELIZABETH ANN WARREN,Democratic,1,5-3A,5,394
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN CONGRESS,senator_in_congress,2,ELIZABETH ANN WARREN,Democratic,1,6-1,6,866
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN CONGRESS,senator_in_congress,2,ELIZABETH ANN WARREN,Democratic,1,6-2,6,648
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN CONGRESS,senator_in_congress,2,ELIZABETH ANN WARREN,Democratic,1,6-3,6,646
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN CONGRESS,senator_in_congress,2,ELIZABETH ANN WARREN,Democratic,1,7-1,7,580
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN CONGRESS,senator_in_congress,2,ELIZABETH ANN WARREN,Democratic,1,7-2,7,574
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN CONGRESS,senator_in_congress,2,ELIZABETH ANN WARREN,Democratic,1,7-3,7,315
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN CONGRESS,senator_in_congress,2,ELIZABETH ANN WARREN,Democratic,1,7-3A,7,254
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN CONGRESS,senator_in_congress,2,ELIZABETH ANN WARREN,Democratic,1,8-1,8,683
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN CONGRESS,senator_in_congress,2,ELIZABETH ANN WARREN,Democratic,1,8-2,8,634
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN CONGRESS,senator_in_congress,2,ELIZABETH ANN WARREN,Democratic,1,8-3,8,509
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN CONGRESS,senator_in_congress,2,JOHN DEATON,Republican,2,1-1,1,151
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN CONGRESS,senator_in_congress,2,JOHN DEATON,Republican,2,1-2,1,234
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN CONGRESS,senator_in_congress,2,JOHN DEATON,Republican,2,1-3,1,241
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN CONGRESS,senator_in_congress,2,JOHN DEATON,Republican,2,2-1,2,195
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN CONGRESS,senator_in_congress,2,JOHN DEATON,Republican,2,2-2,2,288
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN CONGRESS,senator_in_congress,2,JOHN DEATON,Republican,2,2-3,2,318
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN CONGRESS,senator_in_congress,2,JOHN DEATON,Republican,2,3-1,3,146
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN CONGRESS,senator_in_congress,2,JOHN DEATON,Republican,2,3-1A,3,221
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN CONGRESS,senator_in_congress,2,JOHN DEATON,Republican,2,3-2,3,215
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN CONGRESS,senator_in_congress,2,JOHN DEATON,Republican,2,3-3,3,262
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN CONGRESS,senator_in_congress,2,JOHN DEATON,Republican,2,4-1,4,207
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN CONGRESS,senator_in_congress,2,JOHN DEATON,Republican,2,4-2,4,119
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN CONGRESS,senator_in_congress,2,JOHN DEATON,Republican,2,4-3,4,152
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN CONGRESS,senator_in_congress,2,JOHN DEATON,Republican,2,5-1,5,274
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN CONGRESS,senator_in_congress,2,JOHN DEATON,Republican,2,5-2,5,376
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN CONGRESS,senator_in_congress,2,JOHN DEATON,Republican,2,5-3,5,121
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN CONGRESS,senator_in_congress,2,JOHN DEATON,Republican,2,5-3A,5,134
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN CONGRESS,senator_in_congress,2,JOHN DEATON,Republican,2,6-1,6,354
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN CONGRESS,senator_in_congress,2,JOHN DEATON,Republican,2,6-2,6,250
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN CONGRESS,senator_in_congress,2,JOHN DEATON,Republican,2,6-3,6,330
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN CONGRESS,senator_in_congress,2,JOHN DEATON,Republican,2,7-1,7,159
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN CONGRESS,senator_in_congress,2,JOHN DEATON,Republican,2,7-2,7,227
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN CONGRESS,senator_in_congress,2,JOHN DEATON,Republican,2,7-3,7,152
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN CONGRESS,senator_in_congress,2,JOHN DEATON,Republican,2,7-3A,7,84
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN CONGRESS,senator_in_congress,2,JOHN DEATON,Republican,2,8-1,8,354
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN CONGRESS,senator_in_congress,2,JOHN DEATON,Republican,2,8-2,8,284
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN CONGRESS,senator_in_congress,2,JOHN DEATON,Republican,2,8-3,8,198
+malden_state_election_2024_11_05,2024-11-05,state,REPRESENTATIVE IN CONGRESS FIFTH DISTRICT,representative_in_congress_fifth_district,3,KATHERINE M. CLARK,Democratic,1,1-1,1,602
+malden_state_election_2024_11_05,2024-11-05,state,REPRESENTATIVE IN CONGRESS FIFTH DISTRICT,representative_in_congress_fifth_district,3,KATHERINE M. CLARK,Democratic,1,1-2,1,661
+malden_state_election_2024_11_05,2024-11-05,state,REPRESENTATIVE IN CONGRESS FIFTH DISTRICT,representative_in_congress_fifth_district,3,KATHERINE M. CLARK,Democratic,1,1-3,1,689
+malden_state_election_2024_11_05,2024-11-05,state,REPRESENTATIVE IN CONGRESS FIFTH DISTRICT,representative_in_congress_fifth_district,3,KATHERINE M. CLARK,Democratic,1,2-1,2,590
+malden_state_election_2024_11_05,2024-11-05,state,REPRESENTATIVE IN CONGRESS FIFTH DISTRICT,representative_in_congress_fifth_district,3,KATHERINE M. CLARK,Democratic,1,2-2,2,609
+malden_state_election_2024_11_05,2024-11-05,state,REPRESENTATIVE IN CONGRESS FIFTH DISTRICT,representative_in_congress_fifth_district,3,KATHERINE M. CLARK,Democratic,1,2-3,2,751
+malden_state_election_2024_11_05,2024-11-05,state,REPRESENTATIVE IN CONGRESS FIFTH DISTRICT,representative_in_congress_fifth_district,3,KATHERINE M. CLARK,Democratic,1,3-1,3,431
+malden_state_election_2024_11_05,2024-11-05,state,REPRESENTATIVE IN CONGRESS FIFTH DISTRICT,representative_in_congress_fifth_district,3,KATHERINE M. CLARK,Democratic,1,3-1A,3,516
+malden_state_election_2024_11_05,2024-11-05,state,REPRESENTATIVE IN CONGRESS FIFTH DISTRICT,representative_in_congress_fifth_district,3,KATHERINE M. CLARK,Democratic,1,3-2,3,763
+malden_state_election_2024_11_05,2024-11-05,state,REPRESENTATIVE IN CONGRESS FIFTH DISTRICT,representative_in_congress_fifth_district,3,KATHERINE M. CLARK,Democratic,1,3-3,3,880
+malden_state_election_2024_11_05,2024-11-05,state,REPRESENTATIVE IN CONGRESS FIFTH DISTRICT,representative_in_congress_fifth_district,3,KATHERINE M. CLARK,Democratic,1,4-1,4,716
+malden_state_election_2024_11_05,2024-11-05,state,REPRESENTATIVE IN CONGRESS FIFTH DISTRICT,representative_in_congress_fifth_district,3,KATHERINE M. CLARK,Democratic,1,4-2,4,488
+malden_state_election_2024_11_05,2024-11-05,state,REPRESENTATIVE IN CONGRESS FIFTH DISTRICT,representative_in_congress_fifth_district,3,KATHERINE M. CLARK,Democratic,1,4-3,4,671
+malden_state_election_2024_11_05,2024-11-05,state,REPRESENTATIVE IN CONGRESS FIFTH DISTRICT,representative_in_congress_fifth_district,3,KATHERINE M. CLARK,Democratic,1,5-1,5,725
+malden_state_election_2024_11_05,2024-11-05,state,REPRESENTATIVE IN CONGRESS FIFTH DISTRICT,representative_in_congress_fifth_district,3,KATHERINE M. CLARK,Democratic,1,5-2,5,1027
+malden_state_election_2024_11_05,2024-11-05,state,REPRESENTATIVE IN CONGRESS FIFTH DISTRICT,representative_in_congress_fifth_district,3,KATHERINE M. CLARK,Democratic,1,5-3,5,374
+malden_state_election_2024_11_05,2024-11-05,state,REPRESENTATIVE IN CONGRESS FIFTH DISTRICT,representative_in_congress_fifth_district,3,KATHERINE M. CLARK,Democratic,1,5-3A,5,423
+malden_state_election_2024_11_05,2024-11-05,state,REPRESENTATIVE IN CONGRESS FIFTH DISTRICT,representative_in_congress_fifth_district,3,KATHERINE M. CLARK,Democratic,1,6-1,6,947
+malden_state_election_2024_11_05,2024-11-05,state,REPRESENTATIVE IN CONGRESS FIFTH DISTRICT,representative_in_congress_fifth_district,3,KATHERINE M. CLARK,Democratic,1,6-2,6,728
+malden_state_election_2024_11_05,2024-11-05,state,REPRESENTATIVE IN CONGRESS FIFTH DISTRICT,representative_in_congress_fifth_district,3,KATHERINE M. CLARK,Democratic,1,6-3,6,741
+malden_state_election_2024_11_05,2024-11-05,state,REPRESENTATIVE IN CONGRESS FIFTH DISTRICT,representative_in_congress_fifth_district,3,KATHERINE M. CLARK,Democratic,1,7-1,7,618
+malden_state_election_2024_11_05,2024-11-05,state,REPRESENTATIVE IN CONGRESS FIFTH DISTRICT,representative_in_congress_fifth_district,3,KATHERINE M. CLARK,Democratic,1,7-2,7,651
+malden_state_election_2024_11_05,2024-11-05,state,REPRESENTATIVE IN CONGRESS FIFTH DISTRICT,representative_in_congress_fifth_district,3,KATHERINE M. CLARK,Democratic,1,7-3,7,358
+malden_state_election_2024_11_05,2024-11-05,state,REPRESENTATIVE IN CONGRESS FIFTH DISTRICT,representative_in_congress_fifth_district,3,KATHERINE M. CLARK,Democratic,1,7-3A,7,266
+malden_state_election_2024_11_05,2024-11-05,state,REPRESENTATIVE IN CONGRESS FIFTH DISTRICT,representative_in_congress_fifth_district,3,KATHERINE M. CLARK,Democratic,1,8-1,8,799
+malden_state_election_2024_11_05,2024-11-05,state,REPRESENTATIVE IN CONGRESS FIFTH DISTRICT,representative_in_congress_fifth_district,3,KATHERINE M. CLARK,Democratic,1,8-2,8,730
+malden_state_election_2024_11_05,2024-11-05,state,REPRESENTATIVE IN CONGRESS FIFTH DISTRICT,representative_in_congress_fifth_district,3,KATHERINE M. CLARK,Democratic,1,8-3,8,556
+malden_state_election_2024_11_05,2024-11-05,state,COUNCILLOR SIXTH DISTRICT,councillor_sixth_district,4,TERRENCE W. KENNEDY,Democratic,1,1-1,1,575
+malden_state_election_2024_11_05,2024-11-05,state,COUNCILLOR SIXTH DISTRICT,councillor_sixth_district,4,TERRENCE W. KENNEDY,Democratic,1,1-2,1,639
+malden_state_election_2024_11_05,2024-11-05,state,COUNCILLOR SIXTH DISTRICT,councillor_sixth_district,4,TERRENCE W. KENNEDY,Democratic,1,1-3,1,657
+malden_state_election_2024_11_05,2024-11-05,state,COUNCILLOR SIXTH DISTRICT,councillor_sixth_district,4,TERRENCE W. KENNEDY,Democratic,1,2-1,2,550
+malden_state_election_2024_11_05,2024-11-05,state,COUNCILLOR SIXTH DISTRICT,councillor_sixth_district,4,TERRENCE W. KENNEDY,Democratic,1,2-2,2,612
+malden_state_election_2024_11_05,2024-11-05,state,COUNCILLOR SIXTH DISTRICT,councillor_sixth_district,4,TERRENCE W. KENNEDY,Democratic,1,2-3,2,720
+malden_state_election_2024_11_05,2024-11-05,state,COUNCILLOR SIXTH DISTRICT,councillor_sixth_district,4,TERRENCE W. KENNEDY,Democratic,1,3-1,3,392
+malden_state_election_2024_11_05,2024-11-05,state,COUNCILLOR SIXTH DISTRICT,councillor_sixth_district,4,TERRENCE W. KENNEDY,Democratic,1,3-1A,3,486
+malden_state_election_2024_11_05,2024-11-05,state,COUNCILLOR SIXTH DISTRICT,councillor_sixth_district,4,TERRENCE W. KENNEDY,Democratic,1,3-2,3,713
+malden_state_election_2024_11_05,2024-11-05,state,COUNCILLOR SIXTH DISTRICT,councillor_sixth_district,4,TERRENCE W. KENNEDY,Democratic,1,3-3,3,817
+malden_state_election_2024_11_05,2024-11-05,state,COUNCILLOR SIXTH DISTRICT,councillor_sixth_district,4,TERRENCE W. KENNEDY,Democratic,1,4-1,4,679
+malden_state_election_2024_11_05,2024-11-05,state,COUNCILLOR SIXTH DISTRICT,councillor_sixth_district,4,TERRENCE W. KENNEDY,Democratic,1,4-2,4,450
+malden_state_election_2024_11_05,2024-11-05,state,COUNCILLOR SIXTH DISTRICT,councillor_sixth_district,4,TERRENCE W. KENNEDY,Democratic,1,4-3,4,628
+malden_state_election_2024_11_05,2024-11-05,state,COUNCILLOR SIXTH DISTRICT,councillor_sixth_district,4,TERRENCE W. KENNEDY,Democratic,1,5-1,5,708
+malden_state_election_2024_11_05,2024-11-05,state,COUNCILLOR SIXTH DISTRICT,councillor_sixth_district,4,TERRENCE W. KENNEDY,Democratic,1,5-2,5,966
+malden_state_election_2024_11_05,2024-11-05,state,COUNCILLOR SIXTH DISTRICT,councillor_sixth_district,4,TERRENCE W. KENNEDY,Democratic,1,5-3,5,354
+malden_state_election_2024_11_05,2024-11-05,state,COUNCILLOR SIXTH DISTRICT,councillor_sixth_district,4,TERRENCE W. KENNEDY,Democratic,1,5-3A,5,407
+malden_state_election_2024_11_05,2024-11-05,state,COUNCILLOR SIXTH DISTRICT,councillor_sixth_district,4,TERRENCE W. KENNEDY,Democratic,1,6-1,6,884
+malden_state_election_2024_11_05,2024-11-05,state,COUNCILLOR SIXTH DISTRICT,councillor_sixth_district,4,TERRENCE W. KENNEDY,Democratic,1,6-2,6,690
+malden_state_election_2024_11_05,2024-11-05,state,COUNCILLOR SIXTH DISTRICT,councillor_sixth_district,4,TERRENCE W. KENNEDY,Democratic,1,6-3,6,736
+malden_state_election_2024_11_05,2024-11-05,state,COUNCILLOR SIXTH DISTRICT,councillor_sixth_district,4,TERRENCE W. KENNEDY,Democratic,1,7-1,7,592
+malden_state_election_2024_11_05,2024-11-05,state,COUNCILLOR SIXTH DISTRICT,councillor_sixth_district,4,TERRENCE W. KENNEDY,Democratic,1,7-2,7,640
+malden_state_election_2024_11_05,2024-11-05,state,COUNCILLOR SIXTH DISTRICT,councillor_sixth_district,4,TERRENCE W. KENNEDY,Democratic,1,7-3,7,349
+malden_state_election_2024_11_05,2024-11-05,state,COUNCILLOR SIXTH DISTRICT,councillor_sixth_district,4,TERRENCE W. KENNEDY,Democratic,1,7-3A,7,247
+malden_state_election_2024_11_05,2024-11-05,state,COUNCILLOR SIXTH DISTRICT,councillor_sixth_district,4,TERRENCE W. KENNEDY,Democratic,1,8-1,8,794
+malden_state_election_2024_11_05,2024-11-05,state,COUNCILLOR SIXTH DISTRICT,councillor_sixth_district,4,TERRENCE W. KENNEDY,Democratic,1,8-2,8,705
+malden_state_election_2024_11_05,2024-11-05,state,COUNCILLOR SIXTH DISTRICT,councillor_sixth_district,4,TERRENCE W. KENNEDY,Democratic,1,8-3,8,545
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN GENERAL COURT FIFTH MIDDLESEX DISTRICT,senator_in_general_court_fifth_middlesex_district,5,JASON M. LEWIS,Democratic,1,1-1,1,574
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN GENERAL COURT FIFTH MIDDLESEX DISTRICT,senator_in_general_court_fifth_middlesex_district,5,JASON M. LEWIS,Democratic,1,1-2,1,629
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN GENERAL COURT FIFTH MIDDLESEX DISTRICT,senator_in_general_court_fifth_middlesex_district,5,JASON M. LEWIS,Democratic,1,1-3,1,649
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN GENERAL COURT FIFTH MIDDLESEX DISTRICT,senator_in_general_court_fifth_middlesex_district,5,JASON M. LEWIS,Democratic,1,2-1,2,562
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN GENERAL COURT FIFTH MIDDLESEX DISTRICT,senator_in_general_court_fifth_middlesex_district,5,JASON M. LEWIS,Democratic,1,2-2,2,602
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN GENERAL COURT FIFTH MIDDLESEX DISTRICT,senator_in_general_court_fifth_middlesex_district,5,JASON M. LEWIS,Democratic,1,2-3,2,705
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN GENERAL COURT FIFTH MIDDLESEX DISTRICT,senator_in_general_court_fifth_middlesex_district,5,JASON M. LEWIS,Democratic,1,3-1,3,401
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN GENERAL COURT FIFTH MIDDLESEX DISTRICT,senator_in_general_court_fifth_middlesex_district,5,JASON M. LEWIS,Democratic,1,3-1A,3,480
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN GENERAL COURT FIFTH MIDDLESEX DISTRICT,senator_in_general_court_fifth_middlesex_district,5,JASON M. LEWIS,Democratic,1,3-2,3,722
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN GENERAL COURT FIFTH MIDDLESEX DISTRICT,senator_in_general_court_fifth_middlesex_district,5,JASON M. LEWIS,Democratic,1,3-3,3,832
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN GENERAL COURT FIFTH MIDDLESEX DISTRICT,senator_in_general_court_fifth_middlesex_district,5,JASON M. LEWIS,Democratic,1,4-1,4,690
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN GENERAL COURT FIFTH MIDDLESEX DISTRICT,senator_in_general_court_fifth_middlesex_district,5,JASON M. LEWIS,Democratic,1,4-2,4,469
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN GENERAL COURT FIFTH MIDDLESEX DISTRICT,senator_in_general_court_fifth_middlesex_district,5,JASON M. LEWIS,Democratic,1,4-3,4,627
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN GENERAL COURT FIFTH MIDDLESEX DISTRICT,senator_in_general_court_fifth_middlesex_district,5,JASON M. LEWIS,Democratic,1,5-1,5,706
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN GENERAL COURT FIFTH MIDDLESEX DISTRICT,senator_in_general_court_fifth_middlesex_district,5,JASON M. LEWIS,Democratic,1,5-2,5,983
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN GENERAL COURT FIFTH MIDDLESEX DISTRICT,senator_in_general_court_fifth_middlesex_district,5,JASON M. LEWIS,Democratic,1,5-3,5,352
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN GENERAL COURT FIFTH MIDDLESEX DISTRICT,senator_in_general_court_fifth_middlesex_district,5,JASON M. LEWIS,Democratic,1,5-3A,5,409
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN GENERAL COURT FIFTH MIDDLESEX DISTRICT,senator_in_general_court_fifth_middlesex_district,5,JASON M. LEWIS,Democratic,1,6-1,6,904
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN GENERAL COURT FIFTH MIDDLESEX DISTRICT,senator_in_general_court_fifth_middlesex_district,5,JASON M. LEWIS,Democratic,1,6-2,6,694
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN GENERAL COURT FIFTH MIDDLESEX DISTRICT,senator_in_general_court_fifth_middlesex_district,5,JASON M. LEWIS,Democratic,1,6-3,6,718
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN GENERAL COURT FIFTH MIDDLESEX DISTRICT,senator_in_general_court_fifth_middlesex_district,5,JASON M. LEWIS,Democratic,1,7-1,7,587
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN GENERAL COURT FIFTH MIDDLESEX DISTRICT,senator_in_general_court_fifth_middlesex_district,5,JASON M. LEWIS,Democratic,1,7-2,7,633
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN GENERAL COURT FIFTH MIDDLESEX DISTRICT,senator_in_general_court_fifth_middlesex_district,5,JASON M. LEWIS,Democratic,1,7-3,7,345
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN GENERAL COURT FIFTH MIDDLESEX DISTRICT,senator_in_general_court_fifth_middlesex_district,5,JASON M. LEWIS,Democratic,1,7-3A,7,254
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN GENERAL COURT FIFTH MIDDLESEX DISTRICT,senator_in_general_court_fifth_middlesex_district,5,JASON M. LEWIS,Democratic,1,8-1,8,780
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN GENERAL COURT FIFTH MIDDLESEX DISTRICT,senator_in_general_court_fifth_middlesex_district,5,JASON M. LEWIS,Democratic,1,8-2,8,706
+malden_state_election_2024_11_05,2024-11-05,state,SENATOR IN GENERAL COURT FIFTH MIDDLESEX DISTRICT,senator_in_general_court_fifth_middlesex_district,5,JASON M. LEWIS,Democratic,1,8-3,8,533
+malden_state_election_2024_11_05,2024-11-05,state,REPRESENTATIVE IN GENERAL COURT THIRTY-SECOND MIDDLESEX DISTRICT,representative_in_general_court_thirty_second_middlesex_district,6,KATE LIPPER-GARABEDIAN,Democratic,1,5-2,5,951
+malden_state_election_2024_11_05,2024-11-05,state,REPRESENTATIVE IN GENERAL COURT THIRTY-SECOND MIDDLESEX DISTRICT,representative_in_general_court_thirty_second_middlesex_district,6,KATE LIPPER-GARABEDIAN,Democratic,1,5-3A,5,406
+malden_state_election_2024_11_05,2024-11-05,state,REPRESENTATIVE IN GENERAL COURT THIRTY-THIRD MIDDLESEX DISTRICT,representative_in_general_court_thirty_third_middlesex_district,7,STEVEN ULTRINO,Democratic,1,2-1,2,575
+malden_state_election_2024_11_05,2024-11-05,state,REPRESENTATIVE IN GENERAL COURT THIRTY-THIRD MIDDLESEX DISTRICT,representative_in_general_court_thirty_third_middlesex_district,7,STEVEN ULTRINO,Democratic,1,2-2,2,642
+malden_state_election_2024_11_05,2024-11-05,state,REPRESENTATIVE IN GENERAL COURT THIRTY-THIRD MIDDLESEX DISTRICT,representative_in_general_court_thirty_third_middlesex_district,7,STEVEN ULTRINO,Democratic,1,2-3,2,763
+malden_state_election_2024_11_05,2024-11-05,state,REPRESENTATIVE IN GENERAL COURT THIRTY-THIRD MIDDLESEX DISTRICT,representative_in_general_court_thirty_third_middlesex_district,7,STEVEN ULTRINO,Democratic,1,3-1,3,408
+malden_state_election_2024_11_05,2024-11-05,state,REPRESENTATIVE IN GENERAL COURT THIRTY-THIRD MIDDLESEX DISTRICT,representative_in_general_court_thirty_third_middlesex_district,7,STEVEN ULTRINO,Democratic,1,3-2,3,723
+malden_state_election_2024_11_05,2024-11-05,state,REPRESENTATIVE IN GENERAL COURT THIRTY-THIRD MIDDLESEX DISTRICT,representative_in_general_court_thirty_third_middlesex_district,7,STEVEN ULTRINO,Democratic,1,4-1,4,688
+malden_state_election_2024_11_05,2024-11-05,state,REPRESENTATIVE IN GENERAL COURT THIRTY-THIRD MIDDLESEX DISTRICT,representative_in_general_court_thirty_third_middlesex_district,7,STEVEN ULTRINO,Democratic,1,4-2,4,456
+malden_state_election_2024_11_05,2024-11-05,state,REPRESENTATIVE IN GENERAL COURT THIRTY-THIRD MIDDLESEX DISTRICT,representative_in_general_court_thirty_third_middlesex_district,7,STEVEN ULTRINO,Democratic,1,4-3,4,622
+malden_state_election_2024_11_05,2024-11-05,state,REPRESENTATIVE IN GENERAL COURT THIRTY-THIRD MIDDLESEX DISTRICT,representative_in_general_court_thirty_third_middlesex_district,7,STEVEN ULTRINO,Democratic,1,5-1,5,703
+malden_state_election_2024_11_05,2024-11-05,state,REPRESENTATIVE IN GENERAL COURT THIRTY-THIRD MIDDLESEX DISTRICT,representative_in_general_court_thirty_third_middlesex_district,7,STEVEN ULTRINO,Democratic,1,5-3,5,359
+malden_state_election_2024_11_05,2024-11-05,state,REPRESENTATIVE IN GENERAL COURT THIRTY-THIRD MIDDLESEX DISTRICT,representative_in_general_court_thirty_third_middlesex_district,7,STEVEN ULTRINO,Democratic,1,6-1,6,926
+malden_state_election_2024_11_05,2024-11-05,state,REPRESENTATIVE IN GENERAL COURT THIRTY-THIRD MIDDLESEX DISTRICT,representative_in_general_court_thirty_third_middlesex_district,7,STEVEN ULTRINO,Democratic,1,6-2,6,709
+malden_state_election_2024_11_05,2024-11-05,state,REPRESENTATIVE IN GENERAL COURT THIRTY-THIRD MIDDLESEX DISTRICT,representative_in_general_court_thirty_third_middlesex_district,7,STEVEN ULTRINO,Democratic,1,6-3,6,737
+malden_state_election_2024_11_05,2024-11-05,state,REPRESENTATIVE IN GENERAL COURT THIRTY-THIRD MIDDLESEX DISTRICT,representative_in_general_court_thirty_third_middlesex_district,7,STEVEN ULTRINO,Democratic,1,7-2,7,642
+malden_state_election_2024_11_05,2024-11-05,state,REPRESENTATIVE IN GENERAL COURT THIRTY-THIRD MIDDLESEX DISTRICT,representative_in_general_court_thirty_third_middlesex_district,7,STEVEN ULTRINO,Democratic,1,7-3,7,349
+malden_state_election_2024_11_05,2024-11-05,state,REPRESENTATIVE IN GENERAL COURT THIRTY-THIRD MIDDLESEX DISTRICT,representative_in_general_court_thirty_third_middlesex_district,7,STEVEN ULTRINO,Democratic,1,8-1,8,807
+malden_state_election_2024_11_05,2024-11-05,state,REPRESENTATIVE IN GENERAL COURT THIRTY-THIRD MIDDLESEX DISTRICT,representative_in_general_court_thirty_third_middlesex_district,7,STEVEN ULTRINO,Democratic,1,8-2,8,716
+malden_state_election_2024_11_05,2024-11-05,state,REPRESENTATIVE IN GENERAL COURT THIRTY-THIRD MIDDLESEX DISTRICT,representative_in_general_court_thirty_third_middlesex_district,7,STEVEN ULTRINO,Democratic,1,8-3,8,535
+malden_state_election_2024_11_05,2024-11-05,state,REPRESENTATIVE IN GENERAL COURT THIRTY-FIFTH MIDDLESEX DISTRICT,representative_in_general_court_thirty_fifth_middlesex_district,8,PAUL J. DONATO,Democratic,1,1-1,1,583
+malden_state_election_2024_11_05,2024-11-05,state,REPRESENTATIVE IN GENERAL COURT THIRTY-FIFTH MIDDLESEX DISTRICT,representative_in_general_court_thirty_fifth_middlesex_district,8,PAUL J. DONATO,Democratic,1,1-2,1,648
+malden_state_election_2024_11_05,2024-11-05,state,REPRESENTATIVE IN GENERAL COURT THIRTY-FIFTH MIDDLESEX DISTRICT,representative_in_general_court_thirty_fifth_middlesex_district,8,PAUL J. DONATO,Democratic,1,1-3,1,657
+malden_state_election_2024_11_05,2024-11-05,state,REPRESENTATIVE IN GENERAL COURT THIRTY-FIFTH MIDDLESEX DISTRICT,representative_in_general_court_thirty_fifth_middlesex_district,8,PAUL J. DONATO,Democratic,1,3-1A,3,511
+malden_state_election_2024_11_05,2024-11-05,state,REPRESENTATIVE IN GENERAL COURT THIRTY-FIFTH MIDDLESEX DISTRICT,representative_in_general_court_thirty_fifth_middlesex_district,8,PAUL J. DONATO,Democratic,1,3-3,3,818
+malden_state_election_2024_11_05,2024-11-05,state,REPRESENTATIVE IN GENERAL COURT THIRTY-FIFTH MIDDLESEX DISTRICT,representative_in_general_court_thirty_fifth_middlesex_district,8,PAUL J. DONATO,Democratic,1,7-1,7,592
+malden_state_election_2024_11_05,2024-11-05,state,REPRESENTATIVE IN GENERAL COURT THIRTY-FIFTH MIDDLESEX DISTRICT,representative_in_general_court_thirty_fifth_middlesex_district,8,PAUL J. DONATO,Democratic,1,7-3A,7,265
+malden_state_election_2024_11_05,2024-11-05,state,CLERK OF COURTS MIDDLESEX COUNTY,clerk_of_courts_middlesex_county,9,MICHAEL A. SULLIVAN,Democratic,1,1-1,1,578
+malden_state_election_2024_11_05,2024-11-05,state,CLERK OF COURTS MIDDLESEX COUNTY,clerk_of_courts_middlesex_county,9,MICHAEL A. SULLIVAN,Democratic,1,1-2,1,622
+malden_state_election_2024_11_05,2024-11-05,state,CLERK OF COURTS MIDDLESEX COUNTY,clerk_of_courts_middlesex_county,9,MICHAEL A. SULLIVAN,Democratic,1,1-3,1,641
+malden_state_election_2024_11_05,2024-11-05,state,CLERK OF COURTS MIDDLESEX COUNTY,clerk_of_courts_middlesex_county,9,MICHAEL A. SULLIVAN,Democratic,1,2-1,2,550
+malden_state_election_2024_11_05,2024-11-05,state,CLERK OF COURTS MIDDLESEX COUNTY,clerk_of_courts_middlesex_county,9,MICHAEL A. SULLIVAN,Democratic,1,2-2,2,606
+malden_state_election_2024_11_05,2024-11-05,state,CLERK OF COURTS MIDDLESEX COUNTY,clerk_of_courts_middlesex_county,9,MICHAEL A. SULLIVAN,Democratic,1,2-3,2,708
+malden_state_election_2024_11_05,2024-11-05,state,CLERK OF COURTS MIDDLESEX COUNTY,clerk_of_courts_middlesex_county,9,MICHAEL A. SULLIVAN,Democratic,1,3-1,3,392
+malden_state_election_2024_11_05,2024-11-05,state,CLERK OF COURTS MIDDLESEX COUNTY,clerk_of_courts_middlesex_county,9,MICHAEL A. SULLIVAN,Democratic,1,3-1A,3,478
+malden_state_election_2024_11_05,2024-11-05,state,CLERK OF COURTS MIDDLESEX COUNTY,clerk_of_courts_middlesex_county,9,MICHAEL A. SULLIVAN,Democratic,1,3-2,3,716
+malden_state_election_2024_11_05,2024-11-05,state,CLERK OF COURTS MIDDLESEX COUNTY,clerk_of_courts_middlesex_county,9,MICHAEL A. SULLIVAN,Democratic,1,3-3,3,789
+malden_state_election_2024_11_05,2024-11-05,state,CLERK OF COURTS MIDDLESEX COUNTY,clerk_of_courts_middlesex_county,9,MICHAEL A. SULLIVAN,Democratic,1,4-1,4,671
+malden_state_election_2024_11_05,2024-11-05,state,CLERK OF COURTS MIDDLESEX COUNTY,clerk_of_courts_middlesex_county,9,MICHAEL A. SULLIVAN,Democratic,1,4-2,4,453
+malden_state_election_2024_11_05,2024-11-05,state,CLERK OF COURTS MIDDLESEX COUNTY,clerk_of_courts_middlesex_county,9,MICHAEL A. SULLIVAN,Democratic,1,4-3,4,609
+malden_state_election_2024_11_05,2024-11-05,state,CLERK OF COURTS MIDDLESEX COUNTY,clerk_of_courts_middlesex_county,9,MICHAEL A. SULLIVAN,Democratic,1,5-1,5,688
+malden_state_election_2024_11_05,2024-11-05,state,CLERK OF COURTS MIDDLESEX COUNTY,clerk_of_courts_middlesex_county,9,MICHAEL A. SULLIVAN,Democratic,1,5-2,5,958
+malden_state_election_2024_11_05,2024-11-05,state,CLERK OF COURTS MIDDLESEX COUNTY,clerk_of_courts_middlesex_county,9,MICHAEL A. SULLIVAN,Democratic,1,5-3,5,341
+malden_state_election_2024_11_05,2024-11-05,state,CLERK OF COURTS MIDDLESEX COUNTY,clerk_of_courts_middlesex_county,9,MICHAEL A. SULLIVAN,Democratic,1,5-3A,5,399
+malden_state_election_2024_11_05,2024-11-05,state,CLERK OF COURTS MIDDLESEX COUNTY,clerk_of_courts_middlesex_county,9,MICHAEL A. SULLIVAN,Democratic,1,6-1,6,885
+malden_state_election_2024_11_05,2024-11-05,state,CLERK OF COURTS MIDDLESEX COUNTY,clerk_of_courts_middlesex_county,9,MICHAEL A. SULLIVAN,Democratic,1,6-2,6,674
+malden_state_election_2024_11_05,2024-11-05,state,CLERK OF COURTS MIDDLESEX COUNTY,clerk_of_courts_middlesex_county,9,MICHAEL A. SULLIVAN,Democratic,1,6-3,6,716
+malden_state_election_2024_11_05,2024-11-05,state,CLERK OF COURTS MIDDLESEX COUNTY,clerk_of_courts_middlesex_county,9,MICHAEL A. SULLIVAN,Democratic,1,7-1,7,581
+malden_state_election_2024_11_05,2024-11-05,state,CLERK OF COURTS MIDDLESEX COUNTY,clerk_of_courts_middlesex_county,9,MICHAEL A. SULLIVAN,Democratic,1,7-2,7,623
+malden_state_election_2024_11_05,2024-11-05,state,CLERK OF COURTS MIDDLESEX COUNTY,clerk_of_courts_middlesex_county,9,MICHAEL A. SULLIVAN,Democratic,1,7-3,7,333
+malden_state_election_2024_11_05,2024-11-05,state,CLERK OF COURTS MIDDLESEX COUNTY,clerk_of_courts_middlesex_county,9,MICHAEL A. SULLIVAN,Democratic,1,7-3A,7,251
+malden_state_election_2024_11_05,2024-11-05,state,CLERK OF COURTS MIDDLESEX COUNTY,clerk_of_courts_middlesex_county,9,MICHAEL A. SULLIVAN,Democratic,1,8-1,8,774
+malden_state_election_2024_11_05,2024-11-05,state,CLERK OF COURTS MIDDLESEX COUNTY,clerk_of_courts_middlesex_county,9,MICHAEL A. SULLIVAN,Democratic,1,8-2,8,705
+malden_state_election_2024_11_05,2024-11-05,state,CLERK OF COURTS MIDDLESEX COUNTY,clerk_of_courts_middlesex_county,9,MICHAEL A. SULLIVAN,Democratic,1,8-3,8,537
+malden_state_election_2024_11_05,2024-11-05,state,REGISTER OF DEEDS MIDDLESEX SOUTHERN DISTRICT,register_of_deeds_middlesex_southern_district,10,MARIA C. CURTATONE,Democratic,1,1-1,1,497
+malden_state_election_2024_11_05,2024-11-05,state,REGISTER OF DEEDS MIDDLESEX SOUTHERN DISTRICT,register_of_deeds_middlesex_southern_district,10,MARIA C. CURTATONE,Democratic,1,1-2,1,539
+malden_state_election_2024_11_05,2024-11-05,state,REGISTER OF DEEDS MIDDLESEX SOUTHERN DISTRICT,register_of_deeds_middlesex_southern_district,10,MARIA C. CURTATONE,Democratic,1,1-3,1,562
+malden_state_election_2024_11_05,2024-11-05,state,REGISTER OF DEEDS MIDDLESEX SOUTHERN DISTRICT,register_of_deeds_middlesex_southern_district,10,MARIA C. CURTATONE,Democratic,1,2-1,2,434
+malden_state_election_2024_11_05,2024-11-05,state,REGISTER OF DEEDS MIDDLESEX SOUTHERN DISTRICT,register_of_deeds_middlesex_southern_district,10,MARIA C. CURTATONE,Democratic,1,2-2,2,482
+malden_state_election_2024_11_05,2024-11-05,state,REGISTER OF DEEDS MIDDLESEX SOUTHERN DISTRICT,register_of_deeds_middlesex_southern_district,10,MARIA C. CURTATONE,Democratic,1,2-3,2,578
+malden_state_election_2024_11_05,2024-11-05,state,REGISTER OF DEEDS MIDDLESEX SOUTHERN DISTRICT,register_of_deeds_middlesex_southern_district,10,MARIA C. CURTATONE,Democratic,1,3-1,3,361
+malden_state_election_2024_11_05,2024-11-05,state,REGISTER OF DEEDS MIDDLESEX SOUTHERN DISTRICT,register_of_deeds_middlesex_southern_district,10,MARIA C. CURTATONE,Democratic,1,3-1A,3,436
+malden_state_election_2024_11_05,2024-11-05,state,REGISTER OF DEEDS MIDDLESEX SOUTHERN DISTRICT,register_of_deeds_middlesex_southern_district,10,MARIA C. CURTATONE,Democratic,1,3-2,3,631
+malden_state_election_2024_11_05,2024-11-05,state,REGISTER OF DEEDS MIDDLESEX SOUTHERN DISTRICT,register_of_deeds_middlesex_southern_district,10,MARIA C. CURTATONE,Democratic,1,3-3,3,738
+malden_state_election_2024_11_05,2024-11-05,state,REGISTER OF DEEDS MIDDLESEX SOUTHERN DISTRICT,register_of_deeds_middlesex_southern_district,10,MARIA C. CURTATONE,Democratic,1,4-1,4,551
+malden_state_election_2024_11_05,2024-11-05,state,REGISTER OF DEEDS MIDDLESEX SOUTHERN DISTRICT,register_of_deeds_middlesex_southern_district,10,MARIA C. CURTATONE,Democratic,1,4-2,4,387
+malden_state_election_2024_11_05,2024-11-05,state,REGISTER OF DEEDS MIDDLESEX SOUTHERN DISTRICT,register_of_deeds_middlesex_southern_district,10,MARIA C. CURTATONE,Democratic,1,4-3,4,562
+malden_state_election_2024_11_05,2024-11-05,state,REGISTER OF DEEDS MIDDLESEX SOUTHERN DISTRICT,register_of_deeds_middlesex_southern_district,10,MARIA C. CURTATONE,Democratic,1,5-1,5,552
+malden_state_election_2024_11_05,2024-11-05,state,REGISTER OF DEEDS MIDDLESEX SOUTHERN DISTRICT,register_of_deeds_middlesex_southern_district,10,MARIA C. CURTATONE,Democratic,1,5-2,5,839
+malden_state_election_2024_11_05,2024-11-05,state,REGISTER OF DEEDS MIDDLESEX SOUTHERN DISTRICT,register_of_deeds_middlesex_southern_district,10,MARIA C. CURTATONE,Democratic,1,5-3,5,303
+malden_state_election_2024_11_05,2024-11-05,state,REGISTER OF DEEDS MIDDLESEX SOUTHERN DISTRICT,register_of_deeds_middlesex_southern_district,10,MARIA C. CURTATONE,Democratic,1,5-3A,5,348
+malden_state_election_2024_11_05,2024-11-05,state,REGISTER OF DEEDS MIDDLESEX SOUTHERN DISTRICT,register_of_deeds_middlesex_southern_district,10,MARIA C. CURTATONE,Democratic,1,6-1,6,737
+malden_state_election_2024_11_05,2024-11-05,state,REGISTER OF DEEDS MIDDLESEX SOUTHERN DISTRICT,register_of_deeds_middlesex_southern_district,10,MARIA C. CURTATONE,Democratic,1,6-2,6,556
+malden_state_election_2024_11_05,2024-11-05,state,REGISTER OF DEEDS MIDDLESEX SOUTHERN DISTRICT,register_of_deeds_middlesex_southern_district,10,MARIA C. CURTATONE,Democratic,1,6-3,6,575
+malden_state_election_2024_11_05,2024-11-05,state,REGISTER OF DEEDS MIDDLESEX SOUTHERN DISTRICT,register_of_deeds_middlesex_southern_district,10,MARIA C. CURTATONE,Democratic,1,7-1,7,496
+malden_state_election_2024_11_05,2024-11-05,state,REGISTER OF DEEDS MIDDLESEX SOUTHERN DISTRICT,register_of_deeds_middlesex_southern_district,10,MARIA C. CURTATONE,Democratic,1,7-2,7,521
+malden_state_election_2024_11_05,2024-11-05,state,REGISTER OF DEEDS MIDDLESEX SOUTHERN DISTRICT,register_of_deeds_middlesex_southern_district,10,MARIA C. CURTATONE,Democratic,1,7-3,7,265
+malden_state_election_2024_11_05,2024-11-05,state,REGISTER OF DEEDS MIDDLESEX SOUTHERN DISTRICT,register_of_deeds_middlesex_southern_district,10,MARIA C. CURTATONE,Democratic,1,7-3A,7,198
+malden_state_election_2024_11_05,2024-11-05,state,REGISTER OF DEEDS MIDDLESEX SOUTHERN DISTRICT,register_of_deeds_middlesex_southern_district,10,MARIA C. CURTATONE,Democratic,1,8-1,8,624
+malden_state_election_2024_11_05,2024-11-05,state,REGISTER OF DEEDS MIDDLESEX SOUTHERN DISTRICT,register_of_deeds_middlesex_southern_district,10,MARIA C. CURTATONE,Democratic,1,8-2,8,556
+malden_state_election_2024_11_05,2024-11-05,state,REGISTER OF DEEDS MIDDLESEX SOUTHERN DISTRICT,register_of_deeds_middlesex_southern_district,10,MARIA C. CURTATONE,Democratic,1,8-3,8,431
+malden_state_election_2024_11_05,2024-11-05,state,REGISTER OF DEEDS MIDDLESEX SOUTHERN DISTRICT,register_of_deeds_middlesex_southern_district,10,"WILLIAM ""BILLY"" TAURO",Independent,2,1-1,1,124
+malden_state_election_2024_11_05,2024-11-05,state,REGISTER OF DEEDS MIDDLESEX SOUTHERN DISTRICT,register_of_deeds_middlesex_southern_district,10,"WILLIAM ""BILLY"" TAURO",Independent,2,1-2,1,175
+malden_state_election_2024_11_05,2024-11-05,state,REGISTER OF DEEDS MIDDLESEX SOUTHERN DISTRICT,register_of_deeds_middlesex_southern_district,10,"WILLIAM ""BILLY"" TAURO",Independent,2,1-3,1,180
+malden_state_election_2024_11_05,2024-11-05,state,REGISTER OF DEEDS MIDDLESEX SOUTHERN DISTRICT,register_of_deeds_middlesex_southern_district,10,"WILLIAM ""BILLY"" TAURO",Independent,2,2-1,2,169
+malden_state_election_2024_11_05,2024-11-05,state,REGISTER OF DEEDS MIDDLESEX SOUTHERN DISTRICT,register_of_deeds_middlesex_southern_district,10,"WILLIAM ""BILLY"" TAURO",Independent,2,2-2,2,219
+malden_state_election_2024_11_05,2024-11-05,state,REGISTER OF DEEDS MIDDLESEX SOUTHERN DISTRICT,register_of_deeds_middlesex_southern_district,10,"WILLIAM ""BILLY"" TAURO",Independent,2,2-3,2,244
+malden_state_election_2024_11_05,2024-11-05,state,REGISTER OF DEEDS MIDDLESEX SOUTHERN DISTRICT,register_of_deeds_middlesex_southern_district,10,"WILLIAM ""BILLY"" TAURO",Independent,2,3-1,3,115
+malden_state_election_2024_11_05,2024-11-05,state,REGISTER OF DEEDS MIDDLESEX SOUTHERN DISTRICT,register_of_deeds_middlesex_southern_district,10,"WILLIAM ""BILLY"" TAURO",Independent,2,3-1A,3,148
+malden_state_election_2024_11_05,2024-11-05,state,REGISTER OF DEEDS MIDDLESEX SOUTHERN DISTRICT,register_of_deeds_middlesex_southern_district,10,"WILLIAM ""BILLY"" TAURO",Independent,2,3-2,3,179
+malden_state_election_2024_11_05,2024-11-05,state,REGISTER OF DEEDS MIDDLESEX SOUTHERN DISTRICT,register_of_deeds_middlesex_southern_district,10,"WILLIAM ""BILLY"" TAURO",Independent,2,3-3,3,181
+malden_state_election_2024_11_05,2024-11-05,state,REGISTER OF DEEDS MIDDLESEX SOUTHERN DISTRICT,register_of_deeds_middlesex_southern_district,10,"WILLIAM ""BILLY"" TAURO",Independent,2,4-1,4,167
+malden_state_election_2024_11_05,2024-11-05,state,REGISTER OF DEEDS MIDDLESEX SOUTHERN DISTRICT,register_of_deeds_middlesex_southern_district,10,"WILLIAM ""BILLY"" TAURO",Independent,2,4-2,4,95
+malden_state_election_2024_11_05,2024-11-05,state,REGISTER OF DEEDS MIDDLESEX SOUTHERN DISTRICT,register_of_deeds_middlesex_southern_district,10,"WILLIAM ""BILLY"" TAURO",Independent,2,4-3,4,124
+malden_state_election_2024_11_05,2024-11-05,state,REGISTER OF DEEDS MIDDLESEX SOUTHERN DISTRICT,register_of_deeds_middlesex_southern_district,10,"WILLIAM ""BILLY"" TAURO",Independent,2,5-1,5,218
+malden_state_election_2024_11_05,2024-11-05,state,REGISTER OF DEEDS MIDDLESEX SOUTHERN DISTRICT,register_of_deeds_middlesex_southern_district,10,"WILLIAM ""BILLY"" TAURO",Independent,2,5-2,5,277
+malden_state_election_2024_11_05,2024-11-05,state,REGISTER OF DEEDS MIDDLESEX SOUTHERN DISTRICT,register_of_deeds_middlesex_southern_district,10,"WILLIAM ""BILLY"" TAURO",Independent,2,5-3,5,93
+malden_state_election_2024_11_05,2024-11-05,state,REGISTER OF DEEDS MIDDLESEX SOUTHERN DISTRICT,register_of_deeds_middlesex_southern_district,10,"WILLIAM ""BILLY"" TAURO",Independent,2,5-3A,5,110
+malden_state_election_2024_11_05,2024-11-05,state,REGISTER OF DEEDS MIDDLESEX SOUTHERN DISTRICT,register_of_deeds_middlesex_southern_district,10,"WILLIAM ""BILLY"" TAURO",Independent,2,6-1,6,310
+malden_state_election_2024_11_05,2024-11-05,state,REGISTER OF DEEDS MIDDLESEX SOUTHERN DISTRICT,register_of_deeds_middlesex_southern_district,10,"WILLIAM ""BILLY"" TAURO",Independent,2,6-2,6,210
+malden_state_election_2024_11_05,2024-11-05,state,REGISTER OF DEEDS MIDDLESEX SOUTHERN DISTRICT,register_of_deeds_middlesex_southern_district,10,"WILLIAM ""BILLY"" TAURO",Independent,2,6-3,6,243
+malden_state_election_2024_11_05,2024-11-05,state,REGISTER OF DEEDS MIDDLESEX SOUTHERN DISTRICT,register_of_deeds_middlesex_southern_district,10,"WILLIAM ""BILLY"" TAURO",Independent,2,7-1,7,142
+malden_state_election_2024_11_05,2024-11-05,state,REGISTER OF DEEDS MIDDLESEX SOUTHERN DISTRICT,register_of_deeds_middlesex_southern_district,10,"WILLIAM ""BILLY"" TAURO",Independent,2,7-2,7,175
+malden_state_election_2024_11_05,2024-11-05,state,REGISTER OF DEEDS MIDDLESEX SOUTHERN DISTRICT,register_of_deeds_middlesex_southern_district,10,"WILLIAM ""BILLY"" TAURO",Independent,2,7-3,7,116
+malden_state_election_2024_11_05,2024-11-05,state,REGISTER OF DEEDS MIDDLESEX SOUTHERN DISTRICT,register_of_deeds_middlesex_southern_district,10,"WILLIAM ""BILLY"" TAURO",Independent,2,7-3A,7,79
+malden_state_election_2024_11_05,2024-11-05,state,REGISTER OF DEEDS MIDDLESEX SOUTHERN DISTRICT,register_of_deeds_middlesex_southern_district,10,"WILLIAM ""BILLY"" TAURO",Independent,2,8-1,8,258
+malden_state_election_2024_11_05,2024-11-05,state,REGISTER OF DEEDS MIDDLESEX SOUTHERN DISTRICT,register_of_deeds_middlesex_southern_district,10,"WILLIAM ""BILLY"" TAURO",Independent,2,8-2,8,232
+malden_state_election_2024_11_05,2024-11-05,state,REGISTER OF DEEDS MIDDLESEX SOUTHERN DISTRICT,register_of_deeds_middlesex_southern_district,10,"WILLIAM ""BILLY"" TAURO",Independent,2,8-3,8,164
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN CHELSEA,regional_school_committee_northeast_metropolitan_chelsea,11,BLANCA GACHARNA,,1,1-1,1,476
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN CHELSEA,regional_school_committee_northeast_metropolitan_chelsea,11,BLANCA GACHARNA,,1,1-2,1,494
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN CHELSEA,regional_school_committee_northeast_metropolitan_chelsea,11,BLANCA GACHARNA,,1,1-3,1,527
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN CHELSEA,regional_school_committee_northeast_metropolitan_chelsea,11,BLANCA GACHARNA,,1,2-1,2,453
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN CHELSEA,regional_school_committee_northeast_metropolitan_chelsea,11,BLANCA GACHARNA,,1,2-2,2,479
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN CHELSEA,regional_school_committee_northeast_metropolitan_chelsea,11,BLANCA GACHARNA,,1,2-3,2,565
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN CHELSEA,regional_school_committee_northeast_metropolitan_chelsea,11,BLANCA GACHARNA,,1,3-1,3,307
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN CHELSEA,regional_school_committee_northeast_metropolitan_chelsea,11,BLANCA GACHARNA,,1,3-1A,3,370
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN CHELSEA,regional_school_committee_northeast_metropolitan_chelsea,11,BLANCA GACHARNA,,1,3-2,3,563
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN CHELSEA,regional_school_committee_northeast_metropolitan_chelsea,11,BLANCA GACHARNA,,1,3-3,3,625
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN CHELSEA,regional_school_committee_northeast_metropolitan_chelsea,11,BLANCA GACHARNA,,1,4-1,4,545
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN CHELSEA,regional_school_committee_northeast_metropolitan_chelsea,11,BLANCA GACHARNA,,1,4-2,4,366
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN CHELSEA,regional_school_committee_northeast_metropolitan_chelsea,11,BLANCA GACHARNA,,1,4-3,4,489
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN CHELSEA,regional_school_committee_northeast_metropolitan_chelsea,11,BLANCA GACHARNA,,1,5-1,5,579
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN CHELSEA,regional_school_committee_northeast_metropolitan_chelsea,11,BLANCA GACHARNA,,1,5-2,5,771
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN CHELSEA,regional_school_committee_northeast_metropolitan_chelsea,11,BLANCA GACHARNA,,1,5-3,5,262
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN CHELSEA,regional_school_committee_northeast_metropolitan_chelsea,11,BLANCA GACHARNA,,1,5-3A,5,327
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN CHELSEA,regional_school_committee_northeast_metropolitan_chelsea,11,BLANCA GACHARNA,,1,6-1,6,698
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN CHELSEA,regional_school_committee_northeast_metropolitan_chelsea,11,BLANCA GACHARNA,,1,6-2,6,559
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN CHELSEA,regional_school_committee_northeast_metropolitan_chelsea,11,BLANCA GACHARNA,,1,6-3,6,579
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN CHELSEA,regional_school_committee_northeast_metropolitan_chelsea,11,BLANCA GACHARNA,,1,7-1,7,465
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN CHELSEA,regional_school_committee_northeast_metropolitan_chelsea,11,BLANCA GACHARNA,,1,7-2,7,516
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN CHELSEA,regional_school_committee_northeast_metropolitan_chelsea,11,BLANCA GACHARNA,,1,7-3,7,266
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN CHELSEA,regional_school_committee_northeast_metropolitan_chelsea,11,BLANCA GACHARNA,,1,7-3A,7,204
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN CHELSEA,regional_school_committee_northeast_metropolitan_chelsea,11,BLANCA GACHARNA,,1,8-1,8,627
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN CHELSEA,regional_school_committee_northeast_metropolitan_chelsea,11,BLANCA GACHARNA,,1,8-2,8,584
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN CHELSEA,regional_school_committee_northeast_metropolitan_chelsea,11,BLANCA GACHARNA,,1,8-3,8,433
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN MALDEN,regional_school_committee_northeast_metropolitan_malden,12,JAMES J. HOLLAND,,1,1-1,1,504
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN MALDEN,regional_school_committee_northeast_metropolitan_malden,12,JAMES J. HOLLAND,,1,1-2,1,550
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN MALDEN,regional_school_committee_northeast_metropolitan_malden,12,JAMES J. HOLLAND,,1,1-3,1,582
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN MALDEN,regional_school_committee_northeast_metropolitan_malden,12,JAMES J. HOLLAND,,1,2-1,2,476
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN MALDEN,regional_school_committee_northeast_metropolitan_malden,12,JAMES J. HOLLAND,,1,2-2,2,526
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN MALDEN,regional_school_committee_northeast_metropolitan_malden,12,JAMES J. HOLLAND,,1,2-3,2,608
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN MALDEN,regional_school_committee_northeast_metropolitan_malden,12,JAMES J. HOLLAND,,1,3-1,3,338
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN MALDEN,regional_school_committee_northeast_metropolitan_malden,12,JAMES J. HOLLAND,,1,3-1A,3,419
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN MALDEN,regional_school_committee_northeast_metropolitan_malden,12,JAMES J. HOLLAND,,1,3-2,3,603
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN MALDEN,regional_school_committee_northeast_metropolitan_malden,12,JAMES J. HOLLAND,,1,3-3,3,674
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN MALDEN,regional_school_committee_northeast_metropolitan_malden,12,JAMES J. HOLLAND,,1,4-1,4,580
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN MALDEN,regional_school_committee_northeast_metropolitan_malden,12,JAMES J. HOLLAND,,1,4-2,4,372
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN MALDEN,regional_school_committee_northeast_metropolitan_malden,12,JAMES J. HOLLAND,,1,4-3,4,521
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN MALDEN,regional_school_committee_northeast_metropolitan_malden,12,JAMES J. HOLLAND,,1,5-1,5,601
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN MALDEN,regional_school_committee_northeast_metropolitan_malden,12,JAMES J. HOLLAND,,1,5-2,5,846
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN MALDEN,regional_school_committee_northeast_metropolitan_malden,12,JAMES J. HOLLAND,,1,5-3,5,294
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN MALDEN,regional_school_committee_northeast_metropolitan_malden,12,JAMES J. HOLLAND,,1,5-3A,5,361
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN MALDEN,regional_school_committee_northeast_metropolitan_malden,12,JAMES J. HOLLAND,,1,6-1,6,767
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN MALDEN,regional_school_committee_northeast_metropolitan_malden,12,JAMES J. HOLLAND,,1,6-2,6,591
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN MALDEN,regional_school_committee_northeast_metropolitan_malden,12,JAMES J. HOLLAND,,1,6-3,6,639
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN MALDEN,regional_school_committee_northeast_metropolitan_malden,12,JAMES J. HOLLAND,,1,7-1,7,508
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN MALDEN,regional_school_committee_northeast_metropolitan_malden,12,JAMES J. HOLLAND,,1,7-2,7,547
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN MALDEN,regional_school_committee_northeast_metropolitan_malden,12,JAMES J. HOLLAND,,1,7-3,7,300
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN MALDEN,regional_school_committee_northeast_metropolitan_malden,12,JAMES J. HOLLAND,,1,7-3A,7,214
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN MALDEN,regional_school_committee_northeast_metropolitan_malden,12,JAMES J. HOLLAND,,1,8-1,8,691
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN MALDEN,regional_school_committee_northeast_metropolitan_malden,12,JAMES J. HOLLAND,,1,8-2,8,613
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN MALDEN,regional_school_committee_northeast_metropolitan_malden,12,JAMES J. HOLLAND,,1,8-3,8,461
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN MELROSE,regional_school_committee_northeast_metropolitan_melrose,13,WARD HAMILTON,,1,1-1,1,444
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN MELROSE,regional_school_committee_northeast_metropolitan_melrose,13,WARD HAMILTON,,1,1-2,1,483
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN MELROSE,regional_school_committee_northeast_metropolitan_melrose,13,WARD HAMILTON,,1,1-3,1,504
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN MELROSE,regional_school_committee_northeast_metropolitan_melrose,13,WARD HAMILTON,,1,2-1,2,437
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN MELROSE,regional_school_committee_northeast_metropolitan_melrose,13,WARD HAMILTON,,1,2-2,2,480
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN MELROSE,regional_school_committee_northeast_metropolitan_melrose,13,WARD HAMILTON,,1,2-3,2,528
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN MELROSE,regional_school_committee_northeast_metropolitan_melrose,13,WARD HAMILTON,,1,3-1,3,291
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN MELROSE,regional_school_committee_northeast_metropolitan_melrose,13,WARD HAMILTON,,1,3-1A,3,362
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN MELROSE,regional_school_committee_northeast_metropolitan_melrose,13,WARD HAMILTON,,1,3-2,3,542
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN MELROSE,regional_school_committee_northeast_metropolitan_melrose,13,WARD HAMILTON,,1,3-3,3,597
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN MELROSE,regional_school_committee_northeast_metropolitan_melrose,13,WARD HAMILTON,,1,4-1,4,528
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN MELROSE,regional_school_committee_northeast_metropolitan_melrose,13,WARD HAMILTON,,1,4-2,4,349
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN MELROSE,regional_school_committee_northeast_metropolitan_melrose,13,WARD HAMILTON,,1,4-3,4,469
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN MELROSE,regional_school_committee_northeast_metropolitan_melrose,13,WARD HAMILTON,,1,5-1,5,551
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN MELROSE,regional_school_committee_northeast_metropolitan_melrose,13,WARD HAMILTON,,1,5-2,5,749
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN MELROSE,regional_school_committee_northeast_metropolitan_melrose,13,WARD HAMILTON,,1,5-3,5,255
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN MELROSE,regional_school_committee_northeast_metropolitan_melrose,13,WARD HAMILTON,,1,5-3A,5,326
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN MELROSE,regional_school_committee_northeast_metropolitan_melrose,13,WARD HAMILTON,,1,6-1,6,670
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN MELROSE,regional_school_committee_northeast_metropolitan_melrose,13,WARD HAMILTON,,1,6-2,6,533
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN MELROSE,regional_school_committee_northeast_metropolitan_melrose,13,WARD HAMILTON,,1,6-3,6,568
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN MELROSE,regional_school_committee_northeast_metropolitan_melrose,13,WARD HAMILTON,,1,7-1,7,448
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN MELROSE,regional_school_committee_northeast_metropolitan_melrose,13,WARD HAMILTON,,1,7-2,7,510
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN MELROSE,regional_school_committee_northeast_metropolitan_melrose,13,WARD HAMILTON,,1,7-3,7,263
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN MELROSE,regional_school_committee_northeast_metropolitan_melrose,13,WARD HAMILTON,,1,7-3A,7,193
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN MELROSE,regional_school_committee_northeast_metropolitan_melrose,13,WARD HAMILTON,,1,8-1,8,603
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN MELROSE,regional_school_committee_northeast_metropolitan_melrose,13,WARD HAMILTON,,1,8-2,8,571
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN MELROSE,regional_school_committee_northeast_metropolitan_melrose,13,WARD HAMILTON,,1,8-3,8,408
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN N. READING,regional_school_committee_northeast_metropolitan_n_reading,14,JUDITH M. DYMENT,,1,1-1,1,440
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN N. READING,regional_school_committee_northeast_metropolitan_n_reading,14,JUDITH M. DYMENT,,1,1-2,1,479
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN N. READING,regional_school_committee_northeast_metropolitan_n_reading,14,JUDITH M. DYMENT,,1,1-3,1,504
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN N. READING,regional_school_committee_northeast_metropolitan_n_reading,14,JUDITH M. DYMENT,,1,2-1,2,438
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN N. READING,regional_school_committee_northeast_metropolitan_n_reading,14,JUDITH M. DYMENT,,1,2-2,2,469
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN N. READING,regional_school_committee_northeast_metropolitan_n_reading,14,JUDITH M. DYMENT,,1,2-3,2,531
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN N. READING,regional_school_committee_northeast_metropolitan_n_reading,14,JUDITH M. DYMENT,,1,3-1,3,283
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN N. READING,regional_school_committee_northeast_metropolitan_n_reading,14,JUDITH M. DYMENT,,1,3-1A,3,353
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN N. READING,regional_school_committee_northeast_metropolitan_n_reading,14,JUDITH M. DYMENT,,1,3-2,3,538
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN N. READING,regional_school_committee_northeast_metropolitan_n_reading,14,JUDITH M. DYMENT,,1,3-3,3,589
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN N. READING,regional_school_committee_northeast_metropolitan_n_reading,14,JUDITH M. DYMENT,,1,4-1,4,519
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN N. READING,regional_school_committee_northeast_metropolitan_n_reading,14,JUDITH M. DYMENT,,1,4-2,4,350
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN N. READING,regional_school_committee_northeast_metropolitan_n_reading,14,JUDITH M. DYMENT,,1,4-3,4,470
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN N. READING,regional_school_committee_northeast_metropolitan_n_reading,14,JUDITH M. DYMENT,,1,5-1,5,538
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN N. READING,regional_school_committee_northeast_metropolitan_n_reading,14,JUDITH M. DYMENT,,1,5-2,5,741
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN N. READING,regional_school_committee_northeast_metropolitan_n_reading,14,JUDITH M. DYMENT,,1,5-3,5,252
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN N. READING,regional_school_committee_northeast_metropolitan_n_reading,14,JUDITH M. DYMENT,,1,5-3A,5,321
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN N. READING,regional_school_committee_northeast_metropolitan_n_reading,14,JUDITH M. DYMENT,,1,6-1,6,651
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN N. READING,regional_school_committee_northeast_metropolitan_n_reading,14,JUDITH M. DYMENT,,1,6-2,6,528
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN N. READING,regional_school_committee_northeast_metropolitan_n_reading,14,JUDITH M. DYMENT,,1,6-3,6,554
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN N. READING,regional_school_committee_northeast_metropolitan_n_reading,14,JUDITH M. DYMENT,,1,7-1,7,432
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN N. READING,regional_school_committee_northeast_metropolitan_n_reading,14,JUDITH M. DYMENT,,1,7-2,7,501
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN N. READING,regional_school_committee_northeast_metropolitan_n_reading,14,JUDITH M. DYMENT,,1,7-3,7,251
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN N. READING,regional_school_committee_northeast_metropolitan_n_reading,14,JUDITH M. DYMENT,,1,7-3A,7,192
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN N. READING,regional_school_committee_northeast_metropolitan_n_reading,14,JUDITH M. DYMENT,,1,8-1,8,600
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN N. READING,regional_school_committee_northeast_metropolitan_n_reading,14,JUDITH M. DYMENT,,1,8-2,8,569
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN N. READING,regional_school_committee_northeast_metropolitan_n_reading,14,JUDITH M. DYMENT,,1,8-3,8,406
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN READING,regional_school_committee_northeast_metropolitan_reading,15,ROBERT S. McCARTHY,,1,1-1,1,453
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN READING,regional_school_committee_northeast_metropolitan_reading,15,ROBERT S. McCARTHY,,1,1-2,1,492
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN READING,regional_school_committee_northeast_metropolitan_reading,15,ROBERT S. McCARTHY,,1,1-3,1,529
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN READING,regional_school_committee_northeast_metropolitan_reading,15,ROBERT S. McCARTHY,,1,2-1,2,464
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN READING,regional_school_committee_northeast_metropolitan_reading,15,ROBERT S. McCARTHY,,1,2-2,2,542
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN READING,regional_school_committee_northeast_metropolitan_reading,15,ROBERT S. McCARTHY,,1,2-3,2,603
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN READING,regional_school_committee_northeast_metropolitan_reading,15,ROBERT S. McCARTHY,,1,3-1,3,309
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN READING,regional_school_committee_northeast_metropolitan_reading,15,ROBERT S. McCARTHY,,1,3-1A,3,391
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN READING,regional_school_committee_northeast_metropolitan_reading,15,ROBERT S. McCARTHY,,1,3-2,3,560
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN READING,regional_school_committee_northeast_metropolitan_reading,15,ROBERT S. McCARTHY,,1,3-3,3,626
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN READING,regional_school_committee_northeast_metropolitan_reading,15,ROBERT S. McCARTHY,,1,4-1,4,534
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN READING,regional_school_committee_northeast_metropolitan_reading,15,ROBERT S. McCARTHY,,1,4-2,4,356
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN READING,regional_school_committee_northeast_metropolitan_reading,15,ROBERT S. McCARTHY,,1,4-3,4,476
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN READING,regional_school_committee_northeast_metropolitan_reading,15,ROBERT S. McCARTHY,,1,5-1,5,561
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN READING,regional_school_committee_northeast_metropolitan_reading,15,ROBERT S. McCARTHY,,1,5-2,5,787
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN READING,regional_school_committee_northeast_metropolitan_reading,15,ROBERT S. McCARTHY,,1,5-3,5,269
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN READING,regional_school_committee_northeast_metropolitan_reading,15,ROBERT S. McCARTHY,,1,5-3A,5,329
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN READING,regional_school_committee_northeast_metropolitan_reading,15,ROBERT S. McCARTHY,,1,6-1,6,687
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN READING,regional_school_committee_northeast_metropolitan_reading,15,ROBERT S. McCARTHY,,1,6-2,6,563
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN READING,regional_school_committee_northeast_metropolitan_reading,15,ROBERT S. McCARTHY,,1,6-3,6,575
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN READING,regional_school_committee_northeast_metropolitan_reading,15,ROBERT S. McCARTHY,,1,7-1,7,441
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN READING,regional_school_committee_northeast_metropolitan_reading,15,ROBERT S. McCARTHY,,1,7-2,7,519
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN READING,regional_school_committee_northeast_metropolitan_reading,15,ROBERT S. McCARTHY,,1,7-3,7,265
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN READING,regional_school_committee_northeast_metropolitan_reading,15,ROBERT S. McCARTHY,,1,7-3A,7,199
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN READING,regional_school_committee_northeast_metropolitan_reading,15,ROBERT S. McCARTHY,,1,8-1,8,634
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN READING,regional_school_committee_northeast_metropolitan_reading,15,ROBERT S. McCARTHY,,1,8-2,8,579
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN READING,regional_school_committee_northeast_metropolitan_reading,15,ROBERT S. McCARTHY,,1,8-3,8,425
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN REVERE,regional_school_committee_northeast_metropolitan_revere,16,ANTHONY L. CAGGIANO,,1,1-1,1,449
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN REVERE,regional_school_committee_northeast_metropolitan_revere,16,ANTHONY L. CAGGIANO,,1,1-2,1,484
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN REVERE,regional_school_committee_northeast_metropolitan_revere,16,ANTHONY L. CAGGIANO,,1,1-3,1,507
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN REVERE,regional_school_committee_northeast_metropolitan_revere,16,ANTHONY L. CAGGIANO,,1,2-1,2,445
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN REVERE,regional_school_committee_northeast_metropolitan_revere,16,ANTHONY L. CAGGIANO,,1,2-2,2,480
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN REVERE,regional_school_committee_northeast_metropolitan_revere,16,ANTHONY L. CAGGIANO,,1,2-3,2,540
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN REVERE,regional_school_committee_northeast_metropolitan_revere,16,ANTHONY L. CAGGIANO,,1,3-1,3,287
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN REVERE,regional_school_committee_northeast_metropolitan_revere,16,ANTHONY L. CAGGIANO,,1,3-1A,3,364
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN REVERE,regional_school_committee_northeast_metropolitan_revere,16,ANTHONY L. CAGGIANO,,1,3-2,3,543
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN REVERE,regional_school_committee_northeast_metropolitan_revere,16,ANTHONY L. CAGGIANO,,1,3-3,3,606
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN REVERE,regional_school_committee_northeast_metropolitan_revere,16,ANTHONY L. CAGGIANO,,1,4-1,4,512
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN REVERE,regional_school_committee_northeast_metropolitan_revere,16,ANTHONY L. CAGGIANO,,1,4-2,4,348
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN REVERE,regional_school_committee_northeast_metropolitan_revere,16,ANTHONY L. CAGGIANO,,1,4-3,4,467
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN REVERE,regional_school_committee_northeast_metropolitan_revere,16,ANTHONY L. CAGGIANO,,1,5-1,5,548
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN REVERE,regional_school_committee_northeast_metropolitan_revere,16,ANTHONY L. CAGGIANO,,1,5-2,5,739
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN REVERE,regional_school_committee_northeast_metropolitan_revere,16,ANTHONY L. CAGGIANO,,1,5-3,5,261
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN REVERE,regional_school_committee_northeast_metropolitan_revere,16,ANTHONY L. CAGGIANO,,1,5-3A,5,324
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN REVERE,regional_school_committee_northeast_metropolitan_revere,16,ANTHONY L. CAGGIANO,,1,6-1,6,647
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN REVERE,regional_school_committee_northeast_metropolitan_revere,16,ANTHONY L. CAGGIANO,,1,6-2,6,550
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN REVERE,regional_school_committee_northeast_metropolitan_revere,16,ANTHONY L. CAGGIANO,,1,6-3,6,575
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN REVERE,regional_school_committee_northeast_metropolitan_revere,16,ANTHONY L. CAGGIANO,,1,7-1,7,449
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN REVERE,regional_school_committee_northeast_metropolitan_revere,16,ANTHONY L. CAGGIANO,,1,7-2,7,511
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN REVERE,regional_school_committee_northeast_metropolitan_revere,16,ANTHONY L. CAGGIANO,,1,7-3,7,265
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN REVERE,regional_school_committee_northeast_metropolitan_revere,16,ANTHONY L. CAGGIANO,,1,7-3A,7,188
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN REVERE,regional_school_committee_northeast_metropolitan_revere,16,ANTHONY L. CAGGIANO,,1,8-1,8,629
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN REVERE,regional_school_committee_northeast_metropolitan_revere,16,ANTHONY L. CAGGIANO,,1,8-2,8,588
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN REVERE,regional_school_committee_northeast_metropolitan_revere,16,ANTHONY L. CAGGIANO,,1,8-3,8,415
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN SAUGUS,regional_school_committee_northeast_metropolitan_saugus,17,"PETER A. ROSSETTI, JR.",,1,1-1,1,432
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN SAUGUS,regional_school_committee_northeast_metropolitan_saugus,17,"PETER A. ROSSETTI, JR.",,1,1-2,1,471
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN SAUGUS,regional_school_committee_northeast_metropolitan_saugus,17,"PETER A. ROSSETTI, JR.",,1,1-3,1,495
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN SAUGUS,regional_school_committee_northeast_metropolitan_saugus,17,"PETER A. ROSSETTI, JR.",,1,2-1,2,439
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN SAUGUS,regional_school_committee_northeast_metropolitan_saugus,17,"PETER A. ROSSETTI, JR.",,1,2-2,2,467
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN SAUGUS,regional_school_committee_northeast_metropolitan_saugus,17,"PETER A. ROSSETTI, JR.",,1,2-3,2,532
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN SAUGUS,regional_school_committee_northeast_metropolitan_saugus,17,"PETER A. ROSSETTI, JR.",,1,3-1,3,284
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN SAUGUS,regional_school_committee_northeast_metropolitan_saugus,17,"PETER A. ROSSETTI, JR.",,1,3-1A,3,362
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN SAUGUS,regional_school_committee_northeast_metropolitan_saugus,17,"PETER A. ROSSETTI, JR.",,1,3-2,3,526
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN SAUGUS,regional_school_committee_northeast_metropolitan_saugus,17,"PETER A. ROSSETTI, JR.",,1,3-3,3,592
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN SAUGUS,regional_school_committee_northeast_metropolitan_saugus,17,"PETER A. ROSSETTI, JR.",,1,4-1,4,512
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN SAUGUS,regional_school_committee_northeast_metropolitan_saugus,17,"PETER A. ROSSETTI, JR.",,1,4-2,4,341
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN SAUGUS,regional_school_committee_northeast_metropolitan_saugus,17,"PETER A. ROSSETTI, JR.",,1,4-3,4,455
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN SAUGUS,regional_school_committee_northeast_metropolitan_saugus,17,"PETER A. ROSSETTI, JR.",,1,5-1,5,540
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN SAUGUS,regional_school_committee_northeast_metropolitan_saugus,17,"PETER A. ROSSETTI, JR.",,1,5-2,5,733
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN SAUGUS,regional_school_committee_northeast_metropolitan_saugus,17,"PETER A. ROSSETTI, JR.",,1,5-3,5,261
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN SAUGUS,regional_school_committee_northeast_metropolitan_saugus,17,"PETER A. ROSSETTI, JR.",,1,5-3A,5,319
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN SAUGUS,regional_school_committee_northeast_metropolitan_saugus,17,"PETER A. ROSSETTI, JR.",,1,6-1,6,637
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN SAUGUS,regional_school_committee_northeast_metropolitan_saugus,17,"PETER A. ROSSETTI, JR.",,1,6-2,6,535
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN SAUGUS,regional_school_committee_northeast_metropolitan_saugus,17,"PETER A. ROSSETTI, JR.",,1,6-3,6,568
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN SAUGUS,regional_school_committee_northeast_metropolitan_saugus,17,"PETER A. ROSSETTI, JR.",,1,7-1,7,430
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN SAUGUS,regional_school_committee_northeast_metropolitan_saugus,17,"PETER A. ROSSETTI, JR.",,1,7-2,7,505
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN SAUGUS,regional_school_committee_northeast_metropolitan_saugus,17,"PETER A. ROSSETTI, JR.",,1,7-3,7,249
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN SAUGUS,regional_school_committee_northeast_metropolitan_saugus,17,"PETER A. ROSSETTI, JR.",,1,7-3A,7,183
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN SAUGUS,regional_school_committee_northeast_metropolitan_saugus,17,"PETER A. ROSSETTI, JR.",,1,8-1,8,606
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN SAUGUS,regional_school_committee_northeast_metropolitan_saugus,17,"PETER A. ROSSETTI, JR.",,1,8-2,8,565
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN SAUGUS,regional_school_committee_northeast_metropolitan_saugus,17,"PETER A. ROSSETTI, JR.",,1,8-3,8,413
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN STONEHAM,regional_school_committee_northeast_metropolitan_stoneham,18,LAWRENCE M. MEANS,,1,1-1,1,422
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN STONEHAM,regional_school_committee_northeast_metropolitan_stoneham,18,LAWRENCE M. MEANS,,1,1-2,1,462
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN STONEHAM,regional_school_committee_northeast_metropolitan_stoneham,18,LAWRENCE M. MEANS,,1,1-3,1,485
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN STONEHAM,regional_school_committee_northeast_metropolitan_stoneham,18,LAWRENCE M. MEANS,,1,2-1,2,427
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN STONEHAM,regional_school_committee_northeast_metropolitan_stoneham,18,LAWRENCE M. MEANS,,1,2-2,2,452
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN STONEHAM,regional_school_committee_northeast_metropolitan_stoneham,18,LAWRENCE M. MEANS,,1,2-3,2,518
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN STONEHAM,regional_school_committee_northeast_metropolitan_stoneham,18,LAWRENCE M. MEANS,,1,3-1,3,280
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN STONEHAM,regional_school_committee_northeast_metropolitan_stoneham,18,LAWRENCE M. MEANS,,1,3-1A,3,355
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN STONEHAM,regional_school_committee_northeast_metropolitan_stoneham,18,LAWRENCE M. MEANS,,1,3-2,3,512
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN STONEHAM,regional_school_committee_northeast_metropolitan_stoneham,18,LAWRENCE M. MEANS,,1,3-3,3,572
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN STONEHAM,regional_school_committee_northeast_metropolitan_stoneham,18,LAWRENCE M. MEANS,,1,4-1,4,509
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN STONEHAM,regional_school_committee_northeast_metropolitan_stoneham,18,LAWRENCE M. MEANS,,1,4-2,4,338
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN STONEHAM,regional_school_committee_northeast_metropolitan_stoneham,18,LAWRENCE M. MEANS,,1,4-3,4,456
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN STONEHAM,regional_school_committee_northeast_metropolitan_stoneham,18,LAWRENCE M. MEANS,,1,5-1,5,527
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN STONEHAM,regional_school_committee_northeast_metropolitan_stoneham,18,LAWRENCE M. MEANS,,1,5-2,5,716
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN STONEHAM,regional_school_committee_northeast_metropolitan_stoneham,18,LAWRENCE M. MEANS,,1,5-3,5,258
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN STONEHAM,regional_school_committee_northeast_metropolitan_stoneham,18,LAWRENCE M. MEANS,,1,5-3A,5,309
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN STONEHAM,regional_school_committee_northeast_metropolitan_stoneham,18,LAWRENCE M. MEANS,,1,6-1,6,610
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN STONEHAM,regional_school_committee_northeast_metropolitan_stoneham,18,LAWRENCE M. MEANS,,1,6-2,6,526
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN STONEHAM,regional_school_committee_northeast_metropolitan_stoneham,18,LAWRENCE M. MEANS,,1,6-3,6,551
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN STONEHAM,regional_school_committee_northeast_metropolitan_stoneham,18,LAWRENCE M. MEANS,,1,7-1,7,417
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN STONEHAM,regional_school_committee_northeast_metropolitan_stoneham,18,LAWRENCE M. MEANS,,1,7-2,7,488
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN STONEHAM,regional_school_committee_northeast_metropolitan_stoneham,18,LAWRENCE M. MEANS,,1,7-3,7,247
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN STONEHAM,regional_school_committee_northeast_metropolitan_stoneham,18,LAWRENCE M. MEANS,,1,7-3A,7,184
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN STONEHAM,regional_school_committee_northeast_metropolitan_stoneham,18,LAWRENCE M. MEANS,,1,8-1,8,574
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN STONEHAM,regional_school_committee_northeast_metropolitan_stoneham,18,LAWRENCE M. MEANS,,1,8-2,8,551
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN STONEHAM,regional_school_committee_northeast_metropolitan_stoneham,18,LAWRENCE M. MEANS,,1,8-3,8,400
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN WAKEFIELD,regional_school_committee_northeast_metropolitan_wakefield,19,BRITTANY A. CARISELLA,,1,1-1,1,426
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN WAKEFIELD,regional_school_committee_northeast_metropolitan_wakefield,19,BRITTANY A. CARISELLA,,1,1-2,1,464
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN WAKEFIELD,regional_school_committee_northeast_metropolitan_wakefield,19,BRITTANY A. CARISELLA,,1,1-3,1,482
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN WAKEFIELD,regional_school_committee_northeast_metropolitan_wakefield,19,BRITTANY A. CARISELLA,,1,2-1,2,430
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN WAKEFIELD,regional_school_committee_northeast_metropolitan_wakefield,19,BRITTANY A. CARISELLA,,1,2-2,2,453
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN WAKEFIELD,regional_school_committee_northeast_metropolitan_wakefield,19,BRITTANY A. CARISELLA,,1,2-3,2,512
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN WAKEFIELD,regional_school_committee_northeast_metropolitan_wakefield,19,BRITTANY A. CARISELLA,,1,3-1,3,278
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN WAKEFIELD,regional_school_committee_northeast_metropolitan_wakefield,19,BRITTANY A. CARISELLA,,1,3-1A,3,352
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN WAKEFIELD,regional_school_committee_northeast_metropolitan_wakefield,19,BRITTANY A. CARISELLA,,1,3-2,3,508
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN WAKEFIELD,regional_school_committee_northeast_metropolitan_wakefield,19,BRITTANY A. CARISELLA,,1,3-3,3,582
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN WAKEFIELD,regional_school_committee_northeast_metropolitan_wakefield,19,BRITTANY A. CARISELLA,,1,4-1,4,503
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN WAKEFIELD,regional_school_committee_northeast_metropolitan_wakefield,19,BRITTANY A. CARISELLA,,1,4-2,4,335
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN WAKEFIELD,regional_school_committee_northeast_metropolitan_wakefield,19,BRITTANY A. CARISELLA,,1,4-3,4,450
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN WAKEFIELD,regional_school_committee_northeast_metropolitan_wakefield,19,BRITTANY A. CARISELLA,,1,5-1,5,534
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN WAKEFIELD,regional_school_committee_northeast_metropolitan_wakefield,19,BRITTANY A. CARISELLA,,1,5-2,5,715
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN WAKEFIELD,regional_school_committee_northeast_metropolitan_wakefield,19,BRITTANY A. CARISELLA,,1,5-3,5,251
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN WAKEFIELD,regional_school_committee_northeast_metropolitan_wakefield,19,BRITTANY A. CARISELLA,,1,5-3A,5,313
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN WAKEFIELD,regional_school_committee_northeast_metropolitan_wakefield,19,BRITTANY A. CARISELLA,,1,6-1,6,612
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN WAKEFIELD,regional_school_committee_northeast_metropolitan_wakefield,19,BRITTANY A. CARISELLA,,1,6-2,6,516
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN WAKEFIELD,regional_school_committee_northeast_metropolitan_wakefield,19,BRITTANY A. CARISELLA,,1,6-3,6,551
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN WAKEFIELD,regional_school_committee_northeast_metropolitan_wakefield,19,BRITTANY A. CARISELLA,,1,7-1,7,428
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN WAKEFIELD,regional_school_committee_northeast_metropolitan_wakefield,19,BRITTANY A. CARISELLA,,1,7-2,7,480
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN WAKEFIELD,regional_school_committee_northeast_metropolitan_wakefield,19,BRITTANY A. CARISELLA,,1,7-3,7,248
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN WAKEFIELD,regional_school_committee_northeast_metropolitan_wakefield,19,BRITTANY A. CARISELLA,,1,7-3A,7,186
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN WAKEFIELD,regional_school_committee_northeast_metropolitan_wakefield,19,BRITTANY A. CARISELLA,,1,8-1,8,570
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN WAKEFIELD,regional_school_committee_northeast_metropolitan_wakefield,19,BRITTANY A. CARISELLA,,1,8-2,8,551
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN WAKEFIELD,regional_school_committee_northeast_metropolitan_wakefield,19,BRITTANY A. CARISELLA,,1,8-3,8,389
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN WOBURN,regional_school_committee_northeast_metropolitan_woburn,20,DEBORAH P. DAVIS,,1,1-1,1,419
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN WOBURN,regional_school_committee_northeast_metropolitan_woburn,20,DEBORAH P. DAVIS,,1,1-2,1,442
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN WOBURN,regional_school_committee_northeast_metropolitan_woburn,20,DEBORAH P. DAVIS,,1,1-3,1,453
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN WOBURN,regional_school_committee_northeast_metropolitan_woburn,20,DEBORAH P. DAVIS,,1,2-1,2,393
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN WOBURN,regional_school_committee_northeast_metropolitan_woburn,20,DEBORAH P. DAVIS,,1,2-2,2,423
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN WOBURN,regional_school_committee_northeast_metropolitan_woburn,20,DEBORAH P. DAVIS,,1,2-3,2,480
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN WOBURN,regional_school_committee_northeast_metropolitan_woburn,20,DEBORAH P. DAVIS,,1,3-1,3,249
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN WOBURN,regional_school_committee_northeast_metropolitan_woburn,20,DEBORAH P. DAVIS,,1,3-1A,3,318
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN WOBURN,regional_school_committee_northeast_metropolitan_woburn,20,DEBORAH P. DAVIS,,1,3-2,3,483
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN WOBURN,regional_school_committee_northeast_metropolitan_woburn,20,DEBORAH P. DAVIS,,1,3-3,3,527
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN WOBURN,regional_school_committee_northeast_metropolitan_woburn,20,DEBORAH P. DAVIS,,1,4-1,4,472
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN WOBURN,regional_school_committee_northeast_metropolitan_woburn,20,DEBORAH P. DAVIS,,1,4-2,4,315
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN WOBURN,regional_school_committee_northeast_metropolitan_woburn,20,DEBORAH P. DAVIS,,1,4-3,4,415
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN WOBURN,regional_school_committee_northeast_metropolitan_woburn,20,DEBORAH P. DAVIS,,1,5-1,5,498
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN WOBURN,regional_school_committee_northeast_metropolitan_woburn,20,DEBORAH P. DAVIS,,1,5-2,5,674
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN WOBURN,regional_school_committee_northeast_metropolitan_woburn,20,DEBORAH P. DAVIS,,1,5-3,5,242
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN WOBURN,regional_school_committee_northeast_metropolitan_woburn,20,DEBORAH P. DAVIS,,1,5-3A,5,299
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN WOBURN,regional_school_committee_northeast_metropolitan_woburn,20,DEBORAH P. DAVIS,,1,6-1,6,571
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN WOBURN,regional_school_committee_northeast_metropolitan_woburn,20,DEBORAH P. DAVIS,,1,6-2,6,487
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN WOBURN,regional_school_committee_northeast_metropolitan_woburn,20,DEBORAH P. DAVIS,,1,6-3,6,511
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN WOBURN,regional_school_committee_northeast_metropolitan_woburn,20,DEBORAH P. DAVIS,,1,7-1,7,406
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN WOBURN,regional_school_committee_northeast_metropolitan_woburn,20,DEBORAH P. DAVIS,,1,7-2,7,469
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN WOBURN,regional_school_committee_northeast_metropolitan_woburn,20,DEBORAH P. DAVIS,,1,7-3,7,238
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN WOBURN,regional_school_committee_northeast_metropolitan_woburn,20,DEBORAH P. DAVIS,,1,7-3A,7,175
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN WOBURN,regional_school_committee_northeast_metropolitan_woburn,20,DEBORAH P. DAVIS,,1,8-1,8,521
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN WOBURN,regional_school_committee_northeast_metropolitan_woburn,20,DEBORAH P. DAVIS,,1,8-2,8,496
+malden_state_election_2024_11_05,2024-11-05,state,REGIONAL SCHOOL COMMITTEE NORTHEAST METROPOLITAN WOBURN,regional_school_committee_northeast_metropolitan_woburn,20,DEBORAH P. DAVIS,,1,8-3,8,376

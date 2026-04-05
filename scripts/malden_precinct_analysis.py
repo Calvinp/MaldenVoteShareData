@@ -5,9 +5,10 @@ import json
 import math
 import urllib.parse
 import urllib.request
+from collections import defaultdict
 from dataclasses import dataclass
 from pathlib import Path
-from statistics import fmean
+from statistics import fmean, median
 
 from scipy.stats import pearsonr, spearmanr
 from shapely.geometry import MultiPolygon, Polygon, shape
@@ -22,6 +23,7 @@ except ModuleNotFoundError:
 
 
 ROOT = Path(__file__).resolve().parent.parent
+RAW_DATA_DIR = ROOT / "RawData"
 ANALYSIS_CACHE_DIR = ROOT / ".cache" / "precinct_analysis"
 USER_AGENT = "Prop2.5OverrideData/1.0 (side-project precinct correlation analysis)"
 CACHE_VERSION = "v2"
@@ -39,6 +41,13 @@ TIGERWEB_MAPSERVER = "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGER
 
 COVARIATES_OUTPUT_PATH = OUTPUT_DIR / "malden_precinct_covariates.csv"
 REPORT_OUTPUT_PATH = OUTPUT_DIR / "malden_vote_correlation_report.md"
+HISTORICAL_STATE_RESULTS_PATHS = [
+    RAW_DATA_DIR / "malden_state_election_2022_11_08_candidate_results.csv",
+    RAW_DATA_DIR / "malden_state_election_2024_11_05_candidate_results.csv",
+]
+
+DEMOCRATIC_PARTY = "Democratic"
+REPUBLICAN_PARTY = "Republican"
 
 BLOCK_FIELDS = ["GEOID", "OID", "AREALAND"]
 BLOCK_GROUP_FIELDS = ["GEOID", "OID", "AREALAND"]
@@ -196,6 +205,8 @@ ACS_AGE_65_PLUS_CODES = [
 ANALYSIS_VARIABLES = [
     "registered_voters",
     "turnout_pct",
+    "mean_dr_vote_share_2022_2024",
+    "median_dr_vote_share_2022_2024",
     "precinct_area_sq_miles",
     "population_density_per_sq_mile",
     "nearest_mbta_stop_distance_miles",
@@ -237,6 +248,8 @@ VARIABLE_LABELS = {
     "registered_voters": "Registered voters",
     "ballots_cast": "Ballots cast",
     "turnout_pct": "Turnout %",
+    "mean_dr_vote_share_2022_2024": "Mean D-R vote share (2022/2024)",
+    "median_dr_vote_share_2022_2024": "Median D-R vote share (2022/2024)",
     "population_2020": "2020 Census population",
     "precinct_area_sq_miles": "Precinct area (sq mi)",
     "population_density_per_sq_mile": "Population density",
@@ -273,6 +286,8 @@ REPORT_FIELD_SPECS = {
     "registered_voters": ("count", 0),
     "ballots_cast": ("count", 0),
     "turnout_pct": ("pct", 1),
+    "mean_dr_vote_share_2022_2024": ("pct", 1),
+    "median_dr_vote_share_2022_2024": ("pct", 1),
     "population_2020": ("count", 0),
     "precinct_area_sq_miles": ("decimal", 2),
     "population_density_per_sq_mile": ("count", 0),
@@ -368,6 +383,64 @@ def weighted_average(weighted_values: list[tuple[float, float]]) -> float | None
     if total_weight <= 0:
         return None
     return sum(value * weight for value, weight in weighted_values if weight > 0) / total_weight
+
+
+def compute_precinct_historical_partisan_baselines(
+    candidate_rows: list[dict[str, str]],
+) -> dict[str, dict[str, float | None]]:
+    contest_parties: dict[tuple[str, str], set[str]] = defaultdict(set)
+    precinct_contest_party_votes: dict[tuple[str, str, str], int] = defaultdict(int)
+    precincts: set[str] = set()
+
+    for row in candidate_rows:
+        precinct = row["precinct"]
+        contest_key = (row["election_key"], row["contest_slug"])
+        party = row["candidate_party"]
+        precincts.add(precinct)
+        if party:
+            contest_parties[contest_key].add(party)
+        if party in {DEMOCRATIC_PARTY, REPUBLICAN_PARTY}:
+            precinct_contest_party_votes[(precinct, *contest_key, party)] += int(row["votes"])
+
+    eligible_contests = {
+        contest_key
+        for contest_key, parties in contest_parties.items()
+        if DEMOCRATIC_PARTY in parties and REPUBLICAN_PARTY in parties
+    }
+
+    dr_shares_by_precinct: dict[str, list[float]] = {precinct: [] for precinct in precincts}
+    for precinct in precincts:
+        for election_key, contest_slug in eligible_contests:
+            democratic_votes = precinct_contest_party_votes.get(
+                (precinct, election_key, contest_slug, DEMOCRATIC_PARTY),
+                0,
+            )
+            republican_votes = precinct_contest_party_votes.get(
+                (precinct, election_key, contest_slug, REPUBLICAN_PARTY),
+                0,
+            )
+            two_party_votes = democratic_votes + republican_votes
+            dr_vote_share = safe_divide(democratic_votes - republican_votes, two_party_votes)
+            if dr_vote_share is not None:
+                dr_shares_by_precinct[precinct].append(dr_vote_share)
+
+    return {
+        precinct: {
+            "mean_dr_vote_share_2022_2024": fmean(dr_shares) if dr_shares else None,
+            "median_dr_vote_share_2022_2024": median(dr_shares) if dr_shares else None,
+        }
+        for precinct, dr_shares in dr_shares_by_precinct.items()
+    }
+
+
+def load_precinct_historical_partisan_baselines(
+    csv_paths: list[Path] = HISTORICAL_STATE_RESULTS_PATHS,
+) -> dict[str, dict[str, float | None]]:
+    candidate_rows: list[dict[str, str]] = []
+    for csv_path in csv_paths:
+        with csv_path.open(newline="", encoding="utf-8") as csv_file:
+            candidate_rows.extend(csv.DictReader(csv_file))
+    return compute_precinct_historical_partisan_baselines(candidate_rows)
 
 
 def weighted_point_coordinates(weighted_points: list[tuple[float, float, float]]) -> tuple[float, float] | None:
@@ -814,6 +887,7 @@ def build_precinct_covariates() -> list[dict[str, float | str | None]]:
     results = load_precinct_results()
     turnout = load_precinct_turnout()
     precinct_geometries = load_precinct_geometries()
+    historical_partisan_baselines = load_precinct_historical_partisan_baselines()
 
     block_group_features = load_source_geometries(BLOCK_GROUP_LAYER_ID, precinct_geometries, "block_groups")
     block_features = load_source_geometries(BLOCK_LAYER_ID, precinct_geometries, "blocks")
@@ -850,6 +924,7 @@ def build_precinct_covariates() -> list[dict[str, float | str | None]]:
             "ballots_cast": turnout_row.ballots_cast,
             "turnout_pct": turnout_row.turnout_pct,
         }
+        row.update(historical_partisan_baselines.get(precinct_name, {}))
         row.update(block_demographics[precinct_name])
         row.update(acs_covariates[precinct_name])
         precinct_rows.append(row)
@@ -967,6 +1042,7 @@ def build_report(
         f"- Average Q1A yes share: {q1a_mean * 100:.1f}%",
         f"- Average Q1B yes share: {q1b_mean * 100:.1f}%",
         f"- Average turnout: {turnout_mean * 100:.1f}%",
+        "- Historical partisan baseline variables summarize each precinct's Democratic-minus-Republican two-party vote share across the 2022 and 2024 general-election contests that had both Democratic and Republican candidates on the ballot.",
         "- Demographic and housing covariates are precinct estimates created by spatially intersecting precinct polygons with 2020 Census blocks and 2025-vintage TIGER/ACS block groups.",
         "- Distance to the nearest MBTA stop is measured as straight-line miles from each precinct's population-weighted block-overlap center, with precinct centroid fallback where no population-weighted center is available.",
         "- Literal Walk Score is not included here; the analysis uses public walkability proxies instead, especially transit share, walk share, no-car share, and density.",

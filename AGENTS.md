@@ -7,18 +7,36 @@
 
 ## Key Files
 - [scripts/malden_override_map.py](scripts/malden_override_map.py): Main generator for all output maps.
+- [scripts/malden_historical_results.py](scripts/malden_historical_results.py): Parser for the 2022, 2023, 2024, and 2025 Malden results PDFs that writes machine-readable candidate-result CSVs.
 - [scripts/malden_turnout_graphs.py](scripts/malden_turnout_graphs.py): Generator for turnout visuals, including the precinct turnout map and optional ward charts.
 - [scripts/malden_precinct_analysis.py](scripts/malden_precinct_analysis.py): Precinct-level Census/turnout covariate builder and vote-share correlation report generator.
 - [scripts/malden_precinct_pdf_report.py](scripts/malden_precinct_pdf_report.py): Human-readable PDF report generator with narrative pages and charts built from the precinct analysis.
 - [tests/test_malden_override_map.py](tests/test_malden_override_map.py): Parsing, join, and color-scale tests.
+- [tests/test_malden_historical_results.py](tests/test_malden_historical_results.py): Historical PDF parsing, party-label enrichment, district-subset handling, and CSV output tests.
 - [tests/test_malden_turnout_graphs.py](tests/test_malden_turnout_graphs.py): Turnout PDF parsing, aggregation, and chart rendering tests.
 - [tests/test_malden_precinct_analysis.py](tests/test_malden_precinct_analysis.py): Overlay, Census parsing, covariate derivation, and correlation-report tests.
 - [tests/test_malden_precinct_pdf_report.py](tests/test_malden_precinct_pdf_report.py): PDF page rendering, chart generation, and report assembly tests.
 - [RawData/malden_override_results_verified.xlsx](RawData/malden_override_results_verified.xlsx): Source vote totals by precinct and ward.
+- [RawData/malden_state_election_2022_11_08_results.pdf](RawData/malden_state_election_2022_11_08_results.pdf): Official Malden certified results PDF for the November 8, 2022 general state election, including federal and state contests by precinct.
+- [RawData/malden_state_election_2022_11_08_candidate_results.csv](RawData/malden_state_election_2022_11_08_candidate_results.csv): Machine-readable tall CSV of 2022 candidate results by precinct with party labels filled for partisan contests.
+- [RawData/malden_municipal_election_2023_11_07_results.pdf](RawData/malden_municipal_election_2023_11_07_results.pdf): Official Malden municipal final results PDF for November 7, 2023.
+- [RawData/malden_municipal_election_2023_11_07_candidate_results.csv](RawData/malden_municipal_election_2023_11_07_candidate_results.csv): Machine-readable tall CSV of 2023 municipal candidate results by precinct.
+- [RawData/malden_state_election_2024_11_05_results.pdf](RawData/malden_state_election_2024_11_05_results.pdf): Official Malden final results PDF for the November 5, 2024 general state election, including federal and state contests by precinct.
+- [RawData/malden_state_election_2024_11_05_candidate_results.csv](RawData/malden_state_election_2024_11_05_candidate_results.csv): Machine-readable tall CSV of 2024 candidate results by precinct with party labels filled for partisan contests.
+- [RawData/malden_municipal_election_2025_11_04_results.pdf](RawData/malden_municipal_election_2025_11_04_results.pdf): Official Malden municipal final results PDF for November 4, 2025.
+- [RawData/malden_municipal_election_2025_11_04_candidate_results.csv](RawData/malden_municipal_election_2025_11_04_candidate_results.csv): Machine-readable tall CSV of 2025 municipal candidate results by precinct.
 - [RawData/malden_special_municipal_election_2026_unofficial_results.pdf](RawData/malden_special_municipal_election_2026_unofficial_results.pdf): Official Malden PDF with registered-voter and voter-count denominators for turnout.
 - [RawData/malden_subprecincts_official.geojson](RawData/malden_subprecincts_official.geojson): Official Malden precinct polygons used for rendering.
 - [Output](Output): Generated PNG and SVG maps.
 - [Graphics](Graphics): Generated chart graphics, including vote-share and turnout bar charts.
+
+## Historical Raw Data Notes
+- The November 8, 2022, November 7, 2023, November 5, 2024, and November 4, 2025 PDFs use the current 27-subprecinct label set such as `1-3`, `3-1A`, `5-3A`, and `7-3A`.
+- The November 2022 and November 2024 "state election" PDFs are the right general-election raw files for both federal and state contests in those years; Malden labels them as state elections because that is the Commonwealth's standard naming.
+- These historical PDFs were downloaded from the City of Malden election-results page and its linked archive files so future agents can re-verify provenance if needed.
+- The four `*_candidate_results.csv` files are tall CSVs with one row per `contest` / `candidate` / `precinct`, and columns for `candidate_party`, `votes`, `ward`, and stable contest slugs/order.
+- `candidate_party` is intentionally blank for municipal contests and for nonpartisan offices such as the 2024 Northeast Metropolitan regional school committee races.
+- The 2022 and 2024 partisan `candidate_party` values were filled from official Massachusetts candidate-list pages, not inferred from the city PDFs.
 
 ## How To Color A New Election Map
 1. Put the new workbook in `RawData`.
@@ -55,6 +73,8 @@
 - The analysis estimates precinct demographics by spatially intersecting precinct polygons with Census blocks and block groups; these are modeled precinct covariates, not official precinct-published Census tables.
 - Race and Hispanic-share estimates come from 2020 Census redistricting tables at block level.
 - Most socioeconomic variables come from 2024 ACS 5-year estimates at block-group level.
+- The precinct covariates now also include `mean_dr_vote_share_2022_2024` and `median_dr_vote_share_2022_2024`, built from the 2022 and 2024 Malden general-election CSVs.
+- Those D-R variables use Democratic-minus-Republican two-party vote share per contest, then take the mean or median across only the 2022/2024 federal or state contests that had both a Democratic and Republican candidate on the ballot.
 - The analysis now includes distance to the nearest MBTA rapid-transit stop, measured in straight-line miles from a precinct population-weighted block-overlap center when possible, with precinct centroid fallback otherwise.
 - Literal Walk Score is not currently included; use transit share, walk share, no-car share, and density as the public walkability proxies in this repo.
 - Turnout is included from the local city results PDF parser, so no turnout download is needed for the analysis pipeline.

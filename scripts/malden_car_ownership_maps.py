@@ -41,13 +41,72 @@ CAR_OWNERSHIP_COLOR_STOPS = [
 @dataclass(frozen=True)
 class AreaCarOwnership:
     label: str
-    estimated_vehicle_count: float
     population: float
-    estimated_vehicles_per_person: float
+    adult_population: float
+    estimated_households: float
+    estimated_vehicle_count: float
 
     @property
     def ward(self) -> str:
         return self.label.split("-")[0] if "-" in self.label else self.label
+
+
+@dataclass(frozen=True)
+class MetricSpec:
+    column: str
+    title: str
+    legend_title: str
+    output_stem_prefix: str
+    formatter: str
+
+    def compute(self, area: AreaCarOwnership) -> float:
+        if self.column == "estimated_vehicles_per_person":
+            return safe_divide(area.estimated_vehicle_count, area.population)
+        if self.column == "estimated_vehicles_per_household":
+            return safe_divide(area.estimated_vehicle_count, area.estimated_households)
+        if self.column == "estimated_vehicles_per_adult":
+            return safe_divide(area.estimated_vehicle_count, area.adult_population)
+        if self.column == "estimated_residents_with_car_share":
+            return safe_divide(min(area.estimated_vehicle_count, area.population), area.population)
+        raise ValueError(f"Unknown metric: {self.column}")
+
+
+METRICS = [
+    MetricSpec(
+        column="estimated_vehicles_per_person",
+        title="Malden estimated cars per resident by {level}",
+        legend_title="Estimated cars per resident",
+        output_stem_prefix="malden_cars_per_resident",
+        formatter="decimal",
+    ),
+    MetricSpec(
+        column="estimated_vehicles_per_household",
+        title="Malden estimated cars per household by {level}",
+        legend_title="Estimated cars per household",
+        output_stem_prefix="malden_cars_per_household",
+        formatter="decimal",
+    ),
+    MetricSpec(
+        column="estimated_vehicles_per_adult",
+        title="Malden estimated cars per adult resident by {level}",
+        legend_title="Estimated cars per adult",
+        output_stem_prefix="malden_cars_per_adult",
+        formatter="decimal",
+    ),
+    MetricSpec(
+        column="estimated_residents_with_car_share",
+        title="Malden estimated resident car coverage share by {level}",
+        legend_title="Estimated resident car coverage",
+        output_stem_prefix="malden_resident_car_coverage",
+        formatter="pct",
+    ),
+]
+
+
+def safe_divide(numerator: float, denominator: float) -> float:
+    if denominator <= 0:
+        return 0.0
+    return numerator / denominator
 
 
 def build_precinct_car_ownership_rows(
@@ -55,52 +114,82 @@ def build_precinct_car_ownership_rows(
 ) -> list[dict[str, float | str]]:
     rows: list[dict[str, float | str]] = []
     for row in precinct_rows:
-        value = row.get("estimated_vehicles_per_person")
-        if value is None:
-            continue
         population_value = row.get("acs_population_estimate")
         if population_value is None:
             population_value = row.get("population_2020")
         if population_value is None:
             raise KeyError("Expected an ACS or 2020 population field for car-ownership export")
 
-        estimated_vehicle_count = row.get("estimated_vehicle_count")
-        if estimated_vehicle_count is None:
-            estimated_vehicle_count = float(value) * float(population_value)
+        adult_share = row.get("adult_share")
+        adult_population = float(population_value) * float(adult_share) if adult_share is not None else float(population_value)
 
-        rows.append(
-            {
-                "precinct": str(row["precinct"]),
-                "ward": str(row["ward"]),
-                "population": float(population_value),
-                "estimated_vehicle_count": float(estimated_vehicle_count),
-                "estimated_vehicles_per_person": float(value),
-            }
+        estimated_vehicle_count = row.get("estimated_vehicle_count")
+        estimated_vehicles_per_household = row.get("estimated_vehicles_per_household")
+        estimated_vehicles_per_person = row.get("estimated_vehicles_per_person")
+        if estimated_vehicle_count is None:
+            if estimated_vehicles_per_person is None:
+                raise KeyError("Expected an estimated vehicle count or per-person vehicle metric")
+            estimated_vehicle_count = float(estimated_vehicles_per_person) * float(population_value)
+
+        if estimated_vehicles_per_household is None:
+            raise KeyError("Expected estimated_vehicles_per_household for car-ownership export")
+        estimated_households = safe_divide(float(estimated_vehicle_count), float(estimated_vehicles_per_household))
+
+        area = AreaCarOwnership(
+            label=str(row["precinct"]),
+            population=float(population_value),
+            adult_population=adult_population,
+            estimated_households=estimated_households,
+            estimated_vehicle_count=float(estimated_vehicle_count),
         )
+        rows.append(export_row(area))
     return sorted(rows, key=lambda item: (int(str(item["ward"])), str(item["precinct"])))
 
 
 def aggregate_ward_car_ownership(
     precinct_rows: list[dict[str, float | str]],
 ) -> list[dict[str, float | str]]:
-    ward_totals: dict[str, dict[str, float]] = {}
+    ward_totals: dict[str, AreaCarOwnership] = {}
     for row in precinct_rows:
         ward = str(row["ward"])
-        totals = ward_totals.setdefault(ward, {"population": 0.0, "estimated_vehicle_count": 0.0})
-        totals["population"] += float(row["population"])
-        totals["estimated_vehicle_count"] += float(row["estimated_vehicle_count"])
-
-    ward_rows: list[dict[str, float | str]] = []
-    for ward, totals in sorted(ward_totals.items(), key=lambda item: int(item[0])):
-        ward_rows.append(
-            {
-                "ward": ward,
-                "population": totals["population"],
-                "estimated_vehicle_count": totals["estimated_vehicle_count"],
-                "estimated_vehicles_per_person": totals["estimated_vehicle_count"] / totals["population"],
-            }
+        existing = ward_totals.get(ward)
+        current = AreaCarOwnership(
+            label=ward,
+            population=float(row["population"]),
+            adult_population=float(row["adult_population"]),
+            estimated_households=float(row["estimated_households"]),
+            estimated_vehicle_count=float(row["estimated_vehicle_count"]),
         )
-    return ward_rows
+        if existing is None:
+            ward_totals[ward] = current
+        else:
+            ward_totals[ward] = AreaCarOwnership(
+                label=ward,
+                population=existing.population + current.population,
+                adult_population=existing.adult_population + current.adult_population,
+                estimated_households=existing.estimated_households + current.estimated_households,
+                estimated_vehicle_count=existing.estimated_vehicle_count + current.estimated_vehicle_count,
+            )
+
+    return [export_row(area) for _, area in sorted(ward_totals.items(), key=lambda item: int(item[0]))]
+
+
+def export_row(area: AreaCarOwnership) -> dict[str, float | str]:
+    row: dict[str, float | str] = {
+        "population": area.population,
+        "adult_population": area.adult_population,
+        "estimated_households": area.estimated_households,
+        "estimated_vehicle_count": area.estimated_vehicle_count,
+    }
+    if "-" in area.label:
+        row["precinct"] = area.label
+        row["ward"] = area.ward
+    else:
+        row["ward"] = area.label
+
+    for metric in METRICS:
+        row[metric.column] = metric.compute(area)
+    return row
 
 
 def build_area_records(
@@ -111,8 +200,9 @@ def build_area_records(
         str(row[key_field]): AreaCarOwnership(
             label=str(row[key_field]),
             population=float(row["population"]),
+            adult_population=float(row["adult_population"]),
+            estimated_households=float(row["estimated_households"]),
             estimated_vehicle_count=float(row["estimated_vehicle_count"]),
-            estimated_vehicles_per_person=float(row["estimated_vehicles_per_person"]),
         )
         for row in rows
     }
@@ -129,8 +219,15 @@ def build_ward_geometries(
     return ward_geometries
 
 
-def build_car_ownership_colorizer(
+def format_metric_value(value: float, formatter: str) -> str:
+    if formatter == "pct":
+        return f"{value * 100:.0f}%"
+    return f"{value:.2f}"
+
+
+def build_metric_colorizer(
     values: list[float],
+    metric: MetricSpec,
 ) -> tuple[callable, LegendSpec]:
     min_value = min(values)
     max_value = max(values)
@@ -145,8 +242,8 @@ def build_car_ownership_colorizer(
         min_value + (max_value - min_value) * fraction for fraction in (0.0, 0.33, 0.66, 1.0)
     ]
     legend = LegendSpec(
-        title="Estimated cars per resident",
-        items=[(f"{value:.2f}", color_fn(value)) for value in legend_values],
+        title=metric.legend_title,
+        items=[(format_metric_value(value, metric.formatter), color_fn(value)) for value in legend_values],
         position="bottom-right",
     )
     return color_fn, legend
@@ -158,6 +255,27 @@ def write_rows_csv(rows: list[dict[str, float | str]], output_path: Path) -> Non
         writer = csv.DictWriter(csv_file, fieldnames=list(rows[0].keys()))
         writer.writeheader()
         writer.writerows(rows)
+
+
+def render_metric_maps(
+    area_records: dict[str, AreaCarOwnership],
+    geometries: dict[str, Polygon | MultiPolygon],
+    level: str,
+) -> None:
+    basemap = build_basemap(geometries)
+    for metric in METRICS:
+        values = [metric.compute(area) for area in area_records.values()]
+        color_fn, legend = build_metric_colorizer(values, metric)
+        render_map(
+            metric.title.format(level=level),
+            metric.compute,
+            area_records,
+            geometries,
+            basemap,
+            OTHER_DATA_DIR / f"{metric.output_stem_prefix}_{level}_map",
+            color_fn,
+            legend,
+        )
 
 
 def generate_all_outputs() -> None:
@@ -174,35 +292,8 @@ def generate_all_outputs() -> None:
     precinct_geometries = load_precinct_geometries()
     ward_geometries = build_ward_geometries(precinct_geometries)
 
-    all_values = [
-        *(record.estimated_vehicles_per_person for record in precinct_records.values()),
-        *(record.estimated_vehicles_per_person for record in ward_records.values()),
-    ]
-    color_fn, legend = build_car_ownership_colorizer(all_values)
-
-    precinct_basemap = build_basemap(precinct_geometries)
-    render_map(
-        "Malden estimated cars per resident by precinct",
-        lambda record: record.estimated_vehicles_per_person,
-        precinct_records,
-        precinct_geometries,
-        precinct_basemap,
-        OTHER_DATA_DIR / "malden_car_ownership_precinct_map",
-        color_fn,
-        legend,
-    )
-
-    ward_basemap = build_basemap(ward_geometries)
-    render_map(
-        "Malden estimated cars per resident by ward",
-        lambda record: record.estimated_vehicles_per_person,
-        ward_records,
-        ward_geometries,
-        ward_basemap,
-        OTHER_DATA_DIR / "malden_car_ownership_ward_map",
-        color_fn,
-        legend,
-    )
+    render_metric_maps(precinct_records, precinct_geometries, "precinct")
+    render_metric_maps(ward_records, ward_geometries, "ward")
 
 
 if __name__ == "__main__":

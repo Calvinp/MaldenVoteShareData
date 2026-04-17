@@ -1,10 +1,14 @@
 from __future__ import annotations
 
 import csv
+import datetime as dt
+import io
 import json
 import math
+import re
 import urllib.parse
 import urllib.request
+import zipfile
 from collections import defaultdict
 from dataclasses import dataclass
 from pathlib import Path
@@ -26,7 +30,7 @@ ROOT = Path(__file__).resolve().parent.parent
 RAW_DATA_DIR = ROOT / "RawData"
 ANALYSIS_CACHE_DIR = ROOT / ".cache" / "precinct_analysis"
 USER_AGENT = "Prop2.5OverrideData/1.0 (side-project precinct correlation analysis)"
-CACHE_VERSION = "v2"
+CACHE_VERSION = "v4"
 
 STATE_FIPS = "25"
 COUNTY_FIPS = "017"
@@ -35,6 +39,7 @@ ACS_DATASET = "acs/acs5"
 PL_YEAR = "2020"
 PL_DATASET = "dec/pl"
 
+TRACT_LAYER_ID = 0
 BLOCK_GROUP_LAYER_ID = 1
 BLOCK_LAYER_ID = 2
 TIGERWEB_MAPSERVER = "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/Tracts_Blocks/MapServer"
@@ -45,12 +50,39 @@ HISTORICAL_STATE_RESULTS_PATHS = [
     RAW_DATA_DIR / "malden_state_election_2022_11_08_candidate_results.csv",
     RAW_DATA_DIR / "malden_state_election_2024_11_05_candidate_results.csv",
 ]
+MASSGIS_PARCELS_LAYER_URL = (
+    "https://services1.arcgis.com/hGdibHYSPO59RG1h/arcgis/rest/services/"
+    "Massachusetts_Property_Tax_Parcels/FeatureServer/0"
+)
+MBTA_GTFS_URL = "https://cdn.mbta.com/MBTA_GTFS.zip"
+VRU_CRASH_LAYER_URL = (
+    "https://services1.arcgis.com/ceiitspzDAHrdGO1/arcgis/rest/services/VRU_Map_Final_WFL1/FeatureServer/1"
+)
+BUS_ACCESS_RADIUS_MILES = 0.25
 
 DEMOCRATIC_PARTY = "Democratic"
 REPUBLICAN_PARTY = "Republican"
 
+TRACT_FIELDS = ["GEOID", "OID", "AREALAND"]
 BLOCK_FIELDS = ["GEOID", "OID", "AREALAND"]
 BLOCK_GROUP_FIELDS = ["GEOID", "OID", "AREALAND"]
+TRACT_ACS_VARIABLES = [
+    "B05002_001E",
+    "B05002_013E",
+    "B16002_001E",
+    "B16002_004E",
+    "B16002_007E",
+    "B16002_010E",
+    "B16002_013E",
+    "B16002_016E",
+    "B16002_019E",
+    "B16002_022E",
+    "B16002_025E",
+    "B16002_028E",
+    "B16002_031E",
+    "B16002_034E",
+    "B16002_037E",
+]
 
 BLOCK_VARIABLES = [
     "P1_001N",
@@ -132,18 +164,39 @@ ACS_VARIABLES = [
     "B15003_024E",
     "B15003_025E",
     "B19013_001E",
+    "B05002_001E",
+    "B05002_013E",
+    "B16002_001E",
+    "B16002_004E",
+    "B16002_007E",
+    "B16002_010E",
+    "B16002_013E",
+    "B16002_016E",
+    "B16002_019E",
+    "B16002_022E",
+    "B16002_025E",
+    "B16002_028E",
+    "B16002_031E",
+    "B16002_034E",
+    "B16002_037E",
+    "B17021_001E",
+    "B17021_002E",
     "B25003_001E",
     "B25003_002E",
     "B25003_003E",
     "B25044_001E",
     "B25044_003E",
     "B25044_004E",
+    "B25044_005E",
     "B25044_006E",
     "B25044_007E",
+    "B25044_008E",
     "B25044_010E",
     "B25044_011E",
+    "B25044_012E",
     "B25044_013E",
     "B25044_014E",
+    "B25044_015E",
     "B25064_001E",
 ]
 
@@ -201,12 +254,48 @@ ACS_AGE_65_PLUS_CODES = [
     "B01001_048E",
     "B01001_049E",
 ]
+LIMITED_ENGLISH_HOUSEHOLD_CODES = [
+    "B16002_004E",
+    "B16002_007E",
+    "B16002_010E",
+    "B16002_013E",
+    "B16002_016E",
+    "B16002_019E",
+    "B16002_022E",
+    "B16002_025E",
+    "B16002_028E",
+    "B16002_031E",
+    "B16002_034E",
+    "B16002_037E",
+]
+ADDRESS_REPLACEMENTS = {
+    "ALLEY": "ALY",
+    "APARTMENT": "APT",
+    "AVENUE": "AVE",
+    "BOULEVARD": "BLVD",
+    "CIRCLE": "CIR",
+    "COURT": "CT",
+    "DRIVE": "DR",
+    "HIGHWAY": "HWY",
+    "LANE": "LN",
+    "PARKWAY": "PKWY",
+    "PLACE": "PL",
+    "ROAD": "RD",
+    "SQUARE": "SQ",
+    "STREET": "ST",
+    "TERR": "TER",
+    "TERRACE": "TER",
+    "TRAIL": "TRL",
+}
+ADDRESS_TOKEN_RE = re.compile(r"[A-Z0-9]+")
 
 ANALYSIS_VARIABLES = [
     "registered_voters",
     "turnout_pct",
     "mean_dr_vote_share_2022_2024",
     "median_dr_vote_share_2022_2024",
+    "weekday_bus_departures_within_quarter_mile",
+    "vulnerable_user_ka_crash_density_2016_2020",
     "precinct_area_sq_miles",
     "population_density_per_sq_mile",
     "nearest_mbta_stop_distance_miles",
@@ -215,19 +304,25 @@ ANALYSIS_VARIABLES = [
     "asian_share_2020",
     "multiracial_share_2020",
     "hispanic_share_2020",
+    "foreign_born_share",
     "male_share",
     "under_18_share",
     "age_18_to_34_share",
     "age_35_to_64_share",
     "age_65_plus_share",
     "adult_share",
+    "limited_english_household_share",
+    "poverty_share",
     "median_age_estimate",
     "median_household_income_estimate",
     "owner_share",
     "renter_share",
+    "absentee_owner_share",
     "median_gross_rent_estimate",
     "no_vehicle_share",
     "one_vehicle_share",
+    "estimated_vehicles_per_household",
+    "estimated_vehicles_per_person",
     "three_plus_vehicle_share",
     "drive_alone_share",
     "carpool_share",
@@ -250,6 +345,8 @@ VARIABLE_LABELS = {
     "turnout_pct": "Turnout %",
     "mean_dr_vote_share_2022_2024": "Mean D-R vote share (2022/2024)",
     "median_dr_vote_share_2022_2024": "Median D-R vote share (2022/2024)",
+    "weekday_bus_departures_within_quarter_mile": "Weekday bus departures within 0.25 mi",
+    "vulnerable_user_ka_crash_density_2016_2020": "Vulnerable-user K/A crash density",
     "population_2020": "2020 Census population",
     "precinct_area_sq_miles": "Precinct area (sq mi)",
     "population_density_per_sq_mile": "Population density",
@@ -259,19 +356,25 @@ VARIABLE_LABELS = {
     "asian_share_2020": "Asian share (2020)",
     "multiracial_share_2020": "Multiracial share (2020)",
     "hispanic_share_2020": "Hispanic share (2020)",
+    "foreign_born_share": "Foreign-born share",
     "male_share": "Male share",
     "under_18_share": "Under 18 share",
     "age_18_to_34_share": "Age 18-34 share",
     "age_35_to_64_share": "Age 35-64 share",
     "age_65_plus_share": "Age 65+ share",
     "adult_share": "Adult share",
+    "limited_english_household_share": "Limited-English household share",
+    "poverty_share": "Poverty share",
     "median_age_estimate": "Median age estimate",
     "median_household_income_estimate": "Median household income estimate",
     "owner_share": "Owner-occupied share",
     "renter_share": "Renter share",
+    "absentee_owner_share": "Absentee-owner share",
     "median_gross_rent_estimate": "Median gross rent estimate",
     "no_vehicle_share": "No-vehicle share",
     "one_vehicle_share": "One-vehicle share",
+    "estimated_vehicles_per_household": "Estimated vehicles per household",
+    "estimated_vehicles_per_person": "Estimated vehicles per person",
     "three_plus_vehicle_share": "3+ vehicle share",
     "drive_alone_share": "Drive-alone commute share",
     "carpool_share": "Carpool commute share",
@@ -288,6 +391,8 @@ REPORT_FIELD_SPECS = {
     "turnout_pct": ("pct", 1),
     "mean_dr_vote_share_2022_2024": ("pct", 1),
     "median_dr_vote_share_2022_2024": ("pct", 1),
+    "weekday_bus_departures_within_quarter_mile": ("count", 0),
+    "vulnerable_user_ka_crash_density_2016_2020": ("decimal", 1),
     "population_2020": ("count", 0),
     "precinct_area_sq_miles": ("decimal", 2),
     "population_density_per_sq_mile": ("count", 0),
@@ -297,19 +402,25 @@ REPORT_FIELD_SPECS = {
     "asian_share_2020": ("pct", 1),
     "multiracial_share_2020": ("pct", 1),
     "hispanic_share_2020": ("pct", 1),
+    "foreign_born_share": ("pct", 1),
     "male_share": ("pct", 1),
     "under_18_share": ("pct", 1),
     "age_18_to_34_share": ("pct", 1),
     "age_35_to_64_share": ("pct", 1),
     "age_65_plus_share": ("pct", 1),
     "adult_share": ("pct", 1),
+    "limited_english_household_share": ("pct", 1),
+    "poverty_share": ("pct", 1),
     "median_age_estimate": ("decimal", 1),
     "median_household_income_estimate": ("currency", 0),
     "owner_share": ("pct", 1),
     "renter_share": ("pct", 1),
+    "absentee_owner_share": ("pct", 1),
     "median_gross_rent_estimate": ("currency", 0),
     "no_vehicle_share": ("pct", 1),
     "one_vehicle_share": ("pct", 1),
+    "estimated_vehicles_per_household": ("decimal", 2),
+    "estimated_vehicles_per_person": ("decimal", 2),
     "three_plus_vehicle_share": ("pct", 1),
     "drive_alone_share": ("pct", 1),
     "carpool_share": ("pct", 1),
@@ -326,6 +437,13 @@ class GeographyFeature:
     geoid: str
     geometry: Polygon | MultiPolygon
     area_land_sq_meters: float
+
+
+@dataclass(frozen=True)
+class AttributeGeometryFeature:
+    geoid: str
+    geometry: Polygon | MultiPolygon
+    attributes: dict[str, object]
 
 
 @dataclass(frozen=True)
@@ -368,6 +486,21 @@ def safe_float(value: object) -> float | None:
     return numeric_value
 
 
+def normalize_zip_code(value: object) -> str:
+    digits = "".join(character for character in str(value or "") if character.isdigit())
+    if len(digits) == 4:
+        digits = f"0{digits}"
+    return digits[:5]
+
+
+def normalize_address_key(address: object, city: object, zip_code: object) -> str | None:
+    address_tokens = [ADDRESS_REPLACEMENTS.get(token, token) for token in ADDRESS_TOKEN_RE.findall(str(address or "").upper())]
+    if not address_tokens:
+        return None
+    city_tokens = ADDRESS_TOKEN_RE.findall(str(city or "").upper())
+    return "|".join([" ".join(address_tokens), " ".join(city_tokens), normalize_zip_code(zip_code)])
+
+
 def sum_codes(row: dict[str, float | None], codes: list[str]) -> float:
     return sum((row.get(code) or 0.0) for code in codes)
 
@@ -383,6 +516,100 @@ def weighted_average(weighted_values: list[tuple[float, float]]) -> float | None
     if total_weight <= 0:
         return None
     return sum(value * weight for value, weight in weighted_values if weight > 0) / total_weight
+
+
+def query_feature_service_geojson(
+    service_url: str,
+    bounds: tuple[float, float, float, float],
+    fields: list[str],
+    cache_stem: str,
+    *,
+    where: str = "1=1",
+) -> list[dict[str, object]]:
+    cache_path = ANALYSIS_CACHE_DIR / f"{cache_stem}.geojson"
+    if cache_path.exists():
+        data = json.loads(cache_path.read_text(encoding="utf-8"))
+        return data["features"]
+
+    all_features: list[dict[str, object]] = []
+    result_offset = 0
+    while True:
+        params = {
+            "geometry": ",".join(f"{value:.6f}" for value in bounds),
+            "geometryType": "esriGeometryEnvelope",
+            "inSR": "4326",
+            "spatialRel": "esriSpatialRelIntersects",
+            "where": where,
+            "outFields": ",".join(fields),
+            "outSR": "4326",
+            "returnGeometry": "true",
+            "f": "geojson",
+            "resultOffset": str(result_offset),
+            "resultRecordCount": "2000",
+        }
+        url = f"{service_url}/query?{urllib.parse.urlencode(params)}"
+        page = json.loads(http_get(url).decode("utf-8"))
+        features = page.get("features", [])
+        all_features.extend(features)
+        exceeded_transfer_limit = bool(
+            page.get("exceededTransferLimit") or page.get("properties", {}).get("exceededTransferLimit")
+        )
+        if not exceeded_transfer_limit:
+            break
+        result_offset += len(features)
+
+    cache_path.parent.mkdir(parents=True, exist_ok=True)
+    cache_path.write_text(json.dumps({"type": "FeatureCollection", "features": all_features}), encoding="utf-8")
+    return all_features
+
+
+def parse_gtfs_date(value: str) -> dt.date:
+    return dt.date(int(value[:4]), int(value[4:6]), int(value[6:8]))
+
+
+def active_service_ids_on_date(
+    calendar_rows: list[dict[str, str]],
+    calendar_dates_rows: list[dict[str, str]],
+    service_date: dt.date,
+) -> set[str]:
+    weekday_column = (
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday",
+        "sunday",
+    )[service_date.weekday()]
+    active_service_ids = {
+        row["service_id"]
+        for row in calendar_rows
+        if row[weekday_column] == "1"
+        and parse_gtfs_date(row["start_date"]) <= service_date <= parse_gtfs_date(row["end_date"])
+    }
+    for row in calendar_dates_rows:
+        if parse_gtfs_date(row["date"]) != service_date:
+            continue
+        if row["exception_type"] == "1":
+            active_service_ids.add(row["service_id"])
+        elif row["exception_type"] == "2":
+            active_service_ids.discard(row["service_id"])
+    return active_service_ids
+
+
+def representative_gtfs_weekday(
+    calendar_rows: list[dict[str, str]],
+    calendar_dates_rows: list[dict[str, str]],
+) -> dt.date:
+    start_date = min(parse_gtfs_date(row["start_date"]) for row in calendar_rows)
+    end_date = max(parse_gtfs_date(row["end_date"]) for row in calendar_rows)
+    for day_offset in range((end_date - start_date).days + 1):
+        service_date = start_date + dt.timedelta(days=day_offset)
+        if service_date.weekday() >= 5:
+            continue
+        if active_service_ids_on_date(calendar_rows, calendar_dates_rows, service_date):
+            return service_date
+    raise ValueError("Could not find a representative weekday in the MBTA GTFS feed")
 
 
 def compute_precinct_historical_partisan_baselines(
@@ -441,6 +668,215 @@ def load_precinct_historical_partisan_baselines(
         with csv_path.open(newline="", encoding="utf-8") as csv_file:
             candidate_rows.extend(csv.DictReader(csv_file))
     return compute_precinct_historical_partisan_baselines(candidate_rows)
+
+
+def load_malden_parcel_features(
+    precinct_geometries: dict[str, Polygon | MultiPolygon],
+) -> list[AttributeGeometryFeature]:
+    city_union = load_precinct_union(precinct_geometries)
+    features = query_feature_service_geojson(
+        MASSGIS_PARCELS_LAYER_URL,
+        city_union.bounds,
+        [
+            "MAP_PAR_ID",
+            "LOC_ID",
+            "CITY",
+            "ZIP",
+            "SITE_ADDR",
+            "OWN_ADDR",
+            "OWN_CITY",
+            "OWN_STATE",
+            "OWN_ZIP",
+            "UNITS",
+            "RES_AREA",
+            "USE_CODE",
+        ],
+        "massgis_parcels_malden",
+        where="CITY = 'MALDEN'",
+    )
+    return [
+        AttributeGeometryFeature(
+            geoid=str(feature["properties"].get("MAP_PAR_ID") or feature["properties"].get("LOC_ID") or index),
+            geometry=shape(feature["geometry"]),
+            attributes=dict(feature["properties"]),
+        )
+        for index, feature in enumerate(features, start=1)
+    ]
+
+
+def residential_parcel_weight(attributes: dict[str, object]) -> float:
+    units = safe_float(attributes.get("UNITS"))
+    if units is not None and units > 0:
+        return units
+    res_area = safe_float(attributes.get("RES_AREA"))
+    use_code = str(attributes.get("USE_CODE") or "").strip()
+    if (res_area is not None and res_area > 0) or use_code.startswith("1"):
+        return 1.0
+    return 0.0
+
+
+def parcel_absentee_owner_status(attributes: dict[str, object]) -> bool | None:
+    site_key = normalize_address_key(attributes.get("SITE_ADDR"), attributes.get("CITY"), attributes.get("ZIP"))
+    owner_city = attributes.get("OWN_CITY") or attributes.get("CITY")
+    owner_zip = attributes.get("OWN_ZIP") or attributes.get("ZIP")
+    owner_key = normalize_address_key(attributes.get("OWN_ADDR"), owner_city, owner_zip)
+    if site_key is None or owner_key is None:
+        return None
+    return owner_key != site_key
+
+
+def build_absentee_owner_covariates(
+    precinct_geometries: dict[str, Polygon | MultiPolygon],
+) -> dict[str, dict[str, float | None]]:
+    parcel_features = load_malden_parcel_features(precinct_geometries)
+    overlaps = build_overlap_lookup(
+        precinct_geometries,
+        [GeographyFeature(feature.geoid, feature.geometry, 0.0) for feature in parcel_features],
+    )
+    parcel_lookup = {feature.geoid: feature for feature in parcel_features}
+    covariates: dict[str, dict[str, float | None]] = {}
+
+    for precinct_name, parcel_overlap in overlaps.items():
+        known_weight = 0.0
+        absentee_weight = 0.0
+        for geoid, share in parcel_overlap.items():
+            parcel = parcel_lookup[geoid]
+            weight = residential_parcel_weight(parcel.attributes) * share
+            if weight <= 0:
+                continue
+            absentee_status = parcel_absentee_owner_status(parcel.attributes)
+            if absentee_status is None:
+                continue
+            known_weight += weight
+            if absentee_status:
+                absentee_weight += weight
+        covariates[precinct_name] = {
+            "absentee_owner_share": safe_divide(absentee_weight, known_weight),
+        }
+    return covariates
+
+
+def load_bus_stop_departures() -> list[tuple[float, float, int]]:
+    cache_path = ANALYSIS_CACHE_DIR / "mbta_bus_stop_departures.json"
+    if cache_path.exists():
+        return [
+            (float(item["latitude"]), float(item["longitude"]), int(item["departures"]))
+            for item in json.loads(cache_path.read_text(encoding="utf-8"))
+        ]
+
+    gtfs_zip_path = ANALYSIS_CACHE_DIR / "mbta_gtfs.zip"
+    if not gtfs_zip_path.exists():
+        gtfs_zip_path.parent.mkdir(parents=True, exist_ok=True)
+        gtfs_zip_path.write_bytes(http_get(MBTA_GTFS_URL))
+
+    with zipfile.ZipFile(gtfs_zip_path) as gtfs_zip:
+        with gtfs_zip.open("calendar.txt") as csv_file:
+            calendar_rows = list(csv.DictReader(io.TextIOWrapper(csv_file, encoding="utf-8", newline="")))
+        with gtfs_zip.open("calendar_dates.txt") as csv_file:
+            calendar_dates_rows = list(csv.DictReader(io.TextIOWrapper(csv_file, encoding="utf-8", newline="")))
+
+        service_date = representative_gtfs_weekday(calendar_rows, calendar_dates_rows)
+        active_service_ids = active_service_ids_on_date(calendar_rows, calendar_dates_rows, service_date)
+
+        with gtfs_zip.open("routes.txt") as csv_file:
+            bus_route_ids = {
+                row["route_id"]
+                for row in csv.DictReader(io.TextIOWrapper(csv_file, encoding="utf-8", newline=""))
+                if row.get("route_type") == "3"
+            }
+
+        with gtfs_zip.open("trips.txt") as csv_file:
+            active_bus_trip_ids = {
+                row["trip_id"]
+                for row in csv.DictReader(io.TextIOWrapper(csv_file, encoding="utf-8", newline=""))
+                if row.get("route_id") in bus_route_ids and row.get("service_id") in active_service_ids
+            }
+
+        stop_departures: dict[str, int] = defaultdict(int)
+        with gtfs_zip.open("stop_times.txt") as csv_file:
+            for row in csv.DictReader(io.TextIOWrapper(csv_file, encoding="utf-8", newline="")):
+                if row.get("trip_id") in active_bus_trip_ids:
+                    stop_departures[row["stop_id"]] += 1
+
+        stop_rows: list[tuple[float, float, int]] = []
+        with gtfs_zip.open("stops.txt") as csv_file:
+            for row in csv.DictReader(io.TextIOWrapper(csv_file, encoding="utf-8", newline="")):
+                stop_id = row["stop_id"]
+                departures = stop_departures.get(stop_id)
+                location_type = row.get("location_type") or "0"
+                if departures is None or location_type != "0":
+                    continue
+                stop_rows.append((float(row["stop_lat"]), float(row["stop_lon"]), departures))
+
+    cache_path.parent.mkdir(parents=True, exist_ok=True)
+    cache_path.write_text(
+        json.dumps(
+            [
+                {"latitude": latitude, "longitude": longitude, "departures": departures}
+                for latitude, longitude, departures in stop_rows
+            ]
+        ),
+        encoding="utf-8",
+    )
+    return stop_rows
+
+
+def build_bus_access_covariates(
+    block_demographics: dict[str, dict[str, float | str | None]],
+) -> dict[str, dict[str, float | None]]:
+    stop_departures = load_bus_stop_departures()
+    covariates: dict[str, dict[str, float | None]] = {}
+    for precinct_name, row in block_demographics.items():
+        latitude = row.get("population_center_latitude")
+        longitude = row.get("population_center_longitude")
+        if latitude is None or longitude is None:
+            covariates[precinct_name] = {"weekday_bus_departures_within_quarter_mile": None}
+            continue
+        departures = sum(
+            stop_departure_count
+            for stop_latitude, stop_longitude, stop_departure_count in stop_departures
+            if haversine_distance_miles(float(latitude), float(longitude), stop_latitude, stop_longitude)
+            <= BUS_ACCESS_RADIUS_MILES
+        )
+        covariates[precinct_name] = {"weekday_bus_departures_within_quarter_mile": float(departures)}
+    return covariates
+
+
+def load_vulnerable_user_crash_points(
+    precinct_geometries: dict[str, Polygon | MultiPolygon],
+) -> list[Polygon | MultiPolygon]:
+    city_union = load_precinct_union(precinct_geometries)
+    features = query_feature_service_geojson(
+        VRU_CRASH_LAYER_URL,
+        city_union.bounds,
+        ["Crash_Number", "City_Town_Name", "Crash_Year"],
+        "vulnerable_user_ka_crashes_malden",
+        where="City_Town_Name = 'Malden'",
+    )
+    return [shape(feature["geometry"]) for feature in features]
+
+
+def build_vulnerable_user_crash_covariates(
+    precinct_geometries: dict[str, Polygon | MultiPolygon],
+    block_demographics: dict[str, dict[str, float | str | None]],
+) -> dict[str, dict[str, float | None]]:
+    crash_points = load_vulnerable_user_crash_points(precinct_geometries)
+    crash_counts = {precinct_name: 0 for precinct_name in precinct_geometries}
+    for crash_point in crash_points:
+        for precinct_name, precinct_geometry in precinct_geometries.items():
+            if precinct_geometry.intersects(crash_point):
+                crash_counts[precinct_name] += 1
+                break
+
+    return {
+        precinct_name: {
+            "vulnerable_user_ka_crash_density_2016_2020": safe_divide(
+                float(crash_counts[precinct_name]),
+                float(block_demographics[precinct_name]["precinct_area_sq_miles"]),
+            ),
+        }
+        for precinct_name in precinct_geometries
+    }
 
 
 def weighted_point_coordinates(weighted_points: list[tuple[float, float, float]]) -> tuple[float, float] | None:
@@ -541,10 +977,11 @@ def load_source_geometries(
 ) -> list[GeographyFeature]:
     city_union = load_precinct_union(precinct_geometries)
     bounds = city_union.bounds
+    fields = TRACT_FIELDS if layer_id == TRACT_LAYER_ID else BLOCK_FIELDS if layer_id == BLOCK_LAYER_ID else BLOCK_GROUP_FIELDS
     features = query_tigerweb_geojson(
         layer_id,
         bounds,
-        BLOCK_FIELDS if layer_id == BLOCK_LAYER_ID else BLOCK_GROUP_FIELDS,
+        fields,
         cache_stem,
     )
 
@@ -596,6 +1033,17 @@ def fetch_acs_block_group_data() -> dict[str, dict[str, float | None]]:
         for geoid, values in chunk_rows.items():
             grouped_rows.setdefault(geoid, {}).update(values)
     return grouped_rows
+
+
+def fetch_acs_tract_data() -> dict[str, dict[str, float | None]]:
+    params = {
+        "get": ",".join(["NAME", *TRACT_ACS_VARIABLES]),
+        "for": "tract:*",
+        "in": f"state:{STATE_FIPS} county:{COUNTY_FIPS}",
+    }
+    url = f"https://api.census.gov/data/{ACS_YEAR}/{ACS_DATASET}?{urllib.parse.urlencode(params)}"
+    table = load_json_cache(ANALYSIS_CACHE_DIR / f"acs_tracts_{CACHE_VERSION}.json", url)
+    return parse_census_api_table(table, ["state", "county", "tract"])
 
 
 def fetch_pl_block_data(tract_geoids: list[str]) -> dict[str, dict[str, float | None]]:
@@ -776,6 +1224,8 @@ def build_acs_covariates(
 
     for precinct_name, precinct_overlap in overlaps.items():
         total_population = 0.0
+        nativity_population_total = 0.0
+        foreign_born_population = 0.0
         male_population = 0.0
         under_18_population = 0.0
         age_18_to_34_population = 0.0
@@ -784,9 +1234,15 @@ def build_acs_covariates(
         occupied_housing = 0.0
         owner_housing = 0.0
         renter_housing = 0.0
+        limited_english_household_total = 0.0
+        limited_english_households = 0.0
+        poverty_population_total = 0.0
+        poverty_population = 0.0
         vehicle_households_total = 0.0
+        estimated_vehicle_count = 0.0
         no_vehicle = 0.0
         one_vehicle = 0.0
+        two_vehicle = 0.0
         three_plus_vehicle = 0.0
         commute_total = 0.0
         drive_alone = 0.0
@@ -814,6 +1270,8 @@ def build_acs_covariates(
             education_population = (row.get("B15003_001E") or 0.0) * share
 
             total_population += population
+            nativity_population_total += (row.get("B05002_001E") or 0.0) * share
+            foreign_born_population += (row.get("B05002_013E") or 0.0) * share
             male_population += (row.get("B01001_002E") or 0.0) * share
             under_18_population += sum_codes(row, ACS_AGE_UNDER_18_CODES) * share
             age_18_to_34_population += sum_codes(row, ACS_AGE_18_TO_34_CODES) * share
@@ -823,15 +1281,29 @@ def build_acs_covariates(
             occupied_housing += households
             owner_housing += (row.get("B25003_002E") or 0.0) * share
             renter_housing += renter_households
+            limited_english_household_total += (row.get("B16002_001E") or 0.0) * share
+            limited_english_households += sum_codes(row, LIMITED_ENGLISH_HOUSEHOLD_CODES) * share
+            poverty_population_total += (row.get("B17021_001E") or 0.0) * share
+            poverty_population += (row.get("B17021_002E") or 0.0) * share
 
             vehicle_households_total += vehicle_households
             no_vehicle += ((row.get("B25044_003E") or 0.0) + (row.get("B25044_010E") or 0.0)) * share
             one_vehicle += ((row.get("B25044_004E") or 0.0) + (row.get("B25044_011E") or 0.0)) * share
+            two_vehicle += ((row.get("B25044_005E") or 0.0) + (row.get("B25044_012E") or 0.0)) * share
             three_plus_vehicle += (
                 (row.get("B25044_006E") or 0.0)
                 + (row.get("B25044_007E") or 0.0)
+                + (row.get("B25044_008E") or 0.0)
                 + (row.get("B25044_013E") or 0.0)
                 + (row.get("B25044_014E") or 0.0)
+                + (row.get("B25044_015E") or 0.0)
+            ) * share
+            estimated_vehicle_count += (
+                ((row.get("B25044_004E") or 0.0) + (row.get("B25044_011E") or 0.0))
+                + 2.0 * ((row.get("B25044_005E") or 0.0) + (row.get("B25044_012E") or 0.0))
+                + 3.0 * ((row.get("B25044_006E") or 0.0) + (row.get("B25044_013E") or 0.0))
+                + 4.0 * ((row.get("B25044_007E") or 0.0) + (row.get("B25044_014E") or 0.0))
+                + 5.0 * ((row.get("B25044_008E") or 0.0) + (row.get("B25044_015E") or 0.0))
             ) * share
 
             commute_total += workers
@@ -858,12 +1330,17 @@ def build_acs_covariates(
                 rent_weights.append((median_rent, renter_households))
 
         covariates[precinct_name] = {
+            "foreign_born_share": safe_divide(foreign_born_population, nativity_population_total),
+            "acs_population_estimate": total_population,
+            "estimated_vehicle_count": estimated_vehicle_count,
             "male_share": safe_divide(male_population, total_population),
             "under_18_share": safe_divide(under_18_population, total_population),
             "age_18_to_34_share": safe_divide(age_18_to_34_population, total_population),
             "age_35_to_64_share": safe_divide(age_35_to_64_population, total_population),
             "age_65_plus_share": safe_divide(age_65_plus_population, total_population),
             "adult_share": safe_divide(total_population - under_18_population, total_population),
+            "limited_english_household_share": safe_divide(limited_english_households, limited_english_household_total),
+            "poverty_share": safe_divide(poverty_population, poverty_population_total),
             "median_age_estimate": weighted_average(median_age_weights),
             "median_household_income_estimate": weighted_average(income_weights),
             "owner_share": safe_divide(owner_housing, occupied_housing),
@@ -871,6 +1348,8 @@ def build_acs_covariates(
             "median_gross_rent_estimate": weighted_average(rent_weights),
             "no_vehicle_share": safe_divide(no_vehicle, vehicle_households_total),
             "one_vehicle_share": safe_divide(one_vehicle, vehicle_households_total),
+            "estimated_vehicles_per_household": safe_divide(estimated_vehicle_count, vehicle_households_total),
+            "estimated_vehicles_per_person": safe_divide(estimated_vehicle_count, total_population),
             "three_plus_vehicle_share": safe_divide(three_plus_vehicle, vehicle_households_total),
             "drive_alone_share": safe_divide(drive_alone, commute_total),
             "carpool_share": safe_divide(carpool, commute_total),
@@ -883,14 +1362,49 @@ def build_acs_covariates(
     return covariates
 
 
+def build_tract_covariates(
+    precinct_geometries: dict[str, Polygon | MultiPolygon],
+    tract_features: list[GeographyFeature],
+    tract_rows: dict[str, dict[str, float | None]],
+) -> dict[str, dict[str, float | None]]:
+    overlaps = build_overlap_lookup(precinct_geometries, tract_features)
+    covariates: dict[str, dict[str, float | None]] = {}
+
+    for precinct_name, precinct_overlap in overlaps.items():
+        nativity_population_total = 0.0
+        foreign_born_population = 0.0
+        limited_english_household_total = 0.0
+        limited_english_households = 0.0
+
+        for geoid, share in precinct_overlap.items():
+            row = tract_rows.get(geoid)
+            if row is None:
+                continue
+            nativity_population_total += (row.get("B05002_001E") or 0.0) * share
+            foreign_born_population += (row.get("B05002_013E") or 0.0) * share
+            limited_english_household_total += (row.get("B16002_001E") or 0.0) * share
+            limited_english_households += sum_codes(row, LIMITED_ENGLISH_HOUSEHOLD_CODES) * share
+
+        covariates[precinct_name] = {
+            "foreign_born_share": safe_divide(foreign_born_population, nativity_population_total),
+            "limited_english_household_share": safe_divide(limited_english_households, limited_english_household_total),
+        }
+    return covariates
+
+
 def build_precinct_covariates() -> list[dict[str, float | str | None]]:
     results = load_precinct_results()
     turnout = load_precinct_turnout()
     precinct_geometries = load_precinct_geometries()
     historical_partisan_baselines = load_precinct_historical_partisan_baselines()
 
+    tract_features = load_source_geometries(TRACT_LAYER_ID, precinct_geometries, "tracts")
     block_group_features = load_source_geometries(BLOCK_GROUP_LAYER_ID, precinct_geometries, "block_groups")
     block_features = load_source_geometries(BLOCK_LAYER_ID, precinct_geometries, "blocks")
+
+    tract_rows = fetch_acs_tract_data()
+    intersecting_tract_geoids = {feature.geoid for feature in tract_features}
+    tract_rows = {geoid: row for geoid, row in tract_rows.items() if geoid in intersecting_tract_geoids}
 
     block_group_rows = fetch_acs_block_group_data()
     intersecting_block_group_geoids = {feature.geoid for feature in block_group_features}
@@ -905,6 +1419,10 @@ def build_precinct_covariates() -> list[dict[str, float | str | None]]:
 
     block_demographics = build_block_demographics(precinct_geometries, block_features, block_rows)
     acs_covariates = build_acs_covariates(precinct_geometries, block_group_features, block_group_rows)
+    tract_covariates = build_tract_covariates(precinct_geometries, tract_features, tract_rows)
+    absentee_owner_covariates = build_absentee_owner_covariates(precinct_geometries)
+    bus_access_covariates = build_bus_access_covariates(block_demographics)
+    vulnerable_user_crash_covariates = build_vulnerable_user_crash_covariates(precinct_geometries, block_demographics)
 
     precinct_rows: list[dict[str, float | str | None]] = []
     for precinct_name in sorted(results):
@@ -927,6 +1445,10 @@ def build_precinct_covariates() -> list[dict[str, float | str | None]]:
         row.update(historical_partisan_baselines.get(precinct_name, {}))
         row.update(block_demographics[precinct_name])
         row.update(acs_covariates[precinct_name])
+        row.update(tract_covariates[precinct_name])
+        row.update(absentee_owner_covariates[precinct_name])
+        row.update(bus_access_covariates[precinct_name])
+        row.update(vulnerable_user_crash_covariates[precinct_name])
         precinct_rows.append(row)
     return precinct_rows
 
@@ -1043,10 +1565,13 @@ def build_report(
         f"- Average Q1B yes share: {q1b_mean * 100:.1f}%",
         f"- Average turnout: {turnout_mean * 100:.1f}%",
         "- Historical partisan baseline variables summarize each precinct's Democratic-minus-Republican two-party vote share across the 2022 and 2024 general-election contests that had both Democratic and Republican candidates on the ballot.",
-        "- Demographic and housing covariates are precinct estimates created by spatially intersecting precinct polygons with 2020 Census blocks and 2025-vintage TIGER/ACS block groups.",
+        "- Demographic and housing covariates are precinct estimates created by spatially intersecting precinct polygons with 2020 Census blocks plus 2024 ACS tract and block-group geographies.",
+        "- Bus access is measured as total scheduled MBTA weekday bus departures from stops within 0.25 miles of each precinct's population-weighted center, using the current public GTFS feed.",
+        "- Absentee-owner share is estimated from the MassGIS parcel layer by comparing each residential parcel's site address against its owner mailing address, weighted by residential units where available.",
+        "- Vulnerable-user crash density is based on MassDOT's non-motorist K/A crash points for 2016-2020, divided by precinct land area.",
         "- Distance to the nearest MBTA stop is measured as straight-line miles from each precinct's population-weighted block-overlap center, with precinct centroid fallback where no population-weighted center is available.",
+        "- Vehicle ownership fields are estimated from ACS occupied-housing buckets; the `estimated_vehicles_per_person` metric treats the open-ended 5+ bucket as 5 vehicles.",
         "- Literal Walk Score is not included here; the analysis uses public walkability proxies instead, especially transit share, walk share, no-car share, and density.",
-        "- Foreign-born share is omitted from this version because the block-group API fields available in this workflow were not clean enough to trust.",
         "- Correlation is not causation, and with only 27 precincts these results should be treated as directional rather than definitive.",
         "",
     ]

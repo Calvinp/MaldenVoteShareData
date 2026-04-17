@@ -3,11 +3,16 @@ from shapely.geometry import Polygon
 
 from scripts.malden_precinct_analysis import (
     GeographyFeature,
+    active_service_ids_on_date,
     build_acs_covariates,
     build_block_demographics,
     build_overlap_lookup,
     build_report,
     compute_precinct_historical_partisan_baselines,
+    normalize_address_key,
+    parcel_absentee_owner_status,
+    representative_gtfs_weekday,
+    residential_parcel_weight,
     compute_correlations,
     parse_census_api_table,
     weighted_average,
@@ -41,6 +46,94 @@ def test_parse_census_api_table_builds_geoids():
 def test_weighted_average_handles_empty_and_weighted_inputs():
     assert weighted_average([]) is None
     assert weighted_average([(10.0, 1.0), (20.0, 3.0)]) == pytest.approx(17.5)
+
+
+def test_normalize_address_key_normalizes_common_abbreviations_and_zip_codes():
+    assert normalize_address_key("46 Blomerth Street", "Malden", "2148") == normalize_address_key(
+        "46 BLOMERTH ST",
+        "MALDEN",
+        "02148",
+    )
+    assert normalize_address_key("13 Clarence Terr", "Malden", "2148") == normalize_address_key(
+        "13 CLARENCE TERRACE",
+        "MALDEN",
+        "02148-1234",
+    )
+
+
+def test_residential_parcel_weight_and_absentee_status_use_residential_fields_and_owner_address():
+    owner_occupied = {
+        "SITE_ADDR": "46 BLOMERTH ST",
+        "CITY": "MALDEN",
+        "ZIP": "02148",
+        "OWN_ADDR": "46 BLOMERTH STREET",
+        "OWN_CITY": "MALDEN",
+        "OWN_ZIP": "2148",
+        "UNITS": 0,
+        "RES_AREA": 0,
+        "USE_CODE": "101",
+    }
+    absentee = {
+        "SITE_ADDR": "135 HAWTHORNE ST",
+        "CITY": "MALDEN",
+        "ZIP": "02148",
+        "OWN_ADDR": "PO BOX 281",
+        "OWN_CITY": "SOMERVILLE",
+        "OWN_ZIP": "2143",
+        "UNITS": 2,
+        "RES_AREA": 3314,
+        "USE_CODE": "104",
+    }
+
+    assert residential_parcel_weight(owner_occupied) == pytest.approx(1.0)
+    assert parcel_absentee_owner_status(owner_occupied) is False
+    assert residential_parcel_weight(absentee) == pytest.approx(2.0)
+    assert parcel_absentee_owner_status(absentee) is True
+
+
+def test_gtfs_service_helpers_choose_weekday_and_apply_exceptions():
+    calendar_rows = [
+        {
+            "service_id": "WK",
+            "monday": "1",
+            "tuesday": "1",
+            "wednesday": "1",
+            "thursday": "1",
+            "friday": "1",
+            "saturday": "0",
+            "sunday": "0",
+            "start_date": "20260330",
+            "end_date": "20260403",
+        },
+        {
+            "service_id": "SAT",
+            "monday": "0",
+            "tuesday": "0",
+            "wednesday": "0",
+            "thursday": "0",
+            "friday": "0",
+            "saturday": "1",
+            "sunday": "0",
+            "start_date": "20260328",
+            "end_date": "20260404",
+        },
+    ]
+    calendar_dates_rows = [
+        {"service_id": "WK", "date": "20260331", "exception_type": "2"},
+        {"service_id": "SPECIAL", "date": "20260331", "exception_type": "1"},
+    ]
+
+    assert representative_gtfs_weekday(calendar_rows, calendar_dates_rows).isoformat() == "2026-03-30"
+    assert active_service_ids_on_date(
+        calendar_rows,
+        calendar_dates_rows,
+        representative_gtfs_weekday(calendar_rows, calendar_dates_rows),
+    ) == {"WK"}
+    assert active_service_ids_on_date(
+        calendar_rows,
+        calendar_dates_rows,
+        representative_gtfs_weekday(calendar_rows, calendar_dates_rows).replace(day=31),
+    ) == {"SPECIAL"}
 
 
 def test_build_overlap_lookup_splits_source_geometry():
@@ -182,6 +275,13 @@ def test_build_acs_covariates_derives_expected_shares_and_medians():
             "B15003_023E": 5.0,
             "B15003_024E": 2.0,
             "B15003_025E": 1.0,
+            "B05002_001E": 100.0,
+            "B05002_013E": 35.0,
+            "B16002_001E": 50.0,
+            "B16002_004E": 4.0,
+            "B16002_007E": 6.0,
+            "B17021_001E": 100.0,
+            "B17021_002E": 18.0,
             "B19013_001E": 90000.0,
             "B25003_001E": 50.0,
             "B25003_002E": 20.0,
@@ -189,12 +289,16 @@ def test_build_acs_covariates_derives_expected_shares_and_medians():
             "B25044_001E": 50.0,
             "B25044_003E": 4.0,
             "B25044_004E": 8.0,
+            "B25044_005E": 5.0,
             "B25044_006E": 3.0,
             "B25044_007E": 1.0,
+            "B25044_008E": 1.0,
             "B25044_010E": 6.0,
             "B25044_011E": 12.0,
+            "B25044_012E": 5.0,
             "B25044_013E": 5.0,
             "B25044_014E": 1.0,
+            "B25044_015E": 0.0,
             "B25064_001E": 2000.0,
         }
     }
@@ -202,11 +306,14 @@ def test_build_acs_covariates_derives_expected_shares_and_medians():
     covariates = build_acs_covariates(precincts, features, rows)["1-1"]
 
     assert covariates["male_share"] == pytest.approx(0.48)
+    assert covariates["foreign_born_share"] == pytest.approx(0.35)
     assert covariates["under_18_share"] == pytest.approx(0.2)
     assert covariates["age_18_to_34_share"] == pytest.approx(0.3)
     assert covariates["age_35_to_64_share"] == pytest.approx(0.35)
     assert covariates["age_65_plus_share"] == pytest.approx(0.15)
     assert covariates["adult_share"] == pytest.approx(0.8)
+    assert covariates["limited_english_household_share"] == pytest.approx(0.2)
+    assert covariates["poverty_share"] == pytest.approx(0.18)
     assert covariates["median_age_estimate"] == pytest.approx(40.0)
     assert covariates["median_household_income_estimate"] == pytest.approx(90000.0)
     assert covariates["owner_share"] == pytest.approx(0.4)
@@ -214,7 +321,11 @@ def test_build_acs_covariates_derives_expected_shares_and_medians():
     assert covariates["median_gross_rent_estimate"] == pytest.approx(2000.0)
     assert covariates["no_vehicle_share"] == pytest.approx(0.2)
     assert covariates["one_vehicle_share"] == pytest.approx(0.4)
-    assert covariates["three_plus_vehicle_share"] == pytest.approx(0.2)
+    assert covariates["three_plus_vehicle_share"] == pytest.approx(0.22)
+    assert covariates["acs_population_estimate"] == pytest.approx(100.0)
+    assert covariates["estimated_vehicle_count"] == pytest.approx(77.0)
+    assert covariates["estimated_vehicles_per_household"] == pytest.approx(1.54)
+    assert covariates["estimated_vehicles_per_person"] == pytest.approx(0.77)
     assert covariates["transit_share"] == pytest.approx(0.175)
     assert covariates["walk_share"] == pytest.approx(0.1)
     assert covariates["work_from_home_share"] == pytest.approx(0.075)
@@ -234,23 +345,31 @@ def test_build_acs_covariates_accumulates_vehicle_denominator_across_sources():
             "B25044_001E": 50.0,
             "B25044_003E": 10.0,
             "B25044_004E": 20.0,
-            "B25044_006E": 5.0,
-            "B25044_007E": 5.0,
+            "B25044_005E": 5.0,
+            "B25044_006E": 10.0,
+            "B25044_007E": 0.0,
+            "B25044_008E": 0.0,
             "B25044_010E": 0.0,
             "B25044_011E": 0.0,
+            "B25044_012E": 0.0,
             "B25044_013E": 0.0,
             "B25044_014E": 0.0,
+            "B25044_015E": 0.0,
         },
         "bg2": {
             "B25044_001E": 50.0,
             "B25044_003E": 0.0,
             "B25044_004E": 10.0,
+            "B25044_005E": 5.0,
             "B25044_006E": 0.0,
             "B25044_007E": 0.0,
+            "B25044_008E": 10.0,
             "B25044_010E": 0.0,
             "B25044_011E": 20.0,
+            "B25044_012E": 0.0,
             "B25044_013E": 10.0,
             "B25044_014E": 0.0,
+            "B25044_015E": 0.0,
         },
     }
 
@@ -258,7 +377,9 @@ def test_build_acs_covariates_accumulates_vehicle_denominator_across_sources():
 
     assert covariates["no_vehicle_share"] == pytest.approx(0.1)
     assert covariates["one_vehicle_share"] == pytest.approx(0.5)
-    assert covariates["three_plus_vehicle_share"] == pytest.approx(0.2)
+    assert covariates["three_plus_vehicle_share"] == pytest.approx(0.3)
+    assert covariates["estimated_vehicle_count"] == pytest.approx(180.0)
+    assert covariates["estimated_vehicles_per_household"] == pytest.approx(1.8)
 
 
 def test_compute_precinct_historical_partisan_baselines_uses_only_democratic_republican_contests():

@@ -261,11 +261,11 @@ def render_metric_maps(
     area_records: dict[str, AreaCarOwnership],
     geometries: dict[str, Polygon | MultiPolygon],
     level: str,
+    metric_colorizers: dict[str, tuple[callable, LegendSpec]],
 ) -> None:
     basemap = build_basemap(geometries)
     for metric in METRICS:
-        values = [metric.compute(area) for area in area_records.values()]
-        color_fn, legend = build_metric_colorizer(values, metric)
+        color_fn, legend = metric_colorizers[metric.column]
         render_map(
             metric.title.format(level=level),
             metric.compute,
@@ -292,8 +292,19 @@ def generate_all_outputs() -> None:
     precinct_geometries = load_precinct_geometries()
     ward_geometries = build_ward_geometries(precinct_geometries)
 
-    render_metric_maps(precinct_records, precinct_geometries, "precinct")
-    render_metric_maps(ward_records, ward_geometries, "ward")
+    metric_colorizers = {
+        metric.column: build_metric_colorizer(
+            [
+                *(metric.compute(area) for area in precinct_records.values()),
+                *(metric.compute(area) for area in ward_records.values()),
+            ],
+            metric,
+        )
+        for metric in METRICS
+    }
+
+    render_metric_maps(precinct_records, precinct_geometries, "precinct", metric_colorizers)
+    render_metric_maps(ward_records, ward_geometries, "ward", metric_colorizers)
 
 
 if __name__ == "__main__":

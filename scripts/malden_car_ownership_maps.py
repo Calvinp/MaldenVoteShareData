@@ -225,6 +225,10 @@ def format_metric_value(value: float, formatter: str) -> str:
     return f"{value:.2f}"
 
 
+def build_metric_label_lines(area: AreaCarOwnership, metric: MetricSpec) -> list[str]:
+    return [area.label, f"({format_metric_value(metric.compute(area), metric.formatter)})"]
+
+
 def build_metric_colorizer(
     values: list[float],
     metric: MetricSpec,
@@ -275,6 +279,7 @@ def render_metric_maps(
             OTHER_DATA_DIR / f"{metric.output_stem_prefix}_{level}_map",
             color_fn,
             legend,
+            label_text_getter=lambda area, metric=metric: build_metric_label_lines(area, metric),
         )
 
 

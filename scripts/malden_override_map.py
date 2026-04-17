@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import base64
+import html
 import io
 import json
 import math
@@ -450,6 +451,36 @@ def estimate_svg_legend_box(legend: LegendSpec) -> tuple[int, int]:
     return box_width, box_height
 
 
+def draw_centered_label_lines(
+    draw: ImageDraw.ImageDraw,
+    x: float,
+    y: float,
+    lines: list[tuple[str, ImageFont.ImageFont | ImageFont.FreeTypeFont, tuple[int, int, int, int]]],
+    *,
+    stroke_width: int = 2,
+    stroke_fill: tuple[int, int, int, int] = (255, 255, 255, 220),
+    line_gap: int = 2,
+) -> None:
+    line_heights = []
+    for text, font, _ in lines:
+        bbox = draw.textbbox((0, 0), text, font=font, anchor="lt", stroke_width=stroke_width)
+        line_heights.append(bbox[3] - bbox[1])
+    total_height = sum(line_heights) + line_gap * max(0, len(lines) - 1)
+    cursor_y = y - total_height / 2
+
+    for (text, font, fill), height in zip(lines, line_heights):
+        draw.text(
+            (x, cursor_y + height / 2),
+            text,
+            anchor="mm",
+            fill=fill,
+            font=font,
+            stroke_width=stroke_width,
+            stroke_fill=stroke_fill,
+        )
+        cursor_y += height + line_gap
+
+
 def render_map(
     title: str,
     value_getter,
@@ -459,6 +490,7 @@ def render_map(
     output_stem: Path,
     color_fn,
     legend: LegendSpec | None = None,
+    label_text_getter=None,
 ) -> None:
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     projected = lambda lon, lat: basemap.project(lon, lat)
@@ -507,18 +539,27 @@ def render_map(
     map_image = Image.alpha_composite(map_image, ward_overlay)
 
     label_font = load_font(max(18, round(map_image.width * 0.0115)))
+    secondary_label_font = load_font(max(15, round(map_image.width * 0.009)))
     label_draw = ImageDraw.Draw(map_image)
     for precinct_name, geometry in geometries.items():
         point = geometry.representative_point()
         x, y = projected(point.x, point.y)
-        label_draw.text(
-            (x, y),
-            precinct_name,
-            anchor="mm",
-            fill=(60, 60, 60, 255),
-            font=label_font,
-            stroke_width=2,
-            stroke_fill=(255, 255, 255, 220),
+        label_lines = (
+            label_text_getter(results[precinct_name])
+            if label_text_getter is not None
+            else [precinct_name]
+        )
+        draw_centered_label_lines(
+            label_draw,
+            x,
+            y,
+            [
+                (label_lines[0], label_font, (60, 60, 60, 255)),
+                *[
+                    (line, secondary_label_font, (114, 55, 55, 255))
+                    for line in label_lines[1:]
+                ],
+            ],
         )
 
     legend_width, legend_height = (estimate_svg_legend_box(legend) if legend is not None else (0, 0))
@@ -573,15 +614,33 @@ def render_map(
     city_path = geometry_to_svg_path(city_geometry, global_projected)
     svg_parts.append(f'<path d="{city_path}" fill="none" stroke="#2a2a2a" stroke-width="7"/>')
 
+    primary_font_size = max(18, round(map_image.width * 0.0115))
+    secondary_font_size = max(15, round(map_image.width * 0.009))
+    primary_line_height = primary_font_size + 6
+    secondary_line_height = secondary_font_size + 5
     for precinct_name, geometry in geometries.items():
         point = geometry.representative_point()
         x, y = global_projected(point.x, point.y)
-        svg_parts.append(
-            f'<text x="{x:.2f}" y="{y:.2f}" text-anchor="middle" dominant-baseline="middle" '
-            'font-family="Arial, sans-serif" font-size="26" font-weight="700" '
-            'fill="#3c3c3c" stroke="#ffffff" stroke-width="2" paint-order="stroke fill">'
-            f"{precinct_name}</text>"
+        label_lines = (
+            label_text_getter(results[precinct_name])
+            if label_text_getter is not None
+            else [precinct_name]
         )
+        total_height = primary_line_height + secondary_line_height * max(0, len(label_lines) - 1)
+        total_height += 2 * max(0, len(label_lines) - 1)
+        cursor_y = y - total_height / 2
+        for index, line in enumerate(label_lines):
+            font_size = 26 if index == 0 else 20
+            font_weight = "700" if index == 0 else "600"
+            fill = "#3c3c3c" if index == 0 else "#723737"
+            line_height = primary_line_height if index == 0 else secondary_line_height
+            svg_parts.append(
+                f'<text x="{x:.2f}" y="{cursor_y + line_height / 2:.2f}" text-anchor="middle" dominant-baseline="middle" '
+                f'font-family="Arial, sans-serif" font-size="{font_size}" font-weight="{font_weight}" '
+                f'fill="{fill}" stroke="#ffffff" stroke-width="2" paint-order="stroke fill">'
+                f"{html.escape(line)}</text>"
+            )
+            cursor_y += line_height + 2
 
     if legend is not None:
         box_width, box_height = legend_width, legend_height

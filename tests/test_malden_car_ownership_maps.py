@@ -5,6 +5,7 @@ from scripts.malden_car_ownership_maps import (
     aggregate_ward_car_ownership,
     build_area_records,
     build_metric_colorizer,
+    build_metric_label_lines,
     build_precinct_car_ownership_rows,
 )
 
@@ -136,3 +137,26 @@ def test_pct_metric_legend_formats_as_percent():
     assert legend.title == "Estimated resident car coverage"
     assert [label for label, _ in legend.items] == ["40%", "53%", "66%", "80%"]
     assert color_fn(0.4) != color_fn(0.8)
+
+
+def test_build_metric_label_lines_formats_decimal_and_percent_values():
+    area = build_area_records(
+        [
+            {
+                "precinct": "1-1",
+                "ward": "1",
+                "population": 100.0,
+                "adult_population": 80.0,
+                "estimated_households": 50.0,
+                "estimated_vehicle_count": 40.0,
+                "estimated_vehicles_per_person": 0.4,
+                "estimated_vehicles_per_household": 0.8,
+                "estimated_vehicles_per_adult": 0.5,
+                "estimated_residents_with_car_share": 0.4,
+            }
+        ],
+        "precinct",
+    )["1-1"]
+
+    assert build_metric_label_lines(area, METRICS[0]) == ["1-1", "(0.40)"]
+    assert build_metric_label_lines(area, METRICS[3]) == ["1-1", "(40%)"]
